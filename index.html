@@ -2,1492 +2,817 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Crochet Collection</title>
 
 <style>
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#fff0f7,#fce4f0,#f3e7ff);
-  color:#333;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#fff0f7,#fce1ef,#f0e4ff);
+color:#333
 }
+button{cursor:pointer}
+.hidden{display:none!important}
 
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
-
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:linear-gradient(90deg,#e83d91,#a84cff);
-  box-shadow:0 3px 15px #0002;
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(90deg,#e83289,#a84cff);
+box-shadow:0 3px 15px #0002
 }
-
 .header{
-  max-width:1200px;
-  margin:auto;
-  padding:12px 16px;
-  display:flex;
-  align-items:center;
-  gap:15px;
+max-width:1200px;
+margin:auto;
+padding:12px 15px;
+display:flex;
+align-items:center;
+gap:12px
 }
-
 .logo{
-  color:white;
-  font-size:24px;
-  font-weight:bold;
-  white-space:nowrap;
+color:white;
+font-size:23px;
+font-weight:bold;
+white-space:nowrap
 }
-
 .search{
-  flex:1;
-  display:flex;
-  background:white;
-  border-radius:10px;
-  overflow:hidden;
+flex:1;
+display:flex;
+background:white;
+border-radius:10px;
+overflow:hidden
 }
-
 .search input{
-  flex:1;
-  border:0;
-  outline:0;
-  padding:13px;
-  font-size:15px;
+width:100%;
+border:0;
+outline:0;
+padding:13px;
+font-size:15px
 }
-
 .search button{
-  width:55px;
-  border:0;
-  background:#ffe1ee;
-  font-size:20px;
+border:0;
+width:55px;
+background:#ffe2ef;
+font-size:20px
 }
-
-.head-icon{
-  border:0;
-  background:transparent;
-  color:white;
-  font-size:24px;
-  position:relative;
+.icon-btn{
+border:0;
+background:transparent;
+color:white;
+font-size:24px;
+position:relative
 }
-
 .badge{
-  position:absolute;
-  top:-7px;
-  right:-8px;
-  background:#ff1744;
-  color:white;
-  border-radius:50%;
-  min-width:19px;
-  height:19px;
-  font-size:11px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+position:absolute;
+top:-7px;
+right:-7px;
+background:#ff1744;
+color:white;
+font-size:10px;
+width:18px;
+height:18px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center
 }
 
-/* ================= NAV ================= */
-
+/* NAV */
 nav{
-  background:white;
-  box-shadow:0 2px 8px #0001;
+background:white;
+box-shadow:0 2px 8px #0001
 }
-
 .nav{
-  max-width:1200px;
-  margin:auto;
-  padding:11px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
+max-width:1200px;
+margin:auto;
+padding:10px;
+display:flex;
+justify-content:center;
+gap:28px
 }
-
 .nav button{
-  border:0;
-  background:none;
-  font-weight:bold;
-  color:#555;
+border:0;
+background:none;
+font-weight:bold;
+color:#555
 }
+.nav button:hover{color:#e83289}
 
-.nav button:hover{
-  color:#e83d91;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-  max-width:1200px;
-  margin:20px auto;
-  padding:0 15px;
+max-width:1200px;
+margin:20px auto;
+padding:0 15px
 }
-
 .hero img{
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  border-radius:18px;
-  display:block;
-  box-shadow:0 5px 25px #0002;
+width:100%;
+height:330px;
+object-fit:cover;
+border-radius:18px;
+box-shadow:0 5px 25px #0002
 }
 
-/* ================= SECTION ================= */
-
+/* SECTIONS */
 .section{
-  max-width:1200px;
-  margin:30px auto;
-  padding:0 15px;
+max-width:1200px;
+margin:30px auto;
+padding:0 15px
 }
-
 .title{
-  font-size:28px;
-  margin-bottom:18px;
-  color:#d82f83;
+color:#d72f82;
+margin-bottom:18px;
+font-size:28px
 }
 
-/* ================= CATEGORIES ================= */
-
+/* CATEGORIES */
 .categories{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:12px;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:12px
 }
-
 .category{
-  background:white;
-  border-radius:14px;
-  padding:18px 8px;
-  text-align:center;
-  box-shadow:0 3px 12px #0001;
-  cursor:pointer;
-  transition:.2s;
+background:white;
+padding:18px 5px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 3px 12px #0001;
+cursor:pointer;
+transition:.2s
 }
-
-.category:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 20px #0002;
-}
-
+.category:hover{transform:translateY(-4px)}
 .category-icon{
-  font-size:34px;
-  margin-bottom:8px;
+font-size:32px;
+margin-bottom:7px
 }
 
-/* ================= PRODUCTS ================= */
-
-.products-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.products-head select{
-  padding:9px;
-  border:1px solid #ddd;
-  border-radius:8px;
-}
-
+/* PRODUCTS */
 .product-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px
 }
-
 .product{
-  background:white;
-  border-radius:13px;
-  overflow:hidden;
-  position:relative;
-  box-shadow:0 3px 12px #0001;
-  transition:.2s;
+background:white;
+border-radius:13px;
+overflow:hidden;
+box-shadow:0 3px 12px #0001;
+position:relative;
+transition:.2s
 }
-
 .product:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 25px #0002;
+transform:translateY(-4px);
+box-shadow:0 8px 25px #0002
 }
-
 .product-img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
-  cursor:pointer;
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+cursor:pointer
 }
-
-.product-heart{
-  position:absolute;
-  top:10px;
-  right:10px;
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:white;
-  font-size:22px;
-  box-shadow:0 2px 8px #0002;
-  z-index:5;
+.heart{
+position:absolute;
+top:9px;
+right:9px;
+z-index:5;
+border:0;
+background:white;
+border-radius:50%;
+width:38px;
+height:38px;
+font-size:22px;
+box-shadow:0 2px 8px #0002
 }
-
-.product-info{
-  padding:13px;
-  cursor:pointer;
+.info{
+padding:12px;
+cursor:pointer
 }
-
-.product-name{
-  font-weight:bold;
-  min-height:38px;
+.name{
+font-weight:bold;
+min-height:38px
 }
-
 .price{
-  color:#e83d91;
-  font-size:21px;
-  font-weight:bold;
-  margin:7px 0;
+font-size:21px;
+font-weight:bold;
+color:#e83289;
+margin:7px 0
 }
-
-.stars{
-  color:#f5a400;
-  font-size:15px;
+.stars{color:#f5a400}
+.small{
+font-size:12px;
+color:#777
 }
-
-.review-count{
-  color:#777;
-  font-size:12px;
+.actions{
+display:flex;
+gap:5px;
+margin-top:10px
 }
-
-.product-buttons{
-  display:flex;
-  gap:6px;
-  margin-top:10px;
+.actions button{
+flex:1;
+border:0;
+padding:10px 4px;
+border-radius:7px;
+color:white;
+font-weight:bold
 }
+.cart-btn{background:#ff8ab7}
+.buy-btn{background:#e83289}
 
-.cart-btn,
-.buy-btn{
-  flex:1;
-  border:0;
-  color:white;
-  padding:10px 5px;
-  border-radius:7px;
-  font-weight:bold;
+/* ADMIN */
+.admin{
+max-width:800px;
+margin:40px auto;
+padding:0 15px 60px
 }
-
-.cart-btn{
-  background:#ff8db9;
+.login,.panel{
+background:white;
+padding:28px;
+border-radius:20px;
+box-shadow:0 8px 30px #0002
 }
-
-.buy-btn{
-  background:#e83d91;
+.login{
+max-width:430px;
+margin:auto
 }
-
-.empty{
-  grid-column:1/-1;
-  background:white;
-  border-radius:13px;
-  padding:50px 20px;
-  text-align:center;
-  color:#777;
+.heading{
+text-align:center;
+color:#e83289;
+margin-bottom:20px
 }
-
-/* ================= ADMIN ================= */
-
-.admin-area{
-  max-width:750px;
-  margin:40px auto;
-  padding:0 15px 60px;
+.input{
+margin-bottom:13px
 }
-
-.login-box,
-.admin-box{
-  background:white;
-  border-radius:20px;
-  padding:28px;
-  box-shadow:0 8px 30px #0002;
+.input label{
+display:block;
+font-weight:bold;
+margin-bottom:6px
 }
-
-.login-box{
-  max-width:430px;
-  margin:auto;
+.input input,.input select,.input textarea{
+width:100%;
+padding:12px;
+border:2px solid #eee;
+border-radius:10px;
+outline:0;
+font-size:15px
 }
-
-.box-title{
-  color:#e83d91;
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.input-group{
-  margin-bottom:14px;
-}
-
-.input-group label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:6px;
-}
-
-.input-group input,
-.input-group select,
-.input-group textarea{
-  width:100%;
-  padding:12px;
-  border:2px solid #eee;
-  border-radius:10px;
-  outline:none;
-  font-size:15px;
-}
-
-.input-group textarea{
-  min-height:90px;
-}
-
+.input textarea{min-height:90px}
 .main-btn{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:10px;
-  color:white;
-  background:linear-gradient(90deg,#e83d91,#a84cff);
-  font-size:16px;
-  font-weight:bold;
-  margin-top:8px;
+width:100%;
+padding:13px;
+border:0;
+border-radius:10px;
+color:white;
+background:linear-gradient(90deg,#e83289,#a84cff);
+font-size:16px;
+font-weight:bold;
+margin-top:7px
 }
-
 .profile{
-  background:#fff0f7;
-  border-radius:13px;
-  padding:20px;
-  margin-bottom:25px;
-  border:1px solid #ffd4e7;
+background:#fff0f7;
+border:1px solid #ffd1e5;
+padding:18px;
+border-radius:13px;
+margin-bottom:25px
 }
-
-.profile p{
-  margin:8px 0;
-}
-
+.profile p{margin:8px 0}
 .upload{
-  display:block;
-  border:2px dashed #e83d91;
-  background:#fff7fb;
-  border-radius:13px;
-  padding:20px;
-  text-align:center;
-  color:#e83d91;
-  font-weight:bold;
-  margin:15px 0;
+display:block;
+padding:20px;
+text-align:center;
+border:2px dashed #e83289;
+border-radius:13px;
+color:#e83289;
+background:#fff7fb;
+font-weight:bold;
+margin:15px 0
 }
-
 .upload input{
-  display:block;
-  margin:12px auto 0;
+display:block;
+margin:12px auto 0
 }
-
 .editor{
-  background:#fff7fb;
-  padding:15px;
-  border-radius:13px;
-  margin-bottom:15px;
+background:#fff7fb;
+padding:15px;
+border-radius:13px;
+margin-bottom:15px
 }
-
 #canvas{
-  width:100%;
-  max-height:400px;
-  object-fit:contain;
-  border:2px solid #eee;
-  border-radius:10px;
-  margin:10px 0;
+width:100%;
+max-height:400px;
+object-fit:contain;
+border:2px solid #eee;
+border-radius:10px;
+margin:10px 0
 }
-
 .editor label{
-  display:block;
-  font-weight:bold;
-  margin-top:12px;
+display:block;
+font-weight:bold;
+margin:12px 0 5px
 }
+.editor input[type=range]{width:100%}
 
-.editor input[type=range]{
-  width:100%;
-}
-
-/* ================= ADMIN UPLOAD LIST ================= */
-
-.admin-products{
-  margin-top:20px;
-}
-
+/* ADMIN PRODUCTS */
 .admin-product{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:12px;
-  margin:10px 0;
-  background:#fff5fa;
-  border:1px solid #ffd4e7;
-  border-radius:12px;
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px;
+margin:10px 0;
+background:#fff4fa;
+border:1px solid #ffd2e5;
+border-radius:12px
 }
-
 .admin-product img{
-  width:80px;
-  height:80px;
-  object-fit:cover;
-  border-radius:10px;
+width:75px;
+height:75px;
+object-fit:cover;
+border-radius:9px
+}
+.admin-info{flex:1}
+.admin-info h3{margin-bottom:5px}
+.admin-price{
+color:#e83289;
+font-weight:bold;
+margin-bottom:4px
+}
+.delete{
+border:0;
+background:#ff4666;
+color:white;
+padding:10px;
+border-radius:8px;
+font-weight:bold
 }
 
-.admin-product-info{
-  flex:1;
-}
-
-.admin-product-info h3{
-  color:#444;
-  margin-bottom:5px;
-}
-
-.admin-product-info .admin-price{
-  color:#e83d91;
-  font-weight:bold;
-  margin-bottom:4px;
-}
-
-.admin-product-info small{
-  color:#777;
-}
-
-.admin-delete{
-  border:0;
-  background:#ff4d6d;
-  color:white;
-  padding:10px 13px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-.admin-delete:hover{
-  background:#e83253;
-}
-
-/* ================= PRODUCT DETAIL ================= */
-
-.detail-modal{
-  position:fixed;
-  inset:0;
-  z-index:3000;
-  background:#0009;
-  overflow:auto;
-  padding:20px;
-}
-
-.detail-box{
-  background:white;
-  max-width:1100px;
-  margin:20px auto;
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-}
-
-.detail-close{
-  position:absolute;
-  right:15px;
-  top:12px;
-  z-index:10;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:50%;
-  background:white;
-  font-size:28px;
-  box-shadow:0 2px 10px #0003;
-}
-
-.detail-main{
-  display:grid;
-  grid-template-columns:50% 50%;
-}
-
-.gallery{
-  padding:25px;
-  background:#fff7fb;
-}
-
-.main-photo-box{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  position:relative;
-}
-
-.main-photo{
-  width:100%;
-  height:470px;
-  object-fit:contain;
-  display:block;
-  cursor:zoom-in;
-}
-
-.zoom-text{
-  position:absolute;
-  bottom:10px;
-  right:10px;
-  background:#0008;
-  color:white;
-  padding:6px 10px;
-  border-radius:7px;
-  font-size:12px;
-}
-
-.thumbnails{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-  overflow:auto;
-}
-
-.thumbnail{
-  width:75px;
-  height:75px;
-  object-fit:cover;
-  border-radius:8px;
-  border:2px solid #ddd;
-  cursor:pointer;
-}
-
-.thumbnail.active{
-  border-color:#e83d91;
-}
-
-.detail-info{
-  padding:30px;
-}
-
-.detail-category{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:7px;
-  background:#ffe1ef;
-  color:#e83d91;
-  font-size:13px;
-}
-
-.detail-title{
-  font-size:30px;
-  margin:12px 0;
-}
-
-.detail-price{
-  color:#e83d91;
-  font-size:31px;
-  font-weight:bold;
-  margin:15px 0;
-}
-
-.rating-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:20px;
-}
-
-.big-stars{
-  color:#f5a400;
-  font-size:23px;
-}
-
-.rating-number{
-  font-weight:bold;
-}
-
-.rating-count{
-  color:#777;
-}
-
-.like-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:15px 0;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-}
-
-.like-btn{
-  border:0;
-  background:#ffe4ef;
-  color:#e83d91;
-  padding:10px 15px;
-  border-radius:9px;
-  font-size:20px;
-}
-
-.delivery-card{
-  background:#fff5fa;
-  padding:15px;
-  border-radius:10px;
-  margin:20px 0;
-}
-
-.delivery-card p{
-  margin:7px 0;
-}
-
-.detail-actions{
-  display:flex;
-  gap:10px;
-}
-
-.detail-cart,
-.detail-buy{
-  flex:1;
-  padding:14px;
-  border:0;
-  color:white;
-  border-radius:9px;
-  font-weight:bold;
-  font-size:16px;
-}
-
-.detail-cart{
-  background:#ff8db9;
-}
-
-.detail-buy{
-  background:#e83d91;
-}
-
-/* ================= REVIEWS ================= */
-
-.reviews{
-  border-top:1px solid #eee;
-  padding:30px;
-}
-
-.reviews h2{
-  color:#e83d91;
-  margin-bottom:18px;
-}
-
-.review-form{
-  background:#fff5fa;
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:20px;
-}
-
-.review-form input,
-.review-form textarea{
-  width:100%;
-  padding:11px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  margin:7px 0;
-  outline:none;
-}
-
-.review-form textarea{
-  min-height:80px;
-}
-
-.star-select{
-  display:flex;
-  gap:5px;
-  margin:8px 0;
-}
-
-.star-select button{
-  border:0;
-  background:none;
-  font-size:26px;
-  color:#bbb;
-}
-
-.star-select button.active{
-  color:#f5a400;
-}
-
-.submit-review{
-  border:0;
-  background:#e83d91;
-  color:white;
-  padding:11px 20px;
-  border-radius:8px;
-}
-
-.review{
-  border-bottom:1px solid #eee;
-  padding:15px 0;
-}
-
-.review-name{
-  font-weight:bold;
-}
-
-.review-stars{
-  color:#f5a400;
-  margin:4px 0;
-}
-
-.review-date{
-  color:#999;
-  font-size:11px;
-}
-
-.no-reviews{
-  color:#888;
-}
-
-/* ================= MODALS ================= */
-
+/* DETAIL */
 .modal{
-  position:fixed;
-  inset:0;
-  z-index:3500;
-  background:#0008;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:15px;
+position:fixed;
+inset:0;
+background:#0009;
+z-index:3000;
+overflow:auto;
+padding:20px
 }
-
-.modal-box{
-  width:100%;
-  max-width:600px;
-  max-height:90vh;
-  overflow:auto;
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  position:relative;
+.detail{
+background:white;
+max-width:1100px;
+margin:20px auto;
+border-radius:18px;
+overflow:hidden;
+position:relative
 }
-
 .close{
-  position:absolute;
-  right:12px;
-  top:8px;
-  border:0;
-  background:none;
-  font-size:28px;
+position:absolute;
+right:12px;
+top:10px;
+z-index:5;
+border:0;
+background:white;
+border-radius:50%;
+width:40px;
+height:40px;
+font-size:28px
+}
+.detail-grid{
+display:grid;
+grid-template-columns:50% 50%
+}
+.gallery{
+padding:25px;
+background:#fff7fb
+}
+.main-photo{
+width:100%;
+height:460px;
+object-fit:contain;
+background:white;
+border-radius:12px;
+cursor:zoom-in
+}
+.detail-info{padding:30px}
+.category-tag{
+display:inline-block;
+background:#ffe0ed;
+color:#e83289;
+padding:6px 10px;
+border-radius:7px
+}
+.detail-title{
+font-size:30px;
+margin:12px 0
+}
+.detail-price{
+font-size:31px;
+font-weight:bold;
+color:#e83289;
+margin:15px 0
+}
+.rating{
+margin:15px 0
+}
+.big-stars{
+color:#f5a400;
+font-size:23px
+}
+.like{
+padding:15px 0;
+border-top:1px solid #eee;
+border-bottom:1px solid #eee;
+margin:15px 0
+}
+.like button{
+border:0;
+background:#ffe4ef;
+color:#e83289;
+padding:10px 15px;
+border-radius:8px;
+font-size:20px
+}
+.delivery{
+background:#fff3f9;
+padding:15px;
+border-radius:10px;
+margin:20px 0
+}
+.delivery p{margin:7px 0}
+.detail-actions{
+display:flex;
+gap:10px
+}
+.detail-actions button{
+flex:1;
+padding:14px;
+border:0;
+border-radius:9px;
+color:white;
+font-weight:bold;
+font-size:16px
+}
+.detail-cart{background:#ff8ab7}
+.detail-buy{background:#e83289}
+
+/* REVIEWS */
+.reviews{
+border-top:1px solid #eee;
+padding:30px
+}
+.reviews h2{
+color:#e83289;
+margin-bottom:15px
+}
+.review-form{
+background:#fff5fa;
+padding:18px;
+border-radius:12px
+}
+.review-form input,.review-form textarea{
+width:100%;
+padding:11px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:8px
+}
+.review-form textarea{min-height:80px}
+.review-stars-select button{
+border:0;
+background:none;
+font-size:26px;
+color:#bbb
+}
+.review-stars-select button.active{color:#f5a400}
+.review-submit{
+border:0;
+background:#e83289;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+margin-top:8px
+}
+.review{
+padding:15px 0;
+border-bottom:1px solid #eee
+}
+.review-name{font-weight:bold}
+.review-star{color:#f5a400}
+.review-date{
+font-size:11px;
+color:#999
 }
 
-.modal-title{
-  color:#e83d91;
-  margin-bottom:20px;
-}
-
+/* CART */
 .cart-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  border-bottom:1px solid #eee;
-  padding:12px 0;
+display:flex;
+gap:12px;
+align-items:center;
+padding:12px 0;
+border-bottom:1px solid #eee
 }
-
 .cart-item img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
-  border-radius:8px;
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:8px
 }
-
-.cart-info{
-  flex:1;
-}
-
+.cart-info{flex:1}
 .cart-price{
-  color:#e83d91;
-  font-weight:bold;
-  margin-top:5px;
+color:#e83289;
+font-weight:bold;
+margin-top:5px
 }
-
-.remove-btn{
-  border:0;
-  background:#ffe3ee;
-  padding:8px;
-  border-radius:7px;
+.remove{
+border:0;
+background:#ffe0e9;
+padding:8px;
+border-radius:7px
 }
-
 .total{
-  text-align:right;
-  color:#e83d91;
-  font-size:22px;
-  font-weight:bold;
-  margin:20px 0;
+text-align:right;
+font-size:22px;
+font-weight:bold;
+color:#e83289;
+margin:18px 0
+}
+.empty{
+background:white;
+padding:45px 20px;
+border-radius:13px;
+text-align:center;
+color:#777;
+grid-column:1/-1
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
-  background:#251f24;
-  color:white;
-  text-align:center;
-  padding:40px 15px;
+background:#241f23;
+color:white;
+text-align:center;
+padding:40px 15px
 }
+footer h2{color:#ff75b8;margin-bottom:12px}
+footer p{margin:8px}
 
-footer h2{
-  color:#ff75b8;
-  margin-bottom:12px;
+/* MOBILE */
+.mobile{
+display:none
 }
-
-footer p{
-  margin:8px;
-}
-
-/* ================= MOBILE ================= */
-
-.mobile-nav{
-  display:none;
-}
-
 @media(max-width:950px){
-
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .categories{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .detail-main{
-    grid-template-columns:1fr;
-  }
-
+.product-grid{grid-template-columns:repeat(3,1fr)}
+.categories{grid-template-columns:repeat(3,1fr)}
+.detail-grid{grid-template-columns:1fr}
 }
-
 @media(max-width:600px){
-
-  body{
-    padding-bottom:65px;
-  }
-
-  .header{
-    flex-wrap:wrap;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .search{
-    order:3;
-    flex-basis:100%;
-  }
-
-  nav{
-    display:none;
-  }
-
-  .hero img{
-    height:190px;
-  }
-
-  .categories{
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-  }
-
-  .category{
-    padding:12px 5px;
-  }
-
-  .category-icon{
-    font-size:27px;
-  }
-
-  .category p{
-    font-size:12px;
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
-
-  .product-img{
-    height:170px;
-  }
-
-  .product-info{
-    padding:10px;
-  }
-
-  .product-name{
-    font-size:13px;
-  }
-
-  .price{
-    font-size:18px;
-  }
-
-  .product-buttons{
-    flex-direction:column;
-  }
-
-  .main-photo{
-    height:330px;
-  }
-
-  .detail-info{
-    padding:20px;
-  }
-
-  .detail-title{
-    font-size:23px;
-  }
-
-  .detail-price{
-    font-size:26px;
-  }
-
-  .detail-actions{
-    flex-direction:column;
-  }
-
-  .reviews{
-    padding:20px;
-  }
-
-  .admin-product{
-    align-items:flex-start;
-  }
-
-  .admin-product img{
-    width:60px;
-    height:60px;
-  }
-
-  .admin-product-info h3{
-    font-size:14px;
-  }
-
-  .admin-delete{
-    padding:7px;
-    font-size:12px;
-  }
-
-  .mobile-nav{
-    position:fixed;
-    display:flex;
-    bottom:0;
-    left:0;
-    right:0;
-    height:63px;
-    background:white;
-    z-index:2500;
-    justify-content:space-around;
-    border-top:1px solid #ddd;
-  }
-
-  .mobile-nav button{
-    border:0;
-    background:white;
-    font-size:11px;
-    color:#555;
-  }
-
-  .mobile-nav span{
-    display:block;
-    font-size:22px;
-  }
-
+body{padding-bottom:65px}
+.header{flex-wrap:wrap}
+.logo{font-size:20px}
+.search{order:3;flex-basis:100%}
+nav{display:none}
+.hero img{height:190px}
+.categories{grid-template-columns:repeat(3,1fr);gap:8px}
+.category{padding:12px 3px}
+.category-icon{font-size:26px}
+.category p{font-size:11px}
+.product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.product-img{height:170px}
+.info{padding:9px}
+.name{font-size:13px}
+.price{font-size:18px}
+.actions{flex-direction:column}
+.detail-info{padding:20px}
+.main-photo{height:330px}
+.detail-title{font-size:23px}
+.detail-actions{flex-direction:column}
+.admin-product img{width:60px;height:60px}
+.delete{padding:7px;font-size:11px}
+.mobile{
+position:fixed;
+display:flex;
+bottom:0;
+left:0;
+right:0;
+height:63px;
+background:white;
+z-index:2500;
+justify-content:space-around;
+border-top:1px solid #ddd
 }
-
+.mobile button{
+border:0;
+background:white;
+font-size:11px;
+color:#555
+}
+.mobile span{
+display:block;
+font-size:22px
+}
+}
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
-
 <div class="header">
 
-<div class="logo">
-🧶 Crochet
-</div>
+<div class="logo">🧶 Crochet</div>
 
 <div class="search">
-
-<input
-id="search"
-type="text"
-placeholder="Search products..."
-oninput="showProducts()"
->
-
-<button onclick="showProducts()">
-🔎
-</button>
-
+<input id="search" placeholder="Search products..." oninput="showProducts()">
+<button>🔎</button>
 </div>
 
-<button
-class="head-icon"
-onclick="openWishlist()"
->
+<button class="icon-btn" onclick="openWishlist()">
 ❤️
-<span
-class="badge"
-id="wishCount"
->
-0
-</span>
+<span class="badge" id="wishCount">0</span>
 </button>
 
-<button
-class="head-icon"
-onclick="openCart()"
->
+<button class="icon-btn" onclick="openCart()">
 🛒
-<span
-class="badge"
-id="cartCount"
->
-0
-</span>
+<span class="badge" id="cartCount">0</span>
 </button>
 
 </div>
-
 </header>
 
-
-<!-- ================= NAV ================= -->
-
 <nav>
-
 <div class="nav">
-
-<button onclick="home()">
-🏠 Home
-</button>
-
-<button onclick="filterCategory('All')">
-🛍️ Products
-</button>
-
-<button onclick="filterCategory('Bags')">
-👜 Bags
-</button>
-
-<button onclick="filterCategory('Flowers')">
-🌸 Flowers
-</button>
-
-<button onclick="filterCategory('Toys')">
-🧸 Toys
-</button>
-
-<button onclick="openCart()">
-🛒 Cart
-</button>
-
-<button onclick="adminArea()">
-👤 Account
-</button>
-
+<button onclick="home()">🏠 Home</button>
+<button onclick="filterCategory('All')">🛍️ Products</button>
+<button onclick="filterCategory('Bags')">👜 Bags</button>
+<button onclick="filterCategory('Flowers')">🌸 Flowers</button>
+<button onclick="filterCategory('Toys')">🧸 Toys</button>
+<button onclick="openCart()">🛒 Cart</button>
+<button onclick="adminArea()">👤 Account</button>
 </div>
-
 </nav>
 
-
-<!-- ================= HERO ================= -->
-
 <section class="hero">
-
-<img
-src="logo.png"
-alt="Crochet Collection"
->
-
+<img src="logo.png" alt="Crochet Collection">
 </section>
-
-
-<!-- ================= CATEGORIES ================= -->
 
 <section class="section">
 
-<h2 class="title">
-🛍️ Shop By Category
-</h2>
+<h2 class="title">🛍️ Shop By Category</h2>
 
 <div class="categories">
 
-<div
-class="category"
-onclick="filterCategory('All')"
->
+<div class="category" onclick="filterCategory('All')">
 <div class="category-icon">🛍️</div>
 <p>All Products</p>
 </div>
 
-<div
-class="category"
-onclick="filterCategory('Bags')"
->
+<div class="category" onclick="filterCategory('Bags')">
 <div class="category-icon">👜</div>
 <p>Bags</p>
 </div>
 
-<div
-class="category"
-onclick="filterCategory('Flowers')"
->
+<div class="category" onclick="filterCategory('Flowers')">
 <div class="category-icon">🌸</div>
 <p>Flowers</p>
 </div>
 
-<div
-class="category"
-onclick="filterCategory('Toys')"
->
+<div class="category" onclick="filterCategory('Toys')">
 <div class="category-icon">🧸</div>
 <p>Toys</p>
 </div>
 
-<div
-class="category"
-onclick="filterCategory('Accessories')"
->
+<div class="category" onclick="filterCategory('Accessories')">
 <div class="category-icon">🎀</div>
 <p>Accessories</p>
 </div>
 
-<div
-class="category"
-onclick="filterCategory('Home')"
->
+<div class="category" onclick="filterCategory('Home')">
 <div class="category-icon">🏠</div>
 <p>Home</p>
 </div>
 
 </div>
+</section>
+
+<section class="section" id="products">
+
+<h2 class="title">✨ Our Products</h2>
+
+<div id="productGrid" class="product-grid"></div>
 
 </section>
 
+<!-- ADMIN -->
 
-<!-- ================= PRODUCTS ================= -->
+<section class="admin" id="adminArea">
 
-<section
-class="section"
-id="products"
->
+<div id="loginBox" class="login">
 
-<div class="products-head">
+<h2 class="heading">🔐 Admin Login</h2>
 
-<h2 class="title">
-✨ Our Products
-</h2>
-
-<select
-id="sort"
-onchange="sortProducts()"
->
-
-<option value="default">
-Sort Products
-</option>
-
-<option value="low">
-Price Low → High
-</option>
-
-<option value="high">
-Price High → Low
-</option>
-
-<option value="name">
-Name A → Z
-</option>
-
-</select>
-
+<div class="input">
+<label>Name</label>
+<input id="loginName" placeholder="Enter Name">
 </div>
 
-<div
-id="productGrid"
-class="product-grid"
-></div>
-
-</section>
-
-
-<!-- ================= ADMIN ================= -->
-
-<section
-class="admin-area"
-id="adminArea"
->
-
-<!-- LOGIN -->
-
-<div
-id="loginBox"
-class="login-box"
->
-
-<h2 class="box-title">
-🔐 Admin Login
-</h2>
-
-<div class="input-group">
-
-<label>
-Name
-</label>
-
-<input
-id="loginName"
-type="text"
-placeholder="Enter Name"
->
-
+<div class="input">
+<label>Password</label>
+<input id="loginPassword" type="password" placeholder="Enter Password">
 </div>
 
-<div class="input-group">
-
-<label>
-Password
-</label>
-
-<input
-id="loginPassword"
-type="password"
-placeholder="Enter Password"
->
-
-</div>
-
-<button
-class="main-btn"
-onclick="login()"
->
+<button class="main-btn" onclick="login()">
 🔐 Login
 </button>
 
-<p
-id="loginMessage"
-style="text-align:center;margin-top:10px;"
-></p>
+<p id="loginMessage" style="text-align:center;margin-top:10px"></p>
 
 </div>
 
 
-<!-- ADMIN PANEL -->
+<div id="adminPanel" class="panel hidden">
 
-<div
-id="adminPanel"
-class="admin-box hidden"
->
-
-<h2 class="box-title">
-👤 My Profile
-</h2>
+<h2 class="heading">👤 My Profile</h2>
 
 <div class="profile">
 
-<p>
-<b>👤 Name:</b> Sameeha
-</p>
-
-<p>
-<b>♀️ Gender:</b> Female
-</p>
-
-<p>
-<b>📦 Total Uploaded:</b>
-<span id="uploadedCount">0</span>
-</p>
+<p>👤 <b>Name:</b> Sameeha</p>
+<p>♀️ <b>Gender:</b> Female</p>
+<p>📦 <b>My Uploaded Products:</b> <span id="uploadCount">0</span></p>
 
 </div>
 
 
-<!-- ADD PRODUCT -->
+<h2 class="heading">➕ Add Product</h2>
 
-<h2 class="box-title">
-➕ Add New Product
-</h2>
-
-<div class="input-group">
-
-<label>
-Product Name
-</label>
-
-<input
-id="productName"
-type="text"
-placeholder="Example: Crochet Flower"
->
-
+<div class="input">
+<label>Product Name</label>
+<input id="productName" placeholder="Product Name">
 </div>
 
-<div class="input-group">
-
-<label>
-Price
-</label>
-
-<input
-id="productPrice"
-type="number"
-placeholder="Example: 1500"
->
-
+<div class="input">
+<label>Price</label>
+<input id="productPrice" type="number" placeholder="Price Rs.">
 </div>
 
-<div class="input-group">
-
-<label>
-Category
-</label>
+<div class="input">
+<label>Category</label>
 
 <select id="productCategory">
 
-<option value="Bags">
-👜 Bags
-</option>
-
-<option value="Flowers">
-🌸 Flowers
-</option>
-
-<option value="Toys">
-🧸 Toys
-</option>
-
-<option value="Accessories">
-🎀 Accessories
-</option>
-
-<option value="Home">
-🏠 Home
-</option>
+<option value="Bags">👜 Bags</option>
+<option value="Flowers">🌸 Flowers</option>
+<option value="Toys">🧸 Toys</option>
+<option value="Accessories">🎀 Accessories</option>
+<option value="Home">🏠 Home</option>
 
 </select>
 
 </div>
 
-
 <label class="upload">
 
-📷 SELECT PRODUCT PHOTO
+📷 Select Product Photo
 
-<input
-id="imageUpload"
-type="file"
-accept="image/*"
->
+<input id="imageUpload" type="file" accept="image/*">
 
 </label>
 
 
-<!-- PHOTO EDITOR -->
+<div id="editor" class="editor hidden">
 
-<div
-id="editor"
-class="editor hidden"
->
-
-<h3 style="color:#e83d91;">
-✨ Photo Editor
-</h3>
+<h3 style="color:#e83289">✨ Photo Editor</h3>
 
 <canvas id="canvas"></canvas>
 
-<label>
-☀️ Brightness
-</label>
+<label>☀️ Brightness</label>
+<input id="brightness" type="range" min="0" max="200" value="100">
 
-<input
-id="brightness"
-type="range"
-min="0"
-max="200"
-value="100"
->
+<label>🎨 Contrast</label>
+<input id="contrast" type="range" min="0" max="200" value="100">
 
-<label>
-🎨 Contrast
-</label>
+<label>🌈 Saturation</label>
+<input id="saturation" type="range" min="0" max="200" value="100">
 
-<input
-id="contrast"
-type="range"
-min="0"
-max="200"
-value="100"
->
+<button class="main-btn" onclick="rotateImage()">🔄 Rotate</button>
 
-<label>
-🌈 Saturation
-</label>
-
-<input
-id="saturation"
-type="range"
-min="0"
-max="200"
-value="100"
->
-
-<button
-class="main-btn"
-onclick="rotateImage()"
->
-🔄 Rotate
-</button>
-
-<button
-class="main-btn"
-onclick="resetImage()"
->
-↩️ Reset
-</button>
+<button class="main-btn" onclick="resetImage()">↩️ Reset</button>
 
 </div>
 
 
-<button
-class="main-btn"
-onclick="addProduct()"
->
-✅ DONE — ADD PRODUCT
+<button class="main-btn" onclick="addProduct()">
+✅ ADD PRODUCT
 </button>
 
 
-<!-- MY UPLOADS -->
-
-<h2
-class="box-title"
-style="margin-top:35px;"
->
+<h2 class="heading" style="margin-top:35px">
 📦 My Uploaded Products
 </h2>
 
-<div
-id="adminProducts"
-class="admin-products"
-></div>
+<div id="adminProducts"></div>
 
 
 <button
 class="main-btn"
-style="background:#555;margin-top:25px;"
-onclick="logout()"
->
+style="background:#555;margin-top:25px"
+onclick="logout()">
 🚪 Logout
 </button>
 
@@ -1496,143 +821,69 @@ onclick="logout()"
 </section>
 
 
-<!-- ================= PRODUCT DETAIL ================= -->
+<!-- PRODUCT DETAIL -->
 
-<div
-id="detailModal"
-class="detail-modal hidden"
->
+<div id="detailModal" class="modal hidden">
 
-<div class="detail-box">
+<div class="detail">
 
-<button
-class="detail-close"
-onclick="closeDetail()"
->
-×
-</button>
+<button class="close" onclick="closeDetail()">×</button>
 
-<div class="detail-main">
+<div class="detail-grid">
 
 <div class="gallery">
 
-<div class="main-photo-box">
-
-<img
-id="detailMainImage"
-class="main-photo"
-onclick="zoomPhoto()"
->
-
-<div class="zoom-text">
-🔍 Click image to zoom
-</div>
+<img id="detailImage" class="main-photo">
 
 </div>
-
-<div
-id="thumbnails"
-class="thumbnails"
-></div>
-
-</div>
-
 
 <div class="detail-info">
 
-<div
-id="detailCategory"
-class="detail-category"
-></div>
+<div id="detailCategory" class="category-tag"></div>
 
-<h1
-id="detailTitle"
-class="detail-title"
-></h1>
+<h1 id="detailTitle" class="detail-title"></h1>
 
-<div
-id="detailPrice"
-class="detail-price"
-></div>
+<div id="detailPrice" class="detail-price"></div>
 
-<div class="rating-row">
+<div class="rating">
 
-<span
-id="detailStars"
-class="big-stars"
->
-★★★★★
-</span>
+<span id="detailStars" class="big-stars">★★★★★</span>
 
-<span
-id="detailRating"
-class="rating-number"
->
-5.0
-</span>
+<span id="detailRating">5.0</span>
 
-<span
-id="detailRatingCount"
-class="rating-count"
->
-(0 ratings)
-</span>
+<span id="detailRatingCount">(0 reviews)</span>
 
 </div>
 
+<div class="like">
 
-<div class="like-area">
-
-<button
-id="detailLike"
-class="like-btn"
-onclick="likeCurrentProduct()"
->
-♡
+<button onclick="likeProduct()">
+❤️
 </button>
 
 <span>
-<span id="likeNumber">0</span>
+<span id="likeCount">0</span>
 people like this
 </span>
 
 </div>
 
+<div class="delivery">
 
-<div class="delivery-card">
-
-<p>
-🚚 <b>Free Home Delivery</b>
-</p>
-
-<p>
-📦 Delivery available
-</p>
-
-<p>
-❤️ Handmade with love
-</p>
-
-<p>
-💬 Order through WhatsApp
-</p>
+<p>🚚 <b>Free Home Delivery</b></p>
+<p>📦 Delivery Available</p>
+<p>❤️ Handmade With Love</p>
+<p>💬 Order Through WhatsApp</p>
 
 </div>
 
-
 <div class="detail-actions">
 
-<button
-class="detail-cart"
-onclick="detailAddCart()"
->
+<button class="detail-cart" onclick="detailCart()">
 🛒 Add To Cart
 </button>
 
-<button
-class="detail-buy"
-onclick="detailBuyNow()"
->
+<button class="detail-buy" onclick="detailBuy()">
 ⚡ Buy Now
 </button>
 
@@ -1643,70 +894,27 @@ onclick="detailBuyNow()"
 </div>
 
 
-<!-- REVIEWS -->
-
 <div class="reviews">
 
-<h2>
-⭐ Customer Reviews
-</h2>
+<h2>⭐ Customer Reviews</h2>
 
 <div class="review-form">
 
-<input
-id="reviewName"
-type="text"
-placeholder="Your name"
->
+<input id="reviewName" placeholder="Your Name">
 
-<div class="star-select">
+<div class="review-stars-select">
 
-<button
-id="star1"
-onclick="selectReviewStar(1)"
->
-★
-</button>
-
-<button
-id="star2"
-onclick="selectReviewStar(2)"
->
-★
-</button>
-
-<button
-id="star3"
-onclick="selectReviewStar(3)"
->
-★
-</button>
-
-<button
-id="star4"
-onclick="selectReviewStar(4)"
->
-★
-</button>
-
-<button
-id="star5"
-onclick="selectReviewStar(5)"
->
-★
-</button>
+<button onclick="selectStar(1)" id="s1">★</button>
+<button onclick="selectStar(2)" id="s2">★</button>
+<button onclick="selectStar(3)" id="s3">★</button>
+<button onclick="selectStar(4)" id="s4">★</button>
+<button onclick="selectStar(5)" id="s5">★</button>
 
 </div>
 
-<textarea
-id="reviewText"
-placeholder="Write your review..."
-></textarea>
+<textarea id="reviewText" placeholder="Write your review..."></textarea>
 
-<button
-class="submit-review"
-onclick="addReview()"
->
+<button class="review-submit" onclick="addReview()">
 💬 Submit Review
 </button>
 
@@ -1721,39 +929,21 @@ onclick="addReview()"
 </div>
 
 
-<!-- ================= CART ================= -->
+<!-- CART -->
 
-<div
-id="cartModal"
-class="modal hidden"
->
+<div id="cartModal" class="modal hidden">
 
-<div class="modal-box">
+<div class="detail" style="max-width:600px;padding:25px">
 
-<button
-class="close"
-onclick="closeModal('cartModal')"
->
-×
-</button>
+<button class="close" onclick="closeModal('cartModal')">×</button>
 
-<h2 class="modal-title">
-🛒 Shopping Cart
-</h2>
+<h2 class="heading">🛒 Shopping Cart</h2>
 
 <div id="cartItems"></div>
 
-<div
-id="cartTotal"
-class="total"
->
-Total: Rs. 0
-</div>
+<div id="total" class="total">Total: Rs. 0</div>
 
-<button
-class="main-btn"
-onclick="checkout()"
->
+<button class="main-btn" onclick="checkout()">
 🚚 Checkout
 </button>
 
@@ -1762,25 +952,15 @@ onclick="checkout()"
 </div>
 
 
-<!-- ================= WISHLIST ================= -->
+<!-- WISHLIST -->
 
-<div
-id="wishlistModal"
-class="modal hidden"
->
+<div id="wishlistModal" class="modal hidden">
 
-<div class="modal-box">
+<div class="detail" style="max-width:600px;padding:25px">
 
-<button
-class="close"
-onclick="closeModal('wishlistModal')"
->
-×
-</button>
+<button class="close" onclick="closeModal('wishlistModal')">×</button>
 
-<h2 class="modal-title">
-❤️ Wishlist
-</h2>
+<h2 class="heading">❤️ Wishlist</h2>
 
 <div id="wishlistItems"></div>
 
@@ -1789,196 +969,157 @@ onclick="closeModal('wishlistModal')"
 </div>
 
 
-<!-- ================= CHECKOUT ================= -->
+<!-- CHECKOUT -->
 
-<div
-id="checkoutModal"
-class="modal hidden"
->
+<div id="checkoutModal" class="modal hidden">
 
-<div class="modal-box">
+<div class="detail" style="max-width:600px;padding:25px">
 
-<button
-class="close"
-onclick="closeModal('checkoutModal')"
->
-×
-</button>
+<button class="close" onclick="closeModal('checkoutModal')">×</button>
 
-<h2 class="modal-title">
-🚚 Order Details
-</h2>
+<h2 class="heading">🚚 Order Details</h2>
 
-<div class="input-group">
-
-<label>
-Your Name
-</label>
-
-<input
-id="customerName"
-type="text"
-placeholder="Your Name"
->
-
+<div class="input">
+<label>Name</label>
+<input id="customerName">
 </div>
 
-<div class="input-group">
-
-<label>
-Phone
-</label>
-
-<input
-id="customerPhone"
-type="tel"
-placeholder="03XXXXXXXXX"
->
-
+<div class="input">
+<label>Phone</label>
+<input id="customerPhone">
 </div>
 
-<div class="input-group">
-
-<label>
-Full Address
-</label>
-
-<textarea
-id="customerAddress"
-placeholder="Your complete address"
-></textarea>
-
+<div class="input">
+<label>Address</label>
+<textarea id="customerAddress"></textarea>
 </div>
 
-<div class="input-group">
-
-<label>
-Country
-</label>
-
-<input
-id="customerCountry"
-type="text"
-value="Pakistan"
->
-
+<div class="input">
+<label>Country</label>
+<input id="customerCountry" value="Pakistan">
 </div>
 
-<button
-class="main-btn"
-style="background:#20b965;"
-onclick="sendOrder()"
->
+<button class="main-btn" onclick="sendOrder()">
 💬 Order On WhatsApp
 </button>
 
-<p
-id="orderMessage"
-style="text-align:center;margin-top:10px;"
-></p>
+<p id="orderMessage" style="text-align:center;margin-top:10px"></p>
 
 </div>
 
 </div>
 
 
-<!-- ================= MOBILE NAV ================= -->
-
-<div class="mobile-nav">
+<div class="mobile">
 
 <button onclick="home()">
-<span>🏠</span>
-Home
+<span>🏠</span>Home
 </button>
 
 <button onclick="openWishlist()">
-<span>❤️</span>
-Wishlist
+<span>❤️</span>Wishlist
 </button>
 
 <button onclick="openCart()">
-<span>🛒</span>
-Cart
+<span>🛒</span>Cart
 </button>
 
 <button onclick="adminArea()">
-<span>👤</span>
-Account
+<span>👤</span>Account
 </button>
 
 </div>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
-<h2>
-🧶 CROCHET COLLECTION
-</h2>
+<h2>🧶 CROCHET COLLECTION</h2>
 
-<p>
-Handmade products made with love ❤️
-</p>
+<p>Handmade Products Made With Love ❤️</p>
 
-<p>
-🚚 Free Home Delivery
-</p>
+<p>🚚 Free Home Delivery</p>
 
-<p>
-📞 03054330064
-</p>
+<p>📞 03054330064</p>
 
-<p>
-© 2026 Crochet Collection
-</p>
+<p>© 2026 Crochet Collection</p>
 
 </footer>
 
 
 <script>
 
-/* =====================================================
-DATABASE / STORAGE
-===================================================== */
+/* ==================================================
+DATA
+================================================== */
 
 let products =
-JSON.parse(
-localStorage.getItem("crochet_products")
-) || [];
+JSON.parse(localStorage.getItem("crochet_products")) || [
+
+/*
+  YE SAMPLE PRODUCTS HAIN.
+  Agar tumhari files ke naam alag hain,
+  image ka naam change kar dena.
+*/
+
+{
+id:1,
+name:"Crochet Flower",
+price:500,
+category:"Flowers",
+image:"product1.jpg"
+},
+
+{
+id:2,
+name:"Crochet Bag",
+price:1500,
+category:"Bags",
+image:"product2.jpg"
+},
+
+{
+id:3,
+name:"Crochet Teddy",
+price:1200,
+category:"Toys",
+image:"product3.jpg"
+},
+
+{
+id:4,
+name:"Crochet Accessories",
+price:700,
+category:"Accessories",
+image:"product4.jpg"
+}
+
+];
+
 
 let cart =
-JSON.parse(
-localStorage.getItem("crochet_cart")
-) || [];
+JSON.parse(localStorage.getItem("crochet_cart")) || [];
 
 let wishlist =
-JSON.parse(
-localStorage.getItem("crochet_wishlist")
-) || [];
+JSON.parse(localStorage.getItem("crochet_wishlist")) || [];
 
 let reviews =
-JSON.parse(
-localStorage.getItem("crochet_reviews")
-) || {};
+JSON.parse(localStorage.getItem("crochet_reviews")) || {};
 
 let likes =
-JSON.parse(
-localStorage.getItem("crochet_likes")
-) || {};
+JSON.parse(localStorage.getItem("crochet_likes")) || {};
 
-let selectedCategory="All";
+let category="All";
 
-let currentProductId=null;
+let currentProduct=null;
 
-let currentReviewStar=5;
+let reviewStar=5;
 
 
-/* =====================================================
-SAVE DATA
-===================================================== */
+/* ==================================================
+SAVE
+================================================== */
 
-function saveAll(){
+function save(){
 
 localStorage.setItem(
 "crochet_products",
@@ -2008,28 +1149,770 @@ JSON.stringify(likes)
 }
 
 
-/* =====================================================
-LOGIN
-===================================================== */
+/* ==================================================
+SHOW PRODUCTS
+================================================== */
+
+function showProducts(){
+
+const grid=
+document.getElementById("productGrid");
+
+let list=[...products];
+
+if(category!=="All"){
+
+list=list.filter(
+p=>p.category===category
+);
+
+}
+
+const search=
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+if(search){
+
+list=list.filter(
+p=>p.name
+.toLowerCase()
+.includes(search)
+);
+
+}
+
+grid.innerHTML="";
+
+if(list.length===0){
+
+grid.innerHTML=
+`<div class="empty">
+🧶 No products found.
+</div>`;
+
+return;
+
+}
+
+
+list.forEach(p=>{
+
+const card=
+document.createElement("div");
+
+card.className="product";
+
+const rating=
+getRating(p.id);
+
+const liked=
+wishlist.includes(p.id);
+
+card.innerHTML=`
+
+<button
+class="heart"
+onclick="event.stopPropagation();toggleWish(${p.id})">
+${liked?"❤️":"♡"}
+</button>
+
+<img
+class="product-img"
+src="${p.image}"
+onclick="openProduct(${p.id})"
+onerror="this.src='logo.png'"
+>
+
+<div
+class="info"
+onclick="openProduct(${p.id})">
+
+<div class="name">
+${safe(p.name)}
+</div>
+
+<div class="price">
+Rs. ${Number(p.price).toLocaleString()}
+</div>
+
+<div>
+<span class="stars">
+${stars(rating)}
+</span>
+
+<span class="small">
+(${(reviews[p.id]||[]).length})
+</span>
+</div>
+
+<div
+class="actions"
+onclick="event.stopPropagation()">
+
+<button
+class="cart-btn"
+onclick="addCart(${p.id})">
+🛒 Cart
+</button>
+
+<button
+class="buy-btn"
+onclick="buyNow(${p.id})">
+⚡ Buy
+</button>
+
+</div>
+
+</div>
+`;
+
+grid.appendChild(card);
+
+});
+
+updateCounts();
+
+}
+
+
+/* ==================================================
+PRODUCT DETAIL
+================================================== */
+
+function openProduct(id){
+
+const p=
+products.find(
+x=>x.id===id
+);
+
+if(!p)return;
+
+currentProduct=id;
+
+document.getElementById(
+"detailImage"
+).src=p.image;
+
+document.getElementById(
+"detailTitle"
+).textContent=p.name;
+
+document.getElementById(
+"detailPrice"
+).textContent=
+"Rs. "+
+Number(p.price).toLocaleString();
+
+document.getElementById(
+"detailCategory"
+).textContent=p.category;
+
+document.getElementById(
+"likeCount"
+).textContent=
+likes[id]||0;
+
+updateRating();
+
+renderReviews();
+
+document
+.getElementById("detailModal")
+.classList
+.remove("hidden");
+
+document.body.style.overflow="hidden";
+
+}
+
+
+function closeDetail(){
+
+document
+.getElementById("detailModal")
+.classList
+.add("hidden");
+
+document.body.style.overflow="";
+
+}
+
+
+/* ==================================================
+RATING
+================================================== */
+
+function getRating(id){
+
+const list=
+reviews[id]||[];
+
+if(!list.length)return 5;
+
+let total=0;
+
+list.forEach(
+r=>total+=Number(r.rating)
+);
+
+return total/list.length;
+
+}
+
+
+function stars(r){
+
+let result="";
+
+for(let i=1;i<=5;i++){
+
+result+=
+i<=Math.round(r)
+?"★"
+:"☆";
+
+}
+
+return result;
+
+}
+
+
+function updateRating(){
+
+const list=
+reviews[currentProduct]||[];
+
+const r=
+getRating(currentProduct);
+
+document.getElementById(
+"detailStars"
+).textContent=stars(r);
+
+document.getElementById(
+"detailRating"
+).textContent=
+r.toFixed(1);
+
+document.getElementById(
+"detailRatingCount"
+).textContent=
+"("+list.length+" reviews)";
+
+}
+
+
+/* ==================================================
+LIKE
+================================================== */
+
+function likeProduct(){
+
+if(!currentProduct)return;
+
+likes[currentProduct]=
+(likes[currentProduct]||0)+1;
+
+document.getElementById(
+"likeCount"
+).textContent=
+likes[currentProduct];
+
+save();
+
+}
+
+
+/* ==================================================
+REVIEWS
+================================================== */
+
+function selectStar(n){
+
+reviewStar=n;
+
+for(let i=1;i<=5;i++){
+
+document
+.getElementById("s"+i)
+.classList
+.toggle(
+"active",
+i<=n
+);
+
+}
+
+}
+
+
+function addReview(){
+
+const name=
+document
+.getElementById("reviewName")
+.value
+.trim();
+
+const text=
+document
+.getElementById("reviewText")
+.value
+.trim();
+
+if(!name||!text){
+
+alert(
+"Please enter name and review."
+);
+
+return;
+
+}
+
+if(!reviews[currentProduct]){
+
+reviews[currentProduct]=[];
+
+}
+
+reviews[currentProduct].push({
+
+name:name,
+text:text,
+rating:reviewStar,
+date:new Date()
+.toLocaleDateString()
+
+});
+
+save();
+
+document.getElementById(
+"reviewName"
+).value="";
+
+document.getElementById(
+"reviewText"
+).value="";
+
+renderReviews();
+
+updateRating();
+
+showProducts();
+
+}
+
+
+function renderReviews(){
+
+const box=
+document.getElementById(
+"reviewsList"
+);
+
+box.innerHTML="";
+
+const list=
+reviews[currentProduct]||[];
+
+if(!list.length){
+
+box.innerHTML=
+`<p style="color:#777;margin-top:15px">
+💬 No reviews yet. Be the first!
+</p>`;
+
+return;
+
+}
+
+[...list].reverse().forEach(r=>{
+
+const div=
+document.createElement("div");
+
+div.className="review";
+
+div.innerHTML=`
+
+<div class="review-name">
+👤 ${safe(r.name)}
+</div>
+
+<div class="review-star">
+${stars(r.rating)}
+</div>
+
+<p>${safe(r.text)}</p>
+
+<div class="review-date">
+${r.date}
+</div>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/* ==================================================
+CART
+================================================== */
+
+function addCart(id){
+
+const p=
+products.find(
+x=>x.id===id
+);
+
+if(!p)return;
+
+cart.push(p);
+
+save();
+
+updateCounts();
+
+alert("🛒 Added to cart!");
+
+}
+
+
+function detailCart(){
+
+addCart(currentProduct);
+
+}
+
+
+function buyNow(id){
+
+cart=[];
+
+const p=
+products.find(
+x=>x.id===id
+);
+
+if(p)cart.push(p);
+
+save();
+
+checkout();
+
+}
+
+
+function detailBuy(){
+
+buyNow(currentProduct);
+
+}
+
+
+function openCart(){
+
+renderCart();
+
+document
+.getElementById("cartModal")
+.classList
+.remove("hidden");
+
+}
+
+
+function renderCart(){
+
+const box=
+document.getElementById(
+"cartItems"
+);
+
+box.innerHTML="";
+
+let total=0;
+
+if(!cart.length){
+
+box.innerHTML=
+`<div class="empty">
+🛒 Cart is empty.
+</div>`;
+
+}
+
+
+cart.forEach((p,i)=>{
+
+total+=Number(p.price);
+
+const div=
+document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<img src="${p.image}" onerror="this.src='logo.png'">
+
+<div class="cart-info">
+
+<b>${safe(p.name)}</b>
+
+<div class="cart-price">
+Rs. ${Number(p.price).toLocaleString()}
+</div>
+
+</div>
+
+<button
+class="remove"
+onclick="removeCart(${i})">
+🗑️
+</button>
+
+`;
+
+box.appendChild(div);
+
+});
+
+document.getElementById(
+"total"
+).textContent=
+"Total: Rs. "+
+total.toLocaleString();
+
+}
+
+
+function removeCart(i){
+
+cart.splice(i,1);
+
+save();
+
+renderCart();
+
+updateCounts();
+
+}
+
+
+/* ==================================================
+WISHLIST
+================================================== */
+
+function toggleWish(id){
+
+const i=
+wishlist.indexOf(id);
+
+if(i===-1){
+
+wishlist.push(id);
+
+}else{
+
+wishlist.splice(i,1);
+
+}
+
+save();
+
+showProducts();
+
+}
+
+
+function openWishlist(){
+
+const box=
+document.getElementById(
+"wishlistItems"
+);
+
+box.innerHTML="";
+
+const list=
+products.filter(
+p=>wishlist.includes(p.id)
+);
+
+if(!list.length){
+
+box.innerHTML=
+`<div class="empty">
+❤️ Wishlist is empty.
+</div>`;
+
+}
+
+list.forEach(p=>{
+
+const div=
+document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<img src="${p.image}">
+
+<div class="cart-info">
+
+<b>${safe(p.name)}</b>
+
+<div class="cart-price">
+Rs. ${Number(p.price).toLocaleString()}
+</div>
+
+</div>
+
+<button
+class="buy-btn"
+onclick="openProduct(${p.id});closeModal('wishlistModal')">
+View
+</button>
+
+`;
+
+box.appendChild(div);
+
+});
+
+document
+.getElementById("wishlistModal")
+.classList
+.remove("hidden");
+
+}
+
+
+/* ==================================================
+CHECKOUT
+================================================== */
+
+function checkout(){
+
+if(!cart.length){
+
+alert("🛒 Cart is empty!");
+
+return;
+
+}
+
+closeModal("cartModal");
+
+document
+.getElementById("checkoutModal")
+.classList
+.remove("hidden");
+
+}
+
+
+function sendOrder(){
+
+const name=
+document.getElementById(
+"customerName"
+).value.trim();
+
+const phone=
+document.getElementById(
+"customerPhone"
+).value.trim();
+
+const address=
+document.getElementById(
+"customerAddress"
+).value.trim();
+
+const country=
+document.getElementById(
+"customerCountry"
+).value.trim();
+
+if(!name||!phone||!address||!country){
+
+document.getElementById(
+"orderMessage"
+).textContent=
+"❌ Please fill all details!";
+
+return;
+
+}
+
+let total=0;
+let items="";
+
+cart.forEach(p=>{
+
+total+=Number(p.price);
+
+items+=
+"📦 "+
+p.name+
+" - Rs. "+
+p.price+
+"\n";
+
+});
+
+const message=
+"🛍️ NEW ORDER - CROCHET COLLECTION\n\n"+
+items+
+"\n💰 Total: Rs. "+
+total.toLocaleString()+
+"\n\n👤 Name: "+name+
+"\n📞 Phone: "+phone+
+"\n📍 Address: "+address+
+"\n🌍 Country: "+country+
+"\n\n🚚 Home Delivery";
+
+const number="923054330064";
+
+window.open(
+"https://wa.me/"+
+number+
+"?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+
+/* ==================================================
+ADMIN LOGIN
+================================================== */
 
 function login(){
 
 const name=
-document
-.getElementById("loginName")
-.value
-.trim();
+document.getElementById(
+"loginName"
+).value.trim();
 
 const password=
-document
-.getElementById("loginPassword")
-.value;
-
-const message=
 document.getElementById(
-"loginMessage"
-);
-
+"loginPassword"
+).value;
 
 if(
 name.toLowerCase()==="sameeha"
@@ -2047,17 +1930,13 @@ document
 .classList
 .remove("hidden");
 
-message.innerHTML="";
-
 showAdminProducts();
 
-}
+}else{
 
-else{
-
-message.style.color="red";
-
-message.innerHTML=
+document.getElementById(
+"loginMessage"
+).textContent=
 "❌ Wrong name or password!";
 
 }
@@ -2080,9 +1959,9 @@ document
 }
 
 
-/* =====================================================
+/* ==================================================
 PHOTO EDITOR
-===================================================== */
+================================================== */
 
 const canvas=
 document.getElementById("canvas");
@@ -2100,21 +1979,18 @@ document
 .getElementById("imageUpload")
 .addEventListener(
 "change",
-function(event){
+function(e){
 
-const file=
-event.target.files[0];
+const file=e.target.files[0];
 
 if(!file)return;
 
 const reader=
 new FileReader();
 
-reader.onload=
-function(e){
+reader.onload=function(event){
 
-uploadedImage.onload=
-function(){
+uploadedImage.onload=function(){
 
 canvas.width=
 uploadedImage.width;
@@ -2132,7 +2008,7 @@ drawImage();
 };
 
 uploadedImage.src=
-e.target.result;
+event.target.result;
 
 };
 
@@ -2167,24 +2043,8 @@ function drawImage(){
 
 if(!uploadedImage.src)return;
 
-const brightness=
-document
-.getElementById("brightness")
-.value;
-
-const contrast=
-document
-.getElementById("contrast")
-.value;
-
-const saturation=
-document
-.getElementById("saturation")
-.value;
-
 ctx.clearRect(
-0,
-0,
+0,0,
 canvas.width,
 canvas.height
 );
@@ -2192,9 +2052,13 @@ canvas.height
 ctx.save();
 
 ctx.filter=
-"brightness("+brightness+"%) "+
-"contrast("+contrast+"%) "+
-"saturate("+saturation+"%)";
+"brightness("+
+document.getElementById("brightness").value+
+"%) contrast("+
+document.getElementById("contrast").value+
+"%) saturate("+
+document.getElementById("saturation").value+
+"%)";
 
 ctx.translate(
 canvas.width/2,
@@ -2220,9 +2084,8 @@ function rotateImage(){
 
 rotation+=90;
 
-if(rotation>=360){
+if(rotation>=360)
 rotation=0;
-}
 
 drawImage();
 
@@ -2233,99 +2096,59 @@ function resetImage(){
 
 rotation=0;
 
-document
-.getElementById("brightness")
-.value=100;
+document.getElementById(
+"brightness"
+).value=100;
 
-document
-.getElementById("contrast")
-.value=100;
+document.getElementById(
+"contrast"
+).value=100;
 
-document
-.getElementById("saturation")
-.value=100;
+document.getElementById(
+"saturation"
+).value=100;
 
 drawImage();
 
 }
 
 
-/* =====================================================
+/* ==================================================
 ADD PRODUCT
-===================================================== */
+================================================== */
 
 function addProduct(){
 
 const name=
-document
-.getElementById("productName")
-.value
-.trim();
+document.getElementById(
+"productName"
+).value.trim();
 
 const price=
-document
-.getElementById("productPrice")
-.value;
+document.getElementById(
+"productPrice"
+).value;
 
-const category=
-document
-.getElementById("productCategory")
-.value;
+const cat=
+document.getElementById(
+"productCategory"
+).value;
 
-
-if(!name){
+if(!name||!price||!uploadedImage.src){
 
 alert(
-"❌ Please enter product name!"
+"❌ Product name, price and photo are required!"
 );
 
 return;
 
 }
 
-if(!price){
-
-alert(
-"❌ Please enter product price!"
-);
-
-return;
-
-}
-
-if(!uploadedImage.src){
-
-alert(
-"❌ Please select product photo!"
-);
-
-return;
-
-}
-
-
-let image;
-
-try{
-
-image=
+const image=
 canvas.toDataURL(
 "image/jpeg",
-0.75
+.75
 );
-
-}
-
-catch(error){
-
-alert(
-"❌ Could not process image."
-);
-
-return;
-
-}
-
 
 const product={
 
@@ -2335,109 +2158,72 @@ name:name,
 
 price:Number(price),
 
-category:category,
+category:cat,
 
 image:image
 
 };
 
-
 products.push(product);
 
-
-try{
-
-saveAll();
-
-}
-
-catch(error){
-
-products.pop();
-
-alert(
-"❌ Image is too large. Please choose a smaller photo."
-);
-
-return;
-
-}
-
+save();
 
 showProducts();
 
 showAdminProducts();
 
-updateCounts();
+document.getElementById(
+"productName"
+).value="";
 
+document.getElementById(
+"productPrice"
+).value="";
 
-document
-.getElementById("productName")
-.value="";
-
-document
-.getElementById("productPrice")
-.value="";
-
-document
-.getElementById("imageUpload")
-.value="";
+document.getElementById(
+"imageUpload"
+).value="";
 
 document
 .getElementById("editor")
 .classList
 .add("hidden");
 
-uploadedImage=
-new Image();
+uploadedImage=new Image();
 
 rotation=0;
 
 alert(
-"🎉 Product Successfully Added!"
+"🎉 Product successfully uploaded!"
 );
 
 }
 
 
-/* =====================================================
-ADMIN UPLOADED PRODUCTS
-===================================================== */
+/* ==================================================
+ADMIN PRODUCT LIST + DELETE
+================================================== */
 
 function showAdminProducts(){
 
-const container=
+const box=
 document.getElementById(
 "adminProducts"
 );
 
-const count=
 document.getElementById(
-"uploadedCount"
-);
-
-
-if(!container)return;
-
-
-count.textContent=
+"uploadCount"
+).textContent=
 products.length;
 
+box.innerHTML="";
 
-container.innerHTML="";
+if(!products.length){
 
-
-if(products.length===0){
-
-container.innerHTML=`
-
-<div class="empty">
-
-📦 You have not uploaded any products yet.
-
-</div>
-
-`;
+box.innerHTML=
+`<div class="empty">
+📦 No products uploaded.
+</div>`;
 
 return;
 
@@ -2447,112 +2233,84 @@ return;
 products
 .slice()
 .reverse()
-.forEach(product=>{
+.forEach(p=>{
 
-const item=
+const div=
 document.createElement("div");
 
-item.className=
+div.className=
 "admin-product";
 
-
-item.innerHTML=`
+div.innerHTML=`
 
 <img
-src="${product.image}"
-alt="${safe(product.name)}"
+src="${p.image}"
+onerror="this.src='logo.png'"
 >
 
-<div class="admin-product-info">
+<div class="admin-info">
 
-<h3>
-${safe(product.name)}
-</h3>
+<h3>${safe(p.name)}</h3>
 
 <div class="admin-price">
-💰 Rs. ${Number(product.price).toLocaleString()}
+Rs. ${Number(p.price).toLocaleString()}
 </div>
 
 <small>
-📂 ${safe(product.category)}
+📂 ${safe(p.category)}
 </small>
 
 </div>
 
 <button
-class="admin-delete"
-onclick="deleteProduct(${product.id})"
->
+class="delete"
+onclick="deleteProduct(${p.id})">
 🗑️ Delete
 </button>
 
 `;
 
-
-container.appendChild(item);
+box.appendChild(div);
 
 });
 
 }
 
 
-/* =====================================================
-DELETE PRODUCT
-===================================================== */
-
 function deleteProduct(id){
 
-const product=
+const p=
 products.find(
-p=>p.id===id
+x=>x.id===id
 );
 
-if(!product)return;
+if(!p)return;
 
-
-const answer=
-confirm(
-"🗑️ Delete '"+product.name+"'?\n\n"+
-"This product will be removed from your shop."
-);
-
-
-if(!answer)return;
+if(!confirm(
+"🗑️ Delete "+p.name+"?"
+))return;
 
 
 products=
 products.filter(
-p=>p.id!==id
+x=>x.id!==id
 );
-
-
-/* Remove from cart */
 
 cart=
 cart.filter(
-p=>p.id!==id
+x=>x.id!==id
 );
-
-
-/* Remove from wishlist */
 
 wishlist=
 wishlist.filter(
-productId=>productId!==id
+x=>x!==id
 );
-
-
-/* Remove reviews */
 
 delete reviews[id];
 
-
-/* Remove likes */
-
 delete likes[id];
 
-
-saveAll();
+save();
 
 showProducts();
 
@@ -2560,1213 +2318,32 @@ showAdminProducts();
 
 updateCounts();
 
-
-if(currentProductId===id){
+if(currentProduct===id){
 
 closeDetail();
 
 }
 
-
 alert(
-"✅ Product deleted successfully!"
+"✅ Product deleted!"
 );
 
 }
 
 
-/* =====================================================
-SHOW PRODUCTS
-===================================================== */
+/* ==================================================
+CATEGORY / NAV
+================================================== */
 
-function showProducts(){
+function filterCategory(c){
 
-const grid=
-document.getElementById(
-"productGrid"
-);
-
-let list=
-[...products];
-
-
-if(selectedCategory!=="All"){
-
-list=
-list.filter(
-p=>p.category===selectedCategory
-);
-
-}
-
-
-const search=
-document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
-
-
-if(search){
-
-list=
-list.filter(
-p=>
-p.name
-.toLowerCase()
-.includes(search)
-);
-
-}
-
-
-grid.innerHTML="";
-
-
-if(list.length===0){
-
-grid.innerHTML=`
-
-<div class="empty">
-
-🧶 No products found.
-
-<br><br>
-
-Login to Admin and add your first product.
-
-</div>
-
-`;
-
-updateCounts();
-
-return;
-
-}
-
-
-list.forEach(product=>{
-
-const card=
-document.createElement("div");
-
-card.className="product";
-
-
-const liked=
-wishlist.includes(
-product.id
-);
-
-const productReviews=
-reviews[product.id] || [];
-
-const average=
-getAverageRating(
-product.id
-);
-
-
-card.innerHTML=`
-
-<button
-class="product-heart"
-onclick="event.stopPropagation();toggleWishlist(${product.id})"
->
-${liked?"❤️":"♡"}
-</button>
-
-<img
-class="product-img"
-src="${product.image}"
-onclick="openProduct(${product.id})"
->
-
-<div
-class="product-info"
-onclick="openProduct(${product.id})"
->
-
-<div class="product-name">
-${safe(product.name)}
-</div>
-
-<div class="price">
-Rs. ${Number(product.price).toLocaleString()}
-</div>
-
-<div>
-
-<span class="stars">
-${makeStars(average)}
-</span>
-
-<span class="review-count">
-(${productReviews.length})
-</span>
-
-</div>
-
-<div
-class="product-buttons"
-onclick="event.stopPropagation()"
->
-
-<button
-class="cart-btn"
-onclick="addCart(${product.id})"
->
-🛒 Cart
-</button>
-
-<button
-class="buy-btn"
-onclick="buyNow(${product.id})"
->
-⚡ Buy
-</button>
-
-</div>
-
-</div>
-
-`;
-
-
-grid.appendChild(card);
-
-});
-
-
-updateCounts();
-
-}
-
-
-/* =====================================================
-PRODUCT DETAIL
-===================================================== */
-
-function openProduct(id){
-
-const product=
-products.find(
-p=>p.id===id
-);
-
-if(!product)return;
-
-
-currentProductId=id;
-
-
-document
-.getElementById("detailTitle")
-.textContent=
-product.name;
-
-
-document
-.getElementById("detailPrice")
-.textContent=
-"Rs. "+
-Number(product.price)
-.toLocaleString();
-
-
-document
-.getElementById("detailCategory")
-.textContent=
-product.category;
-
-
-document
-.getElementById("detailMainImage")
-.src=
-product.image;
-
-
-const thumbnails=
-document.getElementById(
-"thumbnails"
-);
-
-thumbnails.innerHTML="";
-
-
-const thumbnail=
-document.createElement("img");
-
-thumbnail.src=
-product.image;
-
-thumbnail.className=
-"thumbnail active";
-
-thumbnail.onclick=
-function(){
-
-document
-.getElementById("detailMainImage")
-.src=
-product.image;
-
-};
-
-
-thumbnails.appendChild(
-thumbnail
-);
-
-
-updateProductRating();
-
-
-document
-.getElementById("likeNumber")
-.textContent=
-likes[id] || 0;
-
-
-document
-.getElementById("detailLike")
-.textContent="♡";
-
-
-renderReviews();
-
-
-document
-.getElementById("detailModal")
-.classList
-.remove("hidden");
-
-document.body.style.overflow=
-"hidden";
-
-}
-
-
-function closeDetail(){
-
-document
-.getElementById("detailModal")
-.classList
-.add("hidden");
-
-document.body.style.overflow="";
-
-}
-
-
-/* =====================================================
-ZOOM
-===================================================== */
-
-function zoomPhoto(){
-
-const img=
-document.getElementById(
-"detailMainImage"
-);
-
-if(img.requestFullscreen){
-
-img.requestFullscreen();
-
-}
-
-}
-
-
-/* =====================================================
-RATINGS
-===================================================== */
-
-function getAverageRating(id){
-
-const list=
-reviews[id] || [];
-
-
-if(list.length===0){
-
-return 5;
-
-}
-
-
-let total=0;
-
-
-list.forEach(
-review=>{
-total+=Number(
-review.rating
-);
-}
-);
-
-
-return total/list.length;
-
-}
-
-
-function makeStars(rating){
-
-let result="";
-
-const rounded=
-Math.round(rating);
-
-
-for(let i=1;i<=5;i++){
-
-result+=
-i<=rounded
-?"★"
-:"☆";
-
-}
-
-
-return result;
-
-}
-
-
-function updateProductRating(){
-
-const list=
-reviews[currentProductId] || [];
-
-
-const average=
-getAverageRating(
-currentProductId
-);
-
-
-document
-.getElementById("detailStars")
-.textContent=
-makeStars(average);
-
-
-document
-.getElementById("detailRating")
-.textContent=
-average.toFixed(1);
-
-
-document
-.getElementById("detailRatingCount")
-.textContent=
-"("+list.length+" ratings)";
-
-}
-
-
-/* =====================================================
-LIKE
-===================================================== */
-
-function likeCurrentProduct(){
-
-if(!currentProductId)return;
-
-
-likes[currentProductId]=
-(likes[currentProductId] || 0)+1;
-
-
-document
-.getElementById("likeNumber")
-.textContent=
-likes[currentProductId];
-
-
-document
-.getElementById("detailLike")
-.textContent="❤️";
-
-
-saveAll();
-
-}
-
-
-/* =====================================================
-REVIEWS
-===================================================== */
-
-function selectReviewStar(number){
-
-currentReviewStar=
-number;
-
-
-for(let i=1;i<=5;i++){
-
-const button=
-document.getElementById(
-"star"+i
-);
-
-
-if(i<=number){
-
-button.classList.add(
-"active"
-);
-
-}
-
-else{
-
-button.classList.remove(
-"active"
-);
-
-}
-
-}
-
-}
-
-
-function addReview(){
-
-if(!currentProductId)return;
-
-
-const name=
-document
-.getElementById("reviewName")
-.value
-.trim();
-
-const text=
-document
-.getElementById("reviewText")
-.value
-.trim();
-
-
-if(!name){
-
-alert(
-"Please enter your name."
-);
-
-return;
-
-}
-
-
-if(!text){
-
-alert(
-"Please write a review."
-);
-
-return;
-
-}
-
-
-if(!reviews[currentProductId]){
-
-reviews[currentProductId]=[];
-
-}
-
-
-reviews[currentProductId].push({
-
-name:name,
-
-text:text,
-
-rating:currentReviewStar,
-
-date:new Date()
-.toLocaleDateString()
-
-});
-
-
-saveAll();
-
-
-document
-.getElementById("reviewName")
-.value="";
-
-document
-.getElementById("reviewText")
-.value="";
-
-
-currentReviewStar=5;
-
-selectReviewStar(5);
-
-renderReviews();
-
-updateProductRating();
+category=c;
 
 showProducts();
-
-
-alert(
-"⭐ Review added successfully!"
-);
-
-}
-
-
-function renderReviews(){
-
-const container=
-document.getElementById(
-"reviewsList"
-);
-
-container.innerHTML="";
-
-
-const list=
-reviews[currentProductId] || [];
-
-
-if(list.length===0){
-
-container.innerHTML=`
-
-<div class="no-reviews">
-
-💬 No reviews yet.
-Be the first to review this product!
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-[...list]
-.reverse()
-.forEach(review=>{
-
-const div=
-document.createElement("div");
-
-div.className="review";
-
-
-div.innerHTML=`
-
-<div class="review-name">
-👤 ${safe(review.name)}
-</div>
-
-<div class="review-stars">
-${makeStars(review.rating)}
-</div>
-
-<p>
-${safe(review.text)}
-</p>
-
-<div class="review-date">
-${review.date}
-</div>
-
-`;
-
-
-container.appendChild(div);
-
-});
-
-}
-
-
-/* =====================================================
-CART
-===================================================== */
-
-function addCart(id){
-
-const product=
-products.find(
-p=>p.id===id
-);
-
-if(!product)return;
-
-
-cart.push(product);
-
-saveAll();
-
-updateCounts();
-
-
-alert(
-"🛒 Product added to cart!"
-);
-
-}
-
-
-function detailAddCart(){
-
-if(currentProductId){
-
-addCart(
-currentProductId
-);
-
-}
-
-}
-
-
-function buyNow(id){
-
-cart=[];
-
-
-const product=
-products.find(
-p=>p.id===id
-);
-
-if(!product)return;
-
-
-cart.push(product);
-
-saveAll();
-
-checkout();
-
-}
-
-
-function detailBuyNow(){
-
-if(currentProductId){
-
-buyNow(
-currentProductId
-);
-
-}
-
-}
-
-
-function openCart(){
-
-renderCart();
-
-
-document
-.getElementById("cartModal")
-.classList
-.remove("hidden");
-
-}
-
-
-function renderCart(){
-
-const container=
-document.getElementById(
-"cartItems"
-);
-
-container.innerHTML="";
-
-
-let total=0;
-
-
-if(cart.length===0){
-
-container.innerHTML=`
-
-<div class="empty">
-🛒 Your cart is empty.
-</div>
-
-`;
-
-}
-
-
-cart.forEach(
-(product,index)=>{
-
-total+=Number(
-product.price
-);
-
-
-const item=
-document.createElement("div");
-
-item.className=
-"cart-item";
-
-
-item.innerHTML=`
-
-<img
-src="${product.image}"
->
-
-<div class="cart-info">
-
-<b>
-${safe(product.name)}
-</b>
-
-<div class="cart-price">
-Rs. ${Number(product.price).toLocaleString()}
-</div>
-
-</div>
-
-<button
-class="remove-btn"
-onclick="removeCart(${index})"
->
-🗑️
-</button>
-
-`;
-
-
-container.appendChild(item);
-
-});
-
-
-document
-.getElementById("cartTotal")
-.textContent=
-"Total: Rs. "+
-total.toLocaleString();
-
-}
-
-
-function removeCart(index){
-
-cart.splice(
-index,
-1
-);
-
-saveAll();
-
-renderCart();
-
-updateCounts();
-
-}
-
-
-/* =====================================================
-WISHLIST
-===================================================== */
-
-function toggleWishlist(id){
-
-const index=
-wishlist.indexOf(id);
-
-
-if(index===-1){
-
-wishlist.push(id);
-
-}
-
-else{
-
-wishlist.splice(
-index,
-1
-);
-
-}
-
-
-saveAll();
-
-showProducts();
-
-}
-
-
-function openWishlist(){
-
-const container=
-document.getElementById(
-"wishlistItems"
-);
-
-container.innerHTML="";
-
-
-const items=
-products.filter(
-p=>wishlist.includes(
-p.id
-)
-);
-
-
-if(items.length===0){
-
-container.innerHTML=`
-
-<div class="empty">
-❤️ Wishlist is empty.
-</div>
-
-`;
-
-}
-
-
-items.forEach(
-product=>{
-
-const item=
-document.createElement("div");
-
-item.className=
-"cart-item";
-
-
-item.innerHTML=`
-
-<img
-src="${product.image}"
->
-
-<div class="cart-info">
-
-<b>
-${safe(product.name)}
-</b>
-
-<div class="cart-price">
-Rs. ${Number(product.price).toLocaleString()}
-</div>
-
-</div>
-
-<button
-class="buy-btn"
-onclick="openProduct(${product.id});closeModal('wishlistModal')"
->
-View
-</button>
-
-`;
-
-
-container.appendChild(item);
-
-});
-
-
-document
-.getElementById("wishlistModal")
-.classList
-.remove("hidden");
-
-}
-
-
-/* =====================================================
-CHECKOUT
-===================================================== */
-
-function checkout(){
-
-if(cart.length===0){
-
-alert(
-"🛒 Your cart is empty!"
-);
-
-return;
-
-}
-
-
-closeModal(
-"cartModal"
-);
-
-
-document
-.getElementById("checkoutModal")
-.classList
-.remove("hidden");
-
-}
-
-
-function sendOrder(){
-
-const name=
-document
-.getElementById("customerName")
-.value
-.trim();
-
-const phone=
-document
-.getElementById("customerPhone")
-.value
-.trim();
-
-const address=
-document
-.getElementById("customerAddress")
-.value
-.trim();
-
-const country=
-document
-.getElementById("customerCountry")
-.value
-.trim();
-
-
-const messageBox=
-document.getElementById(
-"orderMessage"
-);
-
-
-if(
-!name||
-!phone||
-!address||
-!country
-){
-
-messageBox.style.color=
-"red";
-
-messageBox.innerHTML=
-"❌ Please fill all details!";
-
-return;
-
-}
-
-
-let total=0;
-
-let items="";
-
-
-cart.forEach(
-product=>{
-
-total+=Number(
-product.price
-);
-
-items+=
-"📦 "+
-product.name+
-" - Rs. "+
-product.price+
-"\n";
-
-});
-
-
-const message=
-
-"🛍️ NEW ORDER - CROCHET COLLECTION\n\n"+
-
-items+
-
-"\n💰 Total: Rs. "+
-total.toLocaleString()+
-
-"\n\n👤 Customer: "+
-name+
-
-"\n📞 Phone: "+
-phone+
-
-"\n📍 Address: "+
-address+
-
-"\n🌍 Country: "+
-country+
-
-"\n\n🚚 Home Delivery";
-
-
-const whatsappNumber=
-"923054330064";
-
-
-const whatsappURL=
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(
-message
-);
-
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
-
-
-/* =====================================================
-COUNTS
-===================================================== */
-
-function updateCounts(){
-
-document
-.getElementById("cartCount")
-.textContent=
-cart.length;
-
-document
-.getElementById("wishCount")
-.textContent=
-wishlist.length;
-
-}
-
-
-/* =====================================================
-CATEGORY
-===================================================== */
-
-function filterCategory(category){
-
-selectedCategory=
-category;
-
-
-showProducts();
-
 
 document
 .getElementById("products")
 .scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================================
-SORT
-===================================================== */
-
-function sortProducts(){
-
-const type=
-document
-.getElementById("sort")
-.value;
-
-
-if(type==="low"){
-
-products.sort(
-(a,b)=>a.price-b.price
-);
-
-}
-
-if(type==="high"){
-
-products.sort(
-(a,b)=>b.price-a.price
-);
-
-}
-
-if(type==="name"){
-
-products.sort(
-(a,b)=>
-a.name.localeCompare(
-b.name
-)
-);
-
-}
-
-
-showProducts();
-
-}
-
-
-/* =====================================================
-UTILITIES
-===================================================== */
-
-function safe(text){
-
-const div=
-document.createElement("div");
-
-div.textContent=
-text;
-
-return div.innerHTML;
-
-}
-
-
-function closeModal(id){
-
-document
-.getElementById(id)
-.classList
-.add("hidden");
-
-}
-
-
-function home(){
-
-window.scrollTo({
-top:0,
 behavior:"smooth"
 });
 
@@ -3784,15 +2361,74 @@ behavior:"smooth"
 }
 
 
-/* =====================================================
+function home(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* ==================================================
+COUNTS
+================================================== */
+
+function updateCounts(){
+
+document.getElementById(
+"cartCount"
+).textContent=
+cart.length;
+
+document.getElementById(
+"wishCount"
+).textContent=
+wishlist.length;
+
+}
+
+
+/* ==================================================
+MODAL
+================================================== */
+
+function closeModal(id){
+
+document
+.getElementById(id)
+.classList
+.add("hidden");
+
+}
+
+
+/* ==================================================
+SAFE TEXT
+================================================== */
+
+function safe(text){
+
+const d=
+document.createElement("div");
+
+d.textContent=text;
+
+return d.innerHTML;
+
+}
+
+
+/* ==================================================
 START
-===================================================== */
+================================================== */
 
 showProducts();
 
 updateCounts();
 
-selectReviewStar(5);
+selectStar(5);
 
 </script>
 
