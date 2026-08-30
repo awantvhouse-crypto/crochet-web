@@ -2,2433 +2,2415 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Crochet Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crochet Web Shop</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#fff0f7,#fce1ef,#f0e4ff);
-color:#333
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
-button{cursor:pointer}
-.hidden{display:none!important}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#fff0f7;
+  color:#333;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+}
+
+.hidden{
+  display:none !important;
+}
 
 /* HEADER */
+
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:linear-gradient(90deg,#e83289,#a84cff);
-box-shadow:0 3px 15px #0002
-}
-.header{
-max-width:1200px;
-margin:auto;
-padding:12px 15px;
-display:flex;
-align-items:center;
-gap:12px
-}
-.logo{
-color:white;
-font-size:23px;
-font-weight:bold;
-white-space:nowrap
-}
-.search{
-flex:1;
-display:flex;
-background:white;
-border-radius:10px;
-overflow:hidden
-}
-.search input{
-width:100%;
-border:0;
-outline:0;
-padding:13px;
-font-size:15px
-}
-.search button{
-border:0;
-width:55px;
-background:#ffe2ef;
-font-size:20px
-}
-.icon-btn{
-border:0;
-background:transparent;
-color:white;
-font-size:24px;
-position:relative
-}
-.badge{
-position:absolute;
-top:-7px;
-right:-7px;
-background:#ff1744;
-color:white;
-font-size:10px;
-width:18px;
-height:18px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(90deg,#ff4fa3,#d946ef,#9c4dff);
+  color:white;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-/* NAV */
-nav{
-background:white;
-box-shadow:0 2px 8px #0001
+.logo{
+  font-size:25px;
+  font-weight:bold;
 }
-.nav{
-max-width:1200px;
-margin:auto;
-padding:10px;
-display:flex;
-justify-content:center;
-gap:28px
+
+.header-buttons{
+  display:flex;
+  gap:8px;
 }
-.nav button{
-border:0;
-background:none;
-font-weight:bold;
-color:#555
+
+.header-buttons button{
+  background:white;
+  color:#d9368a;
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:15px;
 }
-.nav button:hover{color:#e83289}
+
+/* INFO */
+
+.info-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:2000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.info-box{
+  background:white;
+  max-width:500px;
+  width:100%;
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+.info-box h2{
+  color:#e63891;
+  margin-bottom:18px;
+}
+
+.info-box p{
+  line-height:1.7;
+  color:#666;
+  margin-bottom:20px;
+}
+
+.close-btn{
+  background:linear-gradient(90deg,#ff3f99,#a94cff);
+  color:white;
+  padding:12px 25px;
+  border-radius:12px;
+}
 
 /* HERO */
+
 .hero{
-max-width:1200px;
-margin:20px auto;
-padding:0 15px
-}
-.hero img{
-width:100%;
-height:330px;
-object-fit:cover;
-border-radius:18px;
-box-shadow:0 5px 25px #0002
+  background:linear-gradient(135deg,#ffd1e8,#f4c7ff,#d9c8ff);
+  padding:25px 5%;
 }
 
-/* SECTIONS */
-.section{
-max-width:1200px;
-margin:30px auto;
-padding:0 15px
+.hero img{
+  width:100%;
+  max-height:430px;
+  object-fit:cover;
+  border-radius:25px;
+  display:block;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-.title{
-color:#d72f82;
-margin-bottom:18px;
-font-size:28px
+
+/* WELCOME */
+
+.welcome{
+  text-align:center;
+  padding:35px 20px;
+  background:white;
+}
+
+.welcome h1{
+  color:#e63891;
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.welcome p{
+  color:#777;
 }
 
 /* CATEGORIES */
-.categories{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:12px
+
+.category-section{
+  padding:20px 5%;
+  background:#fff;
 }
+
+.category-scroll{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:5px;
+}
+
 .category{
-background:white;
-padding:18px 5px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 3px 12px #0001;
-cursor:pointer;
-transition:.2s
+  min-width:105px;
+  padding:12px 15px;
+  border-radius:18px;
+  background:#fff0f7;
+  color:#d9368a;
+  font-weight:bold;
+  text-align:center;
+  border:2px solid transparent;
 }
-.category:hover{transform:translateY(-4px)}
-.category-icon{
-font-size:32px;
-margin-bottom:7px
+
+.category.active,
+.category:hover{
+  background:#e63891;
+  color:white;
 }
 
 /* PRODUCTS */
+
+.products-section{
+  padding:35px 5%;
+}
+
+.products-section h2{
+  text-align:center;
+  color:#e63891;
+  margin-bottom:25px;
+  font-size:30px;
+}
+
 .product-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:15px
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:20px;
 }
+
 .product{
-background:white;
-border-radius:13px;
-overflow:hidden;
-box-shadow:0 3px 12px #0001;
-position:relative;
-transition:.2s
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+  transition:.2s;
 }
+
 .product:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 25px #0002
+  transform:translateY(-4px);
 }
-.product-img{
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
-cursor:pointer
+
+.product-image{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
 }
-.heart{
-position:absolute;
-top:9px;
-right:9px;
-z-index:5;
-border:0;
-background:white;
-border-radius:50%;
-width:38px;
-height:38px;
-font-size:22px;
-box-shadow:0 2px 8px #0002
+
+.product-info{
+  padding:15px;
 }
-.info{
-padding:12px;
-cursor:pointer
+
+.product-info h3{
+  font-size:18px;
+  margin-bottom:8px;
 }
-.name{
-font-weight:bold;
-min-height:38px
+
+.category-tag{
+  display:inline-block;
+  background:#ffe2f0;
+  color:#d9368a;
+  padding:5px 9px;
+  border-radius:10px;
+  font-size:12px;
+  margin-bottom:8px;
 }
+
 .price{
-font-size:21px;
-font-weight:bold;
-color:#e83289;
-margin:7px 0
+  color:#e63891;
+  font-size:21px;
+  font-weight:bold;
+  margin:7px 0;
 }
-.stars{color:#f5a400}
-.small{
-font-size:12px;
-color:#777
+
+.rating{
+  color:#ffb000;
+  margin:7px 0;
 }
-.actions{
-display:flex;
-gap:5px;
-margin-top:10px
+
+.buy-btn{
+  width:100%;
+  padding:11px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#ff3d99,#a84cff);
+  color:white;
+  font-size:15px;
+  margin-top:7px;
 }
-.actions button{
-flex:1;
-border:0;
-padding:10px 4px;
-border-radius:7px;
-color:white;
-font-weight:bold
+
+/* PRODUCT MODAL */
+
+.product-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:3000;
+  overflow-y:auto;
+  padding:25px 15px;
 }
-.cart-btn{background:#ff8ab7}
-.buy-btn{background:#e83289}
+
+.product-detail{
+  max-width:750px;
+  margin:auto;
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.detail-image{
+  width:100%;
+  max-height:450px;
+  object-fit:cover;
+}
+
+.detail-content{
+  padding:25px;
+}
+
+.detail-content h2{
+  color:#e63891;
+  margin-bottom:10px;
+}
+
+.detail-price{
+  color:#e63891;
+  font-size:27px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.detail-buttons{
+  display:flex;
+  gap:10px;
+  margin:15px 0;
+}
+
+.detail-buttons button{
+  flex:1;
+  padding:13px;
+  border-radius:12px;
+  color:white;
+  background:#e63891;
+}
+
+.like-btn{
+  background:#ff6b9d !important;
+}
+
+.comments{
+  margin-top:20px;
+}
+
+.comments h3{
+  margin-bottom:12px;
+  color:#d9368a;
+}
+
+.comment-box{
+  display:flex;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.comment-box input{
+  flex:1;
+}
+
+.comment-box button{
+  padding:10px 15px;
+  background:#e63891;
+  color:white;
+  border-radius:10px;
+}
+
+.comment{
+  background:#fff0f7;
+  padding:10px;
+  border-radius:12px;
+  margin:7px 0;
+}
+
+.close-detail{
+  width:100%;
+  padding:12px;
+  background:#333;
+  color:white;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+/* ORDER */
+
+.delivery-section{
+  padding:50px 20px;
+  background:linear-gradient(135deg,#ffd5e8,#ead4ff);
+}
+
+.delivery-box{
+  max-width:600px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 10px 35px rgba(0,0,0,.15);
+}
+
+.delivery-box h2{
+  color:#e63891;
+  text-align:center;
+  margin-bottom:8px;
+}
+
+.delivery-box p{
+  text-align:center;
+  color:#777;
+  margin-bottom:18px;
+}
+
+input,textarea,select{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:2px solid #eee;
+  border-radius:11px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:none;
+  border-color:#e63891;
+}
+
+.delivery-submit{
+  width:100%;
+  background:linear-gradient(90deg,#e63891,#a84cff);
+  color:white;
+  padding:14px;
+  border-radius:12px;
+  font-size:16px;
+}
+
+#orderMessage{
+  color:green;
+  font-weight:bold;
+}
+
+/* LOGIN */
+
+.login-section{
+  padding:60px 20px;
+  background:linear-gradient(135deg,#ffc5df,#dfc5ff,#c6e8ff);
+}
+
+.login-box{
+  max-width:430px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
+  text-align:center;
+}
+
+.login-box h2{
+  color:#e63891;
+  margin-bottom:8px;
+}
+
+.login-box p{
+  color:#777;
+  margin-bottom:15px;
+}
+
+.login-btn{
+  width:100%;
+  padding:13px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#e63891,#a84cff);
+  color:white;
+  font-size:16px;
+}
+
+#loginMessage{
+  margin-top:12px;
+}
 
 /* ADMIN */
-.admin{
-max-width:800px;
-margin:40px auto;
-padding:0 15px 60px
+
+.admin-panel{
+  padding:40px 20px;
+  background:#fff0f7;
 }
-.login,.panel{
-background:white;
-padding:28px;
-border-radius:20px;
-box-shadow:0 8px 30px #0002
+
+.admin-box{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 5px 25px rgba(0,0,0,.12);
 }
-.login{
-max-width:430px;
-margin:auto
+
+.admin-box h2{
+  text-align:center;
+  color:#e63891;
+  margin-bottom:20px;
 }
-.heading{
-text-align:center;
-color:#e83289;
-margin-bottom:20px
+
+.profile-info{
+  background:#fff0f7;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:25px;
 }
-.input{
-margin-bottom:13px
+
+.profile-info p{
+  margin:8px 0;
 }
-.input label{
-display:block;
-font-weight:bold;
-margin-bottom:6px
+
+.upload-box{
+  display:block;
+  background:#fff0f7;
+  padding:18px;
+  text-align:center;
+  border-radius:15px;
+  margin:15px 0;
+  cursor:pointer;
 }
-.input input,.input select,.input textarea{
-width:100%;
-padding:12px;
-border:2px solid #eee;
-border-radius:10px;
-outline:0;
-font-size:15px
-}
-.input textarea{min-height:90px}
-.main-btn{
-width:100%;
-padding:13px;
-border:0;
-border-radius:10px;
-color:white;
-background:linear-gradient(90deg,#e83289,#a84cff);
-font-size:16px;
-font-weight:bold;
-margin-top:7px
-}
-.profile{
-background:#fff0f7;
-border:1px solid #ffd1e5;
-padding:18px;
-border-radius:13px;
-margin-bottom:25px
-}
-.profile p{margin:8px 0}
-.upload{
-display:block;
-padding:20px;
-text-align:center;
-border:2px dashed #e83289;
-border-radius:13px;
-color:#e83289;
-background:#fff7fb;
-font-weight:bold;
-margin:15px 0
-}
-.upload input{
-display:block;
-margin:12px auto 0
-}
+
 .editor{
-background:#fff7fb;
-padding:15px;
-border-radius:13px;
-margin-bottom:15px
+  background:#fafafa;
+  padding:15px;
+  border-radius:15px;
+  margin:15px 0;
 }
+
 #canvas{
-width:100%;
-max-height:400px;
-object-fit:contain;
-border:2px solid #eee;
-border-radius:10px;
-margin:10px 0
+  width:100%;
+  max-height:400px;
+  object-fit:contain;
+  border:2px solid #eee;
+  border-radius:15px;
+  margin-bottom:15px;
 }
+
 .editor label{
-display:block;
-font-weight:bold;
-margin:12px 0 5px
+  display:block;
+  margin:13px 0;
+  font-weight:bold;
 }
-.editor input[type=range]{width:100%}
+
+.editor input[type="range"]{
+  padding:0;
+}
+
+.editor button{
+  padding:10px 15px;
+  background:#e63891;
+  color:white;
+  border-radius:10px;
+  margin:4px;
+}
+
+.add-btn{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#20a96b,#42c985);
+  color:white;
+  font-size:16px;
+}
+
+.logout-btn{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  background:#333;
+  color:white;
+  margin-top:10px;
+}
 
 /* ADMIN PRODUCTS */
+
+.my-products{
+  margin-top:30px;
+}
+
+.my-products h3{
+  color:#e63891;
+  margin-bottom:15px;
+}
+
 .admin-product{
-display:flex;
-align-items:center;
-gap:12px;
-padding:12px;
-margin:10px 0;
-background:#fff4fa;
-border:1px solid #ffd2e5;
-border-radius:12px
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:12px;
+  border-radius:15px;
+  background:#fff0f7;
+  margin:10px 0;
 }
+
 .admin-product img{
-width:75px;
-height:75px;
-object-fit:cover;
-border-radius:9px
-}
-.admin-info{flex:1}
-.admin-info h3{margin-bottom:5px}
-.admin-price{
-color:#e83289;
-font-weight:bold;
-margin-bottom:4px
-}
-.delete{
-border:0;
-background:#ff4666;
-color:white;
-padding:10px;
-border-radius:8px;
-font-weight:bold
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:12px;
 }
 
-/* DETAIL */
-.modal{
-position:fixed;
-inset:0;
-background:#0009;
-z-index:3000;
-overflow:auto;
-padding:20px
-}
-.detail{
-background:white;
-max-width:1100px;
-margin:20px auto;
-border-radius:18px;
-overflow:hidden;
-position:relative
-}
-.close{
-position:absolute;
-right:12px;
-top:10px;
-z-index:5;
-border:0;
-background:white;
-border-radius:50%;
-width:40px;
-height:40px;
-font-size:28px
-}
-.detail-grid{
-display:grid;
-grid-template-columns:50% 50%
-}
-.gallery{
-padding:25px;
-background:#fff7fb
-}
-.main-photo{
-width:100%;
-height:460px;
-object-fit:contain;
-background:white;
-border-radius:12px;
-cursor:zoom-in
-}
-.detail-info{padding:30px}
-.category-tag{
-display:inline-block;
-background:#ffe0ed;
-color:#e83289;
-padding:6px 10px;
-border-radius:7px
-}
-.detail-title{
-font-size:30px;
-margin:12px 0
-}
-.detail-price{
-font-size:31px;
-font-weight:bold;
-color:#e83289;
-margin:15px 0
-}
-.rating{
-margin:15px 0
-}
-.big-stars{
-color:#f5a400;
-font-size:23px
-}
-.like{
-padding:15px 0;
-border-top:1px solid #eee;
-border-bottom:1px solid #eee;
-margin:15px 0
-}
-.like button{
-border:0;
-background:#ffe4ef;
-color:#e83289;
-padding:10px 15px;
-border-radius:8px;
-font-size:20px
-}
-.delivery{
-background:#fff3f9;
-padding:15px;
-border-radius:10px;
-margin:20px 0
-}
-.delivery p{margin:7px 0}
-.detail-actions{
-display:flex;
-gap:10px
-}
-.detail-actions button{
-flex:1;
-padding:14px;
-border:0;
-border-radius:9px;
-color:white;
-font-weight:bold;
-font-size:16px
-}
-.detail-cart{background:#ff8ab7}
-.detail-buy{background:#e83289}
-
-/* REVIEWS */
-.reviews{
-border-top:1px solid #eee;
-padding:30px
-}
-.reviews h2{
-color:#e83289;
-margin-bottom:15px
-}
-.review-form{
-background:#fff5fa;
-padding:18px;
-border-radius:12px
-}
-.review-form input,.review-form textarea{
-width:100%;
-padding:11px;
-margin:6px 0;
-border:1px solid #ddd;
-border-radius:8px
-}
-.review-form textarea{min-height:80px}
-.review-stars-select button{
-border:0;
-background:none;
-font-size:26px;
-color:#bbb
-}
-.review-stars-select button.active{color:#f5a400}
-.review-submit{
-border:0;
-background:#e83289;
-color:white;
-padding:10px 18px;
-border-radius:8px;
-margin-top:8px
-}
-.review{
-padding:15px 0;
-border-bottom:1px solid #eee
-}
-.review-name{font-weight:bold}
-.review-star{color:#f5a400}
-.review-date{
-font-size:11px;
-color:#999
+.admin-product-info{
+  flex:1;
 }
 
-/* CART */
-.cart-item{
-display:flex;
-gap:12px;
-align-items:center;
-padding:12px 0;
-border-bottom:1px solid #eee
-}
-.cart-item img{
-width:70px;
-height:70px;
-object-fit:cover;
-border-radius:8px
-}
-.cart-info{flex:1}
-.cart-price{
-color:#e83289;
-font-weight:bold;
-margin-top:5px
-}
-.remove{
-border:0;
-background:#ffe0e9;
-padding:8px;
-border-radius:7px
-}
-.total{
-text-align:right;
-font-size:22px;
-font-weight:bold;
-color:#e83289;
-margin:18px 0
-}
-.empty{
-background:white;
-padding:45px 20px;
-border-radius:13px;
-text-align:center;
-color:#777;
-grid-column:1/-1
+.delete-btn{
+  background:#e53935;
+  color:white;
+  padding:9px 13px;
+  border-radius:9px;
 }
 
 /* FOOTER */
+
 footer{
-background:#241f23;
-color:white;
-text-align:center;
-padding:40px 15px
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
 }
-footer h2{color:#ff75b8;margin-bottom:12px}
-footer p{margin:8px}
+
+footer h2{
+  color:#ff70b8;
+  margin-bottom:12px;
+}
+
+footer p{
+  margin:8px;
+}
 
 /* MOBILE */
-.mobile{
-display:none
-}
-@media(max-width:950px){
-.product-grid{grid-template-columns:repeat(3,1fr)}
-.categories{grid-template-columns:repeat(3,1fr)}
-.detail-grid{grid-template-columns:1fr}
-}
+
 @media(max-width:600px){
-body{padding-bottom:65px}
-.header{flex-wrap:wrap}
-.logo{font-size:20px}
-.search{order:3;flex-basis:100%}
-nav{display:none}
-.hero img{height:190px}
-.categories{grid-template-columns:repeat(3,1fr);gap:8px}
-.category{padding:12px 3px}
-.category-icon{font-size:26px}
-.category p{font-size:11px}
-.product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.product-img{height:170px}
-.info{padding:9px}
-.name{font-size:13px}
-.price{font-size:18px}
-.actions{flex-direction:column}
-.detail-info{padding:20px}
-.main-photo{height:330px}
-.detail-title{font-size:23px}
-.detail-actions{flex-direction:column}
-.admin-product img{width:60px;height:60px}
-.delete{padding:7px;font-size:11px}
-.mobile{
-position:fixed;
-display:flex;
-bottom:0;
-left:0;
-right:0;
-height:63px;
-background:white;
-z-index:2500;
-justify-content:space-around;
-border-top:1px solid #ddd
-}
-.mobile button{
-border:0;
-background:white;
-font-size:11px;
-color:#555
-}
-.mobile span{
-display:block;
-font-size:22px
-}
+
+  .logo{
+    font-size:20px;
+  }
+
+  .header-buttons button{
+    padding:8px 10px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:12px;
+  }
+
+  .welcome h1{
+    font-size:28px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .product-image{
+    height:170px;
+  }
+
+  .product-info{
+    padding:11px;
+  }
+
+  .product-info h3{
+    font-size:15px;
+  }
+
+  .price{
+    font-size:18px;
+  }
+
+  .detail-buttons{
+    flex-direction:column;
+  }
+
+  .admin-product{
+    flex-wrap:wrap;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<div class="header">
 
-<div class="logo">🧶 Crochet</div>
+  <div class="logo">
+    🧶 Crochet Web
+  </div>
 
-<div class="search">
-<input id="search" placeholder="Search products..." oninput="showProducts()">
-<button>🔎</button>
-</div>
+  <div class="header-buttons">
 
-<button class="icon-btn" onclick="openWishlist()">
-❤️
-<span class="badge" id="wishCount">0</span>
-</button>
+    <button onclick="showInfo()">
+      ℹ️ Info
+    </button>
 
-<button class="icon-btn" onclick="openCart()">
-🛒
-<span class="badge" id="cartCount">0</span>
-</button>
+    <button onclick="goHome()">
+      🏠 Home
+    </button>
 
-</div>
+  </div>
+
 </header>
 
-<nav>
-<div class="nav">
-<button onclick="home()">🏠 Home</button>
-<button onclick="filterCategory('All')">🛍️ Products</button>
-<button onclick="filterCategory('Bags')">👜 Bags</button>
-<button onclick="filterCategory('Flowers')">🌸 Flowers</button>
-<button onclick="filterCategory('Toys')">🧸 Toys</button>
-<button onclick="openCart()">🛒 Cart</button>
-<button onclick="adminArea()">👤 Account</button>
+
+<!-- INFORMATION -->
+
+<div id="infoOverlay" class="info-overlay hidden">
+
+  <div class="info-box">
+
+    <h2>ℹ️ Information</h2>
+
+    <p>
+      Hello friends! 👋<br><br>
+
+      If you like this website, that's great! ❤️
+      This website is made for our Crochet Collection
+      where you can explore beautiful handmade products.
+      <br><br>
+
+      Friends, the login option below is only for the
+      admin so the admin can add and manage products.
+      <br><br>
+
+      Thank you for visiting Crochet Web! 🧶💗
+    </p>
+
+    <button class="close-btn" onclick="closeInfo()">
+      Thank You ❤️
+    </button>
+
+  </div>
+
 </div>
-</nav>
+
+
+<!-- HERO -->
 
 <section class="hero">
-<img src="logo.png" alt="Crochet Collection">
-</section>
 
-<section class="section">
-
-<h2 class="title">🛍️ Shop By Category</h2>
-
-<div class="categories">
-
-<div class="category" onclick="filterCategory('All')">
-<div class="category-icon">🛍️</div>
-<p>All Products</p>
-</div>
-
-<div class="category" onclick="filterCategory('Bags')">
-<div class="category-icon">👜</div>
-<p>Bags</p>
-</div>
-
-<div class="category" onclick="filterCategory('Flowers')">
-<div class="category-icon">🌸</div>
-<p>Flowers</p>
-</div>
-
-<div class="category" onclick="filterCategory('Toys')">
-<div class="category-icon">🧸</div>
-<p>Toys</p>
-</div>
-
-<div class="category" onclick="filterCategory('Accessories')">
-<div class="category-icon">🎀</div>
-<p>Accessories</p>
-</div>
-
-<div class="category" onclick="filterCategory('Home')">
-<div class="category-icon">🏠</div>
-<p>Home</p>
-</div>
-
-</div>
-</section>
-
-<section class="section" id="products">
-
-<h2 class="title">✨ Our Products</h2>
-
-<div id="productGrid" class="product-grid"></div>
-
-</section>
-
-<!-- ADMIN -->
-
-<section class="admin" id="adminArea">
-
-<div id="loginBox" class="login">
-
-<h2 class="heading">🔐 Admin Login</h2>
-
-<div class="input">
-<label>Name</label>
-<input id="loginName" placeholder="Enter Name">
-</div>
-
-<div class="input">
-<label>Password</label>
-<input id="loginPassword" type="password" placeholder="Enter Password">
-</div>
-
-<button class="main-btn" onclick="login()">
-🔐 Login
-</button>
-
-<p id="loginMessage" style="text-align:center;margin-top:10px"></p>
-
-</div>
-
-
-<div id="adminPanel" class="panel hidden">
-
-<h2 class="heading">👤 My Profile</h2>
-
-<div class="profile">
-
-<p>👤 <b>Name:</b> Sameeha</p>
-<p>♀️ <b>Gender:</b> Female</p>
-<p>📦 <b>My Uploaded Products:</b> <span id="uploadCount">0</span></p>
-
-</div>
-
-
-<h2 class="heading">➕ Add Product</h2>
-
-<div class="input">
-<label>Product Name</label>
-<input id="productName" placeholder="Product Name">
-</div>
-
-<div class="input">
-<label>Price</label>
-<input id="productPrice" type="number" placeholder="Price Rs.">
-</div>
-
-<div class="input">
-<label>Category</label>
-
-<select id="productCategory">
-
-<option value="Bags">👜 Bags</option>
-<option value="Flowers">🌸 Flowers</option>
-<option value="Toys">🧸 Toys</option>
-<option value="Accessories">🎀 Accessories</option>
-<option value="Home">🏠 Home</option>
-
-</select>
-
-</div>
-
-<label class="upload">
-
-📷 Select Product Photo
-
-<input id="imageUpload" type="file" accept="image/*">
-
-</label>
-
-
-<div id="editor" class="editor hidden">
-
-<h3 style="color:#e83289">✨ Photo Editor</h3>
-
-<canvas id="canvas"></canvas>
-
-<label>☀️ Brightness</label>
-<input id="brightness" type="range" min="0" max="200" value="100">
-
-<label>🎨 Contrast</label>
-<input id="contrast" type="range" min="0" max="200" value="100">
-
-<label>🌈 Saturation</label>
-<input id="saturation" type="range" min="0" max="200" value="100">
-
-<button class="main-btn" onclick="rotateImage()">🔄 Rotate</button>
-
-<button class="main-btn" onclick="resetImage()">↩️ Reset</button>
-
-</div>
-
-
-<button class="main-btn" onclick="addProduct()">
-✅ ADD PRODUCT
-</button>
-
-
-<h2 class="heading" style="margin-top:35px">
-📦 My Uploaded Products
-</h2>
-
-<div id="adminProducts"></div>
-
-
-<button
-class="main-btn"
-style="background:#555;margin-top:25px"
-onclick="logout()">
-🚪 Logout
-</button>
-
-</div>
+  <img src="logo.png" alt="Crochet Web">
 
 </section>
 
 
-<!-- PRODUCT DETAIL -->
+<!-- WELCOME -->
 
-<div id="detailModal" class="modal hidden">
+<section class="welcome">
 
-<div class="detail">
+  <h1>🧶 Crochet Collection</h1>
 
-<button class="close" onclick="closeDetail()">×</button>
+  <p>
+    Beautiful handmade products made with love ❤️
+  </p>
 
-<div class="detail-grid">
+</section>
 
-<div class="gallery">
 
-<img id="detailImage" class="main-photo">
+<!-- CATEGORIES -->
+
+<section class="category-section">
+
+  <div class="category-scroll">
+
+    <button class="category active" onclick="filterProducts('All',this)">
+      🛍️ All
+    </button>
+
+    <button class="category" onclick="filterProducts('Bags',this)">
+      👜 Bags
+    </button>
+
+    <button class="category" onclick="filterProducts('Keychains',this)">
+      🔑 Keychains
+    </button>
+
+    <button class="category" onclick="filterProducts('Flowers',this)">
+      🌸 Flowers
+    </button>
+
+    <button class="category" onclick="filterProducts('Toys',this)">
+      🧸 Toys
+    </button>
+
+    <button class="category" onclick="filterProducts('Accessories',this)">
+      🎀 Accessories
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products-section">
+
+  <h2>🛍️ Our Products</h2>
+
+  <div id="productList" class="product-grid"></div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="delivery-section" id="deliverySection">
+
+  <div class="delivery-box">
+
+    <h2>🚚 Order & Home Delivery</h2>
+
+    <p>
+      Select a product and fill in your details.
+    </p>
+
+    <input
+      type="text"
+      id="customerName"
+      placeholder="Your Name"
+    >
+
+    <textarea
+      id="customerAddress"
+      placeholder="Your Full Address"
+    ></textarea>
+
+    <input
+      type="tel"
+      id="customerPhone"
+      placeholder="Your Phone Number"
+    >
+
+    <input
+      type="text"
+      id="customerCountry"
+      placeholder="Your Country"
+    >
+
+    <input
+      type="text"
+      id="selectedProduct"
+      placeholder="Selected Product"
+      readonly
+    >
+
+    <button
+      class="delivery-submit"
+      onclick="placeOrder()"
+    >
+      🚚 Confirm Order
+    </button>
+
+    <p id="orderMessage"></p>
+
+  </div>
+
+</section>
+
+
+<!-- ADMIN LOGIN -->
+
+<section class="login-section" id="loginSection">
+
+  <div class="login-box">
+
+    <h2>🔐 Admin Login</h2>
+
+    <p>
+      This login is only for the website admin.
+    </p>
+
+    <input
+      type="text"
+      id="loginName"
+      placeholder="Admin Name"
+    >
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Admin Password"
+    >
+
+    <button
+      class="login-btn"
+      onclick="login()"
+    >
+      🔐 Login
+    </button>
+
+    <p id="loginMessage"></p>
+
+  </div>
+
+</section>
+
+
+<!-- ADMIN PANEL -->
+
+<section
+  id="adminPanel"
+  class="admin-panel hidden"
+>
+
+  <div class="admin-box">
+
+    <h2>👤 Admin Profile</h2>
+
+    <div class="profile-info">
+
+      <p>
+        <strong>Name:</strong> Sameeha
+      </p>
+
+      <p>
+        <strong>Gender:</strong> Female
+      </p>
+
+      <p>
+        <strong>Role:</strong> Website Admin
+      </p>
+
+    </div>
+
+
+    <h2>➕ Add New Product</h2>
+
+    <input
+      type="text"
+      id="productName"
+      placeholder="Product Name"
+    >
+
+    <input
+      type="number"
+      id="productPrice"
+      placeholder="Product Price (Rs.)"
+    >
+
+    <select id="productCategory">
+
+      <option value="Bags">👜 Bags</option>
+
+      <option value="Keychains">🔑 Keychains</option>
+
+      <option value="Flowers">🌸 Flowers</option>
+
+      <option value="Toys">🧸 Toys</option>
+
+      <option value="Accessories">🎀 Accessories</option>
+
+    </select>
+
+
+    <label class="upload-box">
+
+      📷 Select Product Photo
+
+      <input
+        type="file"
+        id="imageUpload"
+        accept="image/*"
+      >
+
+    </label>
+
+
+    <!-- PHOTO EDITOR -->
+
+    <div
+      id="editor"
+      class="editor hidden"
+    >
+
+      <h3>✨ Photo Editor</h3>
+
+      <canvas id="canvas"></canvas>
+
+      <label>
+        ☀️ Brightness
+        <input
+          type="range"
+          id="brightness"
+          min="0"
+          max="200"
+          value="100"
+        >
+      </label>
+
+      <label>
+        🎨 Contrast
+        <input
+          type="range"
+          id="contrast"
+          min="0"
+          max="200"
+          value="100"
+        >
+      </label>
+
+      <label>
+        🌈 Saturation
+        <input
+          type="range"
+          id="saturation"
+          min="0"
+          max="200"
+          value="100"
+        >
+      </label>
+
+      <button onclick="rotateImage()">
+        🔄 Rotate
+      </button>
+
+      <button onclick="resetImage()">
+        ↩️ Reset
+      </button>
+
+    </div>
+
+
+    <button
+      class="add-btn"
+      onclick="addProduct()"
+    >
+      ✅ DONE - ADD PRODUCT
+    </button>
+
+
+    <!-- MY PRODUCTS -->
+
+    <div class="my-products">
+
+      <h3>
+        📦 My Uploaded Products
+      </h3>
+
+      <div id="adminProductList"></div>
+
+    </div>
+
+
+    <button
+      class="logout-btn"
+      onclick="logout()"
+    >
+      🚪 Logout
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCT DETAILS -->
+
+<div
+  id="productOverlay"
+  class="product-overlay hidden"
+>
+
+  <div class="product-detail">
+
+    <img
+      id="detailImage"
+      class="detail-image"
+      src=""
+      alt=""
+    >
+
+    <div class="detail-content">
+
+      <h2 id="detailName"></h2>
+
+      <div
+        id="detailCategory"
+        class="category-tag"
+      ></div>
+
+      <div
+        id="detailPrice"
+        class="detail-price"
+      ></div>
+
+      <div
+        id="detailRating"
+        class="rating"
+      >
+        ⭐⭐⭐⭐⭐
+      </div>
+
+      <div class="detail-buttons">
+
+        <button
+          onclick="likeProduct()"
+          class="like-btn"
+          id="likeButton"
+        >
+          ❤️ Like 0
+        </button>
+
+        <button
+          onclick="buyCurrentProduct()"
+        >
+          🛒 Buy Now
+        </button>
+
+      </div>
+
+
+      <div class="comments">
+
+        <h3>💬 Comments</h3>
+
+        <div class="comment-box">
+
+          <input
+            type="text"
+            id="commentInput"
+            placeholder="Write a comment..."
+          >
+
+          <button onclick="addComment()">
+            Post
+          </button>
+
+        </div>
+
+        <div id="commentList"></div>
+
+      </div>
+
+
+      <button
+        class="close-detail"
+        onclick="closeProduct()"
+      >
+        ✖ Close
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="detail-info">
 
-<div id="detailCategory" class="category-tag"></div>
-
-<h1 id="detailTitle" class="detail-title"></h1>
-
-<div id="detailPrice" class="detail-price"></div>
-
-<div class="rating">
-
-<span id="detailStars" class="big-stars">★★★★★</span>
-
-<span id="detailRating">5.0</span>
-
-<span id="detailRatingCount">(0 reviews)</span>
-
-</div>
-
-<div class="like">
-
-<button onclick="likeProduct()">
-❤️
-</button>
-
-<span>
-<span id="likeCount">0</span>
-people like this
-</span>
-
-</div>
-
-<div class="delivery">
-
-<p>🚚 <b>Free Home Delivery</b></p>
-<p>📦 Delivery Available</p>
-<p>❤️ Handmade With Love</p>
-<p>💬 Order Through WhatsApp</p>
-
-</div>
-
-<div class="detail-actions">
-
-<button class="detail-cart" onclick="detailCart()">
-🛒 Add To Cart
-</button>
-
-<button class="detail-buy" onclick="detailBuy()">
-⚡ Buy Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="reviews">
-
-<h2>⭐ Customer Reviews</h2>
-
-<div class="review-form">
-
-<input id="reviewName" placeholder="Your Name">
-
-<div class="review-stars-select">
-
-<button onclick="selectStar(1)" id="s1">★</button>
-<button onclick="selectStar(2)" id="s2">★</button>
-<button onclick="selectStar(3)" id="s3">★</button>
-<button onclick="selectStar(4)" id="s4">★</button>
-<button onclick="selectStar(5)" id="s5">★</button>
-
-</div>
-
-<textarea id="reviewText" placeholder="Write your review..."></textarea>
-
-<button class="review-submit" onclick="addReview()">
-💬 Submit Review
-</button>
-
-</div>
-
-<div id="reviewsList"></div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- CART -->
-
-<div id="cartModal" class="modal hidden">
-
-<div class="detail" style="max-width:600px;padding:25px">
-
-<button class="close" onclick="closeModal('cartModal')">×</button>
-
-<h2 class="heading">🛒 Shopping Cart</h2>
-
-<div id="cartItems"></div>
-
-<div id="total" class="total">Total: Rs. 0</div>
-
-<button class="main-btn" onclick="checkout()">
-🚚 Checkout
-</button>
-
-</div>
-
-</div>
-
-
-<!-- WISHLIST -->
-
-<div id="wishlistModal" class="modal hidden">
-
-<div class="detail" style="max-width:600px;padding:25px">
-
-<button class="close" onclick="closeModal('wishlistModal')">×</button>
-
-<h2 class="heading">❤️ Wishlist</h2>
-
-<div id="wishlistItems"></div>
-
-</div>
-
-</div>
-
-
-<!-- CHECKOUT -->
-
-<div id="checkoutModal" class="modal hidden">
-
-<div class="detail" style="max-width:600px;padding:25px">
-
-<button class="close" onclick="closeModal('checkoutModal')">×</button>
-
-<h2 class="heading">🚚 Order Details</h2>
-
-<div class="input">
-<label>Name</label>
-<input id="customerName">
-</div>
-
-<div class="input">
-<label>Phone</label>
-<input id="customerPhone">
-</div>
-
-<div class="input">
-<label>Address</label>
-<textarea id="customerAddress"></textarea>
-</div>
-
-<div class="input">
-<label>Country</label>
-<input id="customerCountry" value="Pakistan">
-</div>
-
-<button class="main-btn" onclick="sendOrder()">
-💬 Order On WhatsApp
-</button>
-
-<p id="orderMessage" style="text-align:center;margin-top:10px"></p>
-
-</div>
-
-</div>
-
-
-<div class="mobile">
-
-<button onclick="home()">
-<span>🏠</span>Home
-</button>
-
-<button onclick="openWishlist()">
-<span>❤️</span>Wishlist
-</button>
-
-<button onclick="openCart()">
-<span>🛒</span>Cart
-</button>
-
-<button onclick="adminArea()">
-<span>👤</span>Account
-</button>
-
-</div>
-
+<!-- FOOTER -->
 
 <footer>
 
-<h2>🧶 CROCHET COLLECTION</h2>
+  <h2>🚚 FREE HOME DELIVERY</h2>
 
-<p>Handmade Products Made With Love ❤️</p>
+  <p>
+    We deliver your favorite products to your home ❤️
+  </p>
 
-<p>🚚 Free Home Delivery</p>
+  <p>
+    📞 Contact: 03054330064
+  </p>
 
-<p>📞 03054330064</p>
-
-<p>© 2026 Crochet Collection</p>
+  <p>
+    © 2026 Crochet Web
+  </p>
 
 </footer>
 
 
 <script>
 
-/* ==================================================
-DATA
-================================================== */
+/* =========================
+ADMIN LOGIN
+========================= */
 
-let products =
-JSON.parse(localStorage.getItem("crochet_products")) || [
-
-/*
-  YE SAMPLE PRODUCTS HAIN.
-  Agar tumhari files ke naam alag hain,
-  image ka naam change kar dena.
-*/
-
-{
-id:1,
-name:"Crochet Flower",
-price:500,
-category:"Flowers",
-image:"product1.jpg"
-},
-
-{
-id:2,
-name:"Crochet Bag",
-price:1500,
-category:"Bags",
-image:"product2.jpg"
-},
-
-{
-id:3,
-name:"Crochet Teddy",
-price:1200,
-category:"Toys",
-image:"product3.jpg"
-},
-
-{
-id:4,
-name:"Crochet Accessories",
-price:700,
-category:"Accessories",
-image:"product4.jpg"
-}
-
-];
+const CORRECT_NAME = "Sameeha";
+const CORRECT_PASSWORD = "crochet123";
 
 
-let cart =
-JSON.parse(localStorage.getItem("crochet_cart")) || [];
-
-let wishlist =
-JSON.parse(localStorage.getItem("crochet_wishlist")) || [];
-
-let reviews =
-JSON.parse(localStorage.getItem("crochet_reviews")) || {};
-
-let likes =
-JSON.parse(localStorage.getItem("crochet_likes")) || {};
-
-let category="All";
-
-let currentProduct=null;
-
-let reviewStar=5;
+let loggedIn = false;
 
 
-/* ==================================================
-SAVE
-================================================== */
+/* =========================
+PRODUCT DATA
+========================= */
 
-function save(){
+let products = [];
 
-localStorage.setItem(
-"crochet_products",
-JSON.stringify(products)
-);
+let selectedCategory = "All";
 
-localStorage.setItem(
-"crochet_cart",
-JSON.stringify(cart)
-);
+let currentProductId = null;
 
-localStorage.setItem(
-"crochet_wishlist",
-JSON.stringify(wishlist)
-);
 
-localStorage.setItem(
-"crochet_reviews",
-JSON.stringify(reviews)
-);
+/* =========================
+LOAD PRODUCTS
+========================= */
 
-localStorage.setItem(
-"crochet_likes",
-JSON.stringify(likes)
-);
+function loadProducts(){
+
+  const saved =
+    localStorage.getItem("crochetProducts");
+
+  if(saved){
+
+    try{
+
+      products = JSON.parse(saved);
+
+    }catch(error){
+
+      products = [];
+
+    }
+
+  }
+
+  displayProducts();
+
+  displayAdminProducts();
 
 }
 
 
-/* ==================================================
-SHOW PRODUCTS
-================================================== */
+function saveProducts(){
 
-function showProducts(){
-
-const grid=
-document.getElementById("productGrid");
-
-let list=[...products];
-
-if(category!=="All"){
-
-list=list.filter(
-p=>p.category===category
-);
-
-}
-
-const search=
-document
-.getElementById("search")
-.value
-.toLowerCase();
-
-if(search){
-
-list=list.filter(
-p=>p.name
-.toLowerCase()
-.includes(search)
-);
-
-}
-
-grid.innerHTML="";
-
-if(list.length===0){
-
-grid.innerHTML=
-`<div class="empty">
-🧶 No products found.
-</div>`;
-
-return;
+  localStorage.setItem(
+    "crochetProducts",
+    JSON.stringify(products)
+  );
 
 }
 
 
-list.forEach(p=>{
+/* =========================
+DISPLAY PRODUCTS
+========================= */
 
-const card=
-document.createElement("div");
+function displayProducts(){
 
-card.className="product";
+  const list =
+    document.getElementById("productList");
 
-const rating=
-getRating(p.id);
+  list.innerHTML = "";
 
-const liked=
-wishlist.includes(p.id);
 
-card.innerHTML=`
+  let filtered = products;
 
-<button
-class="heart"
-onclick="event.stopPropagation();toggleWish(${p.id})">
-${liked?"❤️":"♡"}
-</button>
 
-<img
-class="product-img"
-src="${p.image}"
-onclick="openProduct(${p.id})"
-onerror="this.src='logo.png'"
->
+  if(selectedCategory !== "All"){
 
-<div
-class="info"
-onclick="openProduct(${p.id})">
+    filtered =
+      products.filter(
+        p => p.category === selectedCategory
+      );
 
-<div class="name">
-${safe(p.name)}
-</div>
+  }
 
-<div class="price">
-Rs. ${Number(p.price).toLocaleString()}
-</div>
 
-<div>
-<span class="stars">
-${stars(rating)}
-</span>
+  if(filtered.length === 0){
 
-<span class="small">
-(${(reviews[p.id]||[]).length})
-</span>
-</div>
+    list.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        text-align:center;
+        background:white;
+        padding:35px;
+        border-radius:20px;
+      ">
+        <h3>🧶 No products yet</h3>
+        <p style="color:#777;margin-top:8px;">
+          Admin can add products from the login section.
+        </p>
+      </div>
+    `;
 
-<div
-class="actions"
-onclick="event.stopPropagation()">
+    return;
 
-<button
-class="cart-btn"
-onclick="addCart(${p.id})">
-🛒 Cart
-</button>
+  }
 
-<button
-class="buy-btn"
-onclick="buyNow(${p.id})">
-⚡ Buy
-</button>
 
-</div>
+  filtered.forEach(product => {
 
-</div>
-`;
+    const card =
+      document.createElement("div");
 
-grid.appendChild(card);
+    card.className = "product";
 
-});
 
-updateCounts();
+    const averageRating =
+      getAverageRating(product);
+
+
+    card.innerHTML = `
+
+      <img
+        class="product-image"
+        src="${product.image}"
+        alt="${escapeHTML(product.name)}"
+        onclick="openProduct(${product.id})"
+        style="cursor:pointer"
+      >
+
+      <div class="product-info">
+
+        <span class="category-tag">
+          ${getCategoryIcon(product.category)}
+          ${escapeHTML(product.category)}
+        </span>
+
+        <h3>
+          ${escapeHTML(product.name)}
+        </h3>
+
+        <div class="price">
+          Rs. ${escapeHTML(String(product.price))}
+        </div>
+
+        <div class="rating">
+          ${getStars(averageRating)}
+          <small style="color:#777;">
+            (${product.ratings.length})
+          </small>
+        </div>
+
+        <button
+          class="buy-btn"
+          onclick="openProduct(${product.id})"
+        >
+          🛒 View Product
+        </button>
+
+      </div>
+    `;
+
+
+    list.appendChild(card);
+
+  });
 
 }
 
 
-/* ==================================================
+/* =========================
+CATEGORY
+========================= */
+
+function filterProducts(category, button){
+
+  selectedCategory = category;
+
+
+  document
+    .querySelectorAll(".category")
+    .forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+
+  button.classList.add("active");
+
+
+  displayProducts();
+
+}
+
+
+/* =========================
+CATEGORY ICON
+========================= */
+
+function getCategoryIcon(category){
+
+  const icons = {
+
+    Bags:"👜",
+
+    Keychains:"🔑",
+
+    Flowers:"🌸",
+
+    Toys:"🧸",
+
+    Accessories:"🎀"
+
+  };
+
+
+  return icons[category] || "🧶";
+
+}
+
+
+/* =========================
 PRODUCT DETAIL
-================================================== */
+========================= */
 
 function openProduct(id){
 
-const p=
-products.find(
-x=>x.id===id
-);
-
-if(!p)return;
-
-currentProduct=id;
-
-document.getElementById(
-"detailImage"
-).src=p.image;
-
-document.getElementById(
-"detailTitle"
-).textContent=p.name;
-
-document.getElementById(
-"detailPrice"
-).textContent=
-"Rs. "+
-Number(p.price).toLocaleString();
-
-document.getElementById(
-"detailCategory"
-).textContent=p.category;
-
-document.getElementById(
-"likeCount"
-).textContent=
-likes[id]||0;
-
-updateRating();
-
-renderReviews();
-
-document
-.getElementById("detailModal")
-.classList
-.remove("hidden");
-
-document.body.style.overflow="hidden";
-
-}
+  const product =
+    products.find(p => p.id === id);
 
 
-function closeDetail(){
+  if(!product) return;
 
-document
-.getElementById("detailModal")
-.classList
-.add("hidden");
 
-document.body.style.overflow="";
+  currentProductId = id;
+
+
+  document
+    .getElementById("detailImage")
+    .src = product.image;
+
+
+  document
+    .getElementById("detailName")
+    .textContent =
+      product.name;
+
+
+  document
+    .getElementById("detailCategory")
+    .textContent =
+      getCategoryIcon(product.category)
+      + " "
+      + product.category;
+
+
+  document
+    .getElementById("detailPrice")
+    .textContent =
+      "Rs. " + product.price;
+
+
+  document
+    .getElementById("likeButton")
+    .textContent =
+      "❤️ Like " + product.likes;
+
+
+  showComments();
+
+
+  document
+    .getElementById("productOverlay")
+    .classList.remove("hidden");
 
 }
 
 
-/* ==================================================
-RATING
-================================================== */
+function closeProduct(){
 
-function getRating(id){
+  document
+    .getElementById("productOverlay")
+    .classList.add("hidden");
 
-const list=
-reviews[id]||[];
-
-if(!list.length)return 5;
-
-let total=0;
-
-list.forEach(
-r=>total+=Number(r.rating)
-);
-
-return total/list.length;
+  currentProductId = null;
 
 }
 
 
-function stars(r){
-
-let result="";
-
-for(let i=1;i<=5;i++){
-
-result+=
-i<=Math.round(r)
-?"★"
-:"☆";
-
-}
-
-return result;
-
-}
-
-
-function updateRating(){
-
-const list=
-reviews[currentProduct]||[];
-
-const r=
-getRating(currentProduct);
-
-document.getElementById(
-"detailStars"
-).textContent=stars(r);
-
-document.getElementById(
-"detailRating"
-).textContent=
-r.toFixed(1);
-
-document.getElementById(
-"detailRatingCount"
-).textContent=
-"("+list.length+" reviews)";
-
-}
-
-
-/* ==================================================
+/* =========================
 LIKE
-================================================== */
+========================= */
 
 function likeProduct(){
 
-if(!currentProduct)return;
-
-likes[currentProduct]=
-(likes[currentProduct]||0)+1;
-
-document.getElementById(
-"likeCount"
-).textContent=
-likes[currentProduct];
-
-save();
-
-}
+  const product =
+    products.find(
+      p => p.id === currentProductId
+    );
 
 
-/* ==================================================
-REVIEWS
-================================================== */
+  if(!product) return;
 
-function selectStar(n){
 
-reviewStar=n;
+  product.likes++;
 
-for(let i=1;i<=5;i++){
 
-document
-.getElementById("s"+i)
-.classList
-.toggle(
-"active",
-i<=n
-);
+  saveProducts();
 
-}
+
+  document
+    .getElementById("likeButton")
+    .textContent =
+      "❤️ Like " + product.likes;
+
+
+  displayProducts();
 
 }
 
 
-function addReview(){
+/* =========================
+COMMENTS
+========================= */
 
-const name=
-document
-.getElementById("reviewName")
-.value
-.trim();
+function addComment(){
 
-const text=
-document
-.getElementById("reviewText")
-.value
-.trim();
+  const input =
+    document.getElementById("commentInput");
 
-if(!name||!text){
 
-alert(
-"Please enter name and review."
-);
+  const text =
+    input.value.trim();
 
-return;
 
-}
+  if(!text){
 
-if(!reviews[currentProduct]){
+    return;
 
-reviews[currentProduct]=[];
+  }
 
-}
 
-reviews[currentProduct].push({
+  const product =
+    products.find(
+      p => p.id === currentProductId
+    );
 
-name:name,
-text:text,
-rating:reviewStar,
-date:new Date()
-.toLocaleDateString()
 
-});
+  if(!product) return;
 
-save();
 
-document.getElementById(
-"reviewName"
-).value="";
+  product.comments.push({
 
-document.getElementById(
-"reviewText"
-).value="";
+    text:text,
 
-renderReviews();
+    date:new Date().toLocaleString()
 
-updateRating();
+  });
 
-showProducts();
+
+  input.value = "";
+
+
+  saveProducts();
+
+
+  showComments();
 
 }
 
 
-function renderReviews(){
+function showComments(){
 
-const box=
-document.getElementById(
-"reviewsList"
-);
+  const product =
+    products.find(
+      p => p.id === currentProductId
+    );
 
-box.innerHTML="";
 
-const list=
-reviews[currentProduct]||[];
+  const list =
+    document.getElementById("commentList");
 
-if(!list.length){
 
-box.innerHTML=
-`<p style="color:#777;margin-top:15px">
-💬 No reviews yet. Be the first!
-</p>`;
+  list.innerHTML = "";
 
-return;
 
-}
+  if(!product ||
+     product.comments.length === 0){
 
-[...list].reverse().forEach(r=>{
+    list.innerHTML = `
+      <p style="color:#888;">
+        No comments yet. Be the first! 💗
+      </p>
+    `;
 
-const div=
-document.createElement("div");
+    return;
 
-div.className="review";
+  }
 
-div.innerHTML=`
 
-<div class="review-name">
-👤 ${safe(r.name)}
-</div>
+  [...product.comments]
+    .reverse()
+    .forEach(comment => {
 
-<div class="review-star">
-${stars(r.rating)}
-</div>
+      const div =
+        document.createElement("div");
 
-<p>${safe(r.text)}</p>
+      div.className = "comment";
 
-<div class="review-date">
-${r.date}
-</div>
+      div.innerHTML = `
+        💬 ${escapeHTML(comment.text)}
+        <br>
+        <small style="color:#999;">
+          ${escapeHTML(comment.date)}
+        </small>
+      `;
 
-`;
+      list.appendChild(div);
 
-box.appendChild(div);
-
-});
+    });
 
 }
 
 
-/* ==================================================
-CART
-================================================== */
+/* =========================
+BUY
+========================= */
 
-function addCart(id){
+function buyCurrentProduct(){
 
-const p=
-products.find(
-x=>x.id===id
-);
-
-if(!p)return;
-
-cart.push(p);
-
-save();
-
-updateCounts();
-
-alert("🛒 Added to cart!");
-
-}
+  const product =
+    products.find(
+      p => p.id === currentProductId
+    );
 
 
-function detailCart(){
-
-addCart(currentProduct);
-
-}
+  if(!product) return;
 
 
-function buyNow(id){
+  document
+    .getElementById("selectedProduct")
+    .value = product.name;
 
-cart=[];
 
-const p=
-products.find(
-x=>x.id===id
-);
+  closeProduct();
 
-if(p)cart.push(p);
 
-save();
-
-checkout();
+  document
+    .getElementById("deliverySection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
 
-function detailBuy(){
+function buyProduct(productName){
 
-buyNow(currentProduct);
+  document
+    .getElementById("selectedProduct")
+    .value = productName;
 
-}
 
-
-function openCart(){
-
-renderCart();
-
-document
-.getElementById("cartModal")
-.classList
-.remove("hidden");
+  document
+    .getElementById("deliverySection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
 
-function renderCart(){
+/* =========================
+ORDER
+========================= */
 
-const box=
-document.getElementById(
-"cartItems"
-);
+function placeOrder(){
 
-box.innerHTML="";
-
-let total=0;
-
-if(!cart.length){
-
-box.innerHTML=
-`<div class="empty">
-🛒 Cart is empty.
-</div>`;
-
-}
+  const name =
+    document
+      .getElementById("customerName")
+      .value.trim();
 
 
-cart.forEach((p,i)=>{
-
-total+=Number(p.price);
-
-const div=
-document.createElement("div");
-
-div.className="cart-item";
-
-div.innerHTML=`
-
-<img src="${p.image}" onerror="this.src='logo.png'">
-
-<div class="cart-info">
-
-<b>${safe(p.name)}</b>
-
-<div class="cart-price">
-Rs. ${Number(p.price).toLocaleString()}
-</div>
-
-</div>
-
-<button
-class="remove"
-onclick="removeCart(${i})">
-🗑️
-</button>
-
-`;
-
-box.appendChild(div);
-
-});
-
-document.getElementById(
-"total"
-).textContent=
-"Total: Rs. "+
-total.toLocaleString();
-
-}
+  const address =
+    document
+      .getElementById("customerAddress")
+      .value.trim();
 
 
-function removeCart(i){
-
-cart.splice(i,1);
-
-save();
-
-renderCart();
-
-updateCounts();
-
-}
+  const phone =
+    document
+      .getElementById("customerPhone")
+      .value.trim();
 
 
-/* ==================================================
-WISHLIST
-================================================== */
-
-function toggleWish(id){
-
-const i=
-wishlist.indexOf(id);
-
-if(i===-1){
-
-wishlist.push(id);
-
-}else{
-
-wishlist.splice(i,1);
-
-}
-
-save();
-
-showProducts();
-
-}
+  const country =
+    document
+      .getElementById("customerCountry")
+      .value.trim();
 
 
-function openWishlist(){
+  const product =
+    document
+      .getElementById("selectedProduct")
+      .value.trim();
 
-const box=
-document.getElementById(
-"wishlistItems"
-);
 
-box.innerHTML="";
+  const messageBox =
+    document.getElementById("orderMessage");
 
-const list=
-products.filter(
-p=>wishlist.includes(p.id)
-);
 
-if(!list.length){
+  if(
+    !name ||
+    !address ||
+    !phone ||
+    !country ||
+    !product
+  ){
 
-box.innerHTML=
-`<div class="empty">
-❤️ Wishlist is empty.
-</div>`;
+    messageBox.style.color = "red";
+
+    messageBox.textContent =
+      "❌ Please select a product and fill all details!";
+
+    return;
+
+  }
+
+
+  const myWhatsAppNumber =
+    "923054330064";
+
+
+  const message =
+    "🛍️ NEW ORDER - CROCHET WEB\n\n" +
+
+    "📦 Product: " +
+    product +
+    "\n\n" +
+
+    "👤 Customer Name: " +
+    name +
+    "\n" +
+
+    "📞 Customer Phone: " +
+    phone +
+    "\n" +
+
+    "📍 Address: " +
+    address +
+    "\n" +
+
+    "🌍 Country: " +
+    country +
+    "\n\n" +
+
+    "🚚 Home Delivery Order";
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    myWhatsAppNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
+
+
+  messageBox.style.color = "green";
+
+  messageBox.textContent =
+    "✅ Opening WhatsApp...";
 
 }
 
-list.forEach(p=>{
 
-const div=
-document.createElement("div");
-
-div.className="cart-item";
-
-div.innerHTML=`
-
-<img src="${p.image}">
-
-<div class="cart-info">
-
-<b>${safe(p.name)}</b>
-
-<div class="cart-price">
-Rs. ${Number(p.price).toLocaleString()}
-</div>
-
-</div>
-
-<button
-class="buy-btn"
-onclick="openProduct(${p.id});closeModal('wishlistModal')">
-View
-</button>
-
-`;
-
-box.appendChild(div);
-
-});
-
-document
-.getElementById("wishlistModal")
-.classList
-.remove("hidden");
-
-}
-
-
-/* ==================================================
-CHECKOUT
-================================================== */
-
-function checkout(){
-
-if(!cart.length){
-
-alert("🛒 Cart is empty!");
-
-return;
-
-}
-
-closeModal("cartModal");
-
-document
-.getElementById("checkoutModal")
-.classList
-.remove("hidden");
-
-}
-
-
-function sendOrder(){
-
-const name=
-document.getElementById(
-"customerName"
-).value.trim();
-
-const phone=
-document.getElementById(
-"customerPhone"
-).value.trim();
-
-const address=
-document.getElementById(
-"customerAddress"
-).value.trim();
-
-const country=
-document.getElementById(
-"customerCountry"
-).value.trim();
-
-if(!name||!phone||!address||!country){
-
-document.getElementById(
-"orderMessage"
-).textContent=
-"❌ Please fill all details!";
-
-return;
-
-}
-
-let total=0;
-let items="";
-
-cart.forEach(p=>{
-
-total+=Number(p.price);
-
-items+=
-"📦 "+
-p.name+
-" - Rs. "+
-p.price+
-"\n";
-
-});
-
-const message=
-"🛍️ NEW ORDER - CROCHET COLLECTION\n\n"+
-items+
-"\n💰 Total: Rs. "+
-total.toLocaleString()+
-"\n\n👤 Name: "+name+
-"\n📞 Phone: "+phone+
-"\n📍 Address: "+address+
-"\n🌍 Country: "+country+
-"\n\n🚚 Home Delivery";
-
-const number="923054330064";
-
-window.open(
-"https://wa.me/"+
-number+
-"?text="+
-encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-/* ==================================================
-ADMIN LOGIN
-================================================== */
+/* =========================
+LOGIN
+========================= */
 
 function login(){
 
-const name=
-document.getElementById(
-"loginName"
-).value.trim();
+  const name =
+    document
+      .getElementById("loginName")
+      .value.trim();
 
-const password=
-document.getElementById(
-"loginPassword"
-).value;
 
-if(
-name.toLowerCase()==="sameeha"
-&&
-password==="crochet123"
-){
+  const password =
+    document
+      .getElementById("loginPassword")
+      .value;
 
-document
-.getElementById("loginBox")
-.classList
-.add("hidden");
 
-document
-.getElementById("adminPanel")
-.classList
-.remove("hidden");
+  const message =
+    document.getElementById("loginMessage");
 
-showAdminProducts();
 
-}else{
+  if(
+    name.toLowerCase() ===
+      CORRECT_NAME.toLowerCase()
+    &&
+    password === CORRECT_PASSWORD
+  ){
 
-document.getElementById(
-"loginMessage"
-).textContent=
-"❌ Wrong name or password!";
+    loggedIn = true;
+
+
+    document
+      .getElementById("adminPanel")
+      .classList.remove("hidden");
+
+
+    message.style.color = "green";
+
+    message.textContent =
+      "✅ Login Successful!";
+
+
+    setTimeout(() => {
+
+      document
+        .getElementById("adminPanel")
+        .scrollIntoView({
+          behavior:"smooth"
+        });
+
+    },300);
+
+  }
+
+  else{
+
+    message.style.color = "red";
+
+    message.textContent =
+      "❌ Wrong name or password!";
+
+  }
 
 }
 
-}
 
+/* =========================
+LOGOUT
+========================= */
 
 function logout(){
 
-document
-.getElementById("adminPanel")
-.classList
-.add("hidden");
+  loggedIn = false;
 
-document
-.getElementById("loginBox")
-.classList
-.remove("hidden");
+
+  document
+    .getElementById("adminPanel")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("loginName")
+    .value = "";
+
+
+  document
+    .getElementById("loginPassword")
+    .value = "";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-/* ==================================================
+/* =========================
 PHOTO EDITOR
-================================================== */
+========================= */
 
-const canvas=
-document.getElementById("canvas");
-
-const ctx=
-canvas.getContext("2d");
-
-let uploadedImage=
-new Image();
-
-let rotation=0;
+const canvas =
+  document.getElementById("canvas");
 
 
-document
-.getElementById("imageUpload")
-.addEventListener(
-"change",
-function(e){
+const ctx =
+  canvas.getContext("2d");
 
-const file=e.target.files[0];
 
-if(!file)return;
+let uploadedImage =
+  new Image();
 
-const reader=
-new FileReader();
 
-reader.onload=function(event){
-
-uploadedImage.onload=function(){
-
-canvas.width=
-uploadedImage.width;
-
-canvas.height=
-uploadedImage.height;
-
-document
-.getElementById("editor")
-.classList
-.remove("hidden");
-
-drawImage();
-
-};
-
-uploadedImage.src=
-event.target.result;
-
-};
-
-reader.readAsDataURL(file);
-
-});
+let rotation = 0;
 
 
 document
-.getElementById("brightness")
-.addEventListener(
-"input",
-drawImage
-);
+  .getElementById("imageUpload")
+  .addEventListener(
+    "change",
+    function(event){
+
+      const file =
+        event.target.files[0];
+
+
+      if(!file) return;
+
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        function(e){
+
+          uploadedImage.onload =
+            function(){
+
+              canvas.width =
+                uploadedImage.width;
+
+
+              canvas.height =
+                uploadedImage.height;
+
+
+              document
+                .getElementById("editor")
+                .classList
+                .remove("hidden");
+
+
+              drawImage();
+
+            };
+
+
+          uploadedImage.src =
+            e.target.result;
+
+        };
+
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
 
 document
-.getElementById("contrast")
-.addEventListener(
-"input",
-drawImage
-);
+  .getElementById("brightness")
+  .addEventListener(
+    "input",
+    drawImage
+  );
+
 
 document
-.getElementById("saturation")
-.addEventListener(
-"input",
-drawImage
-);
+  .getElementById("contrast")
+  .addEventListener(
+    "input",
+    drawImage
+  );
+
+
+document
+  .getElementById("saturation")
+  .addEventListener(
+    "input",
+    drawImage
+  );
 
 
 function drawImage(){
 
-if(!uploadedImage.src)return;
+  if(!uploadedImage.src) return;
 
-ctx.clearRect(
-0,0,
-canvas.width,
-canvas.height
-);
 
-ctx.save();
+  const brightness =
+    document
+      .getElementById("brightness")
+      .value;
 
-ctx.filter=
-"brightness("+
-document.getElementById("brightness").value+
-"%) contrast("+
-document.getElementById("contrast").value+
-"%) saturate("+
-document.getElementById("saturation").value+
-"%)";
 
-ctx.translate(
-canvas.width/2,
-canvas.height/2
-);
+  const contrast =
+    document
+      .getElementById("contrast")
+      .value;
 
-ctx.rotate(
-rotation*Math.PI/180
-);
 
-ctx.drawImage(
-uploadedImage,
--uploadedImage.width/2,
--uploadedImage.height/2
-);
+  const saturation =
+    document
+      .getElementById("saturation")
+      .value;
 
-ctx.restore();
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  ctx.save();
+
+
+  ctx.filter =
+    "brightness(" +
+    brightness +
+    "%) " +
+
+    "contrast(" +
+    contrast +
+    "%) " +
+
+    "saturate(" +
+    saturation +
+    "%)";
+
+
+  ctx.translate(
+    canvas.width / 2,
+    canvas.height / 2
+  );
+
+
+  ctx.rotate(
+    rotation *
+    Math.PI /
+    180
+  );
+
+
+  ctx.drawImage(
+    uploadedImage,
+    -uploadedImage.width / 2,
+    -uploadedImage.height / 2
+  );
+
+
+  ctx.restore();
 
 }
 
+
+/* =========================
+ROTATE
+========================= */
 
 function rotateImage(){
 
-rotation+=90;
+  rotation += 90;
 
-if(rotation>=360)
-rotation=0;
-
-drawImage();
+  drawImage();
 
 }
 
+
+/* =========================
+RESET
+========================= */
 
 function resetImage(){
 
-rotation=0;
+  rotation = 0;
 
-document.getElementById(
-"brightness"
-).value=100;
 
-document.getElementById(
-"contrast"
-).value=100;
+  document
+    .getElementById("brightness")
+    .value = 100;
 
-document.getElementById(
-"saturation"
-).value=100;
 
-drawImage();
+  document
+    .getElementById("contrast")
+    .value = 100;
+
+
+  document
+    .getElementById("saturation")
+    .value = 100;
+
+
+  drawImage();
 
 }
 
 
-/* ==================================================
+/* =========================
 ADD PRODUCT
-================================================== */
+========================= */
 
 function addProduct(){
 
-const name=
-document.getElementById(
-"productName"
-).value.trim();
+  if(!loggedIn){
 
-const price=
-document.getElementById(
-"productPrice"
-).value;
+    alert(
+      "Please login as admin first."
+    );
 
-const cat=
-document.getElementById(
-"productCategory"
-).value;
+    return;
 
-if(!name||!price||!uploadedImage.src){
-
-alert(
-"❌ Product name, price and photo are required!"
-);
-
-return;
-
-}
-
-const image=
-canvas.toDataURL(
-"image/jpeg",
-.75
-);
-
-const product={
-
-id:Date.now(),
-
-name:name,
-
-price:Number(price),
-
-category:cat,
-
-image:image
-
-};
-
-products.push(product);
-
-save();
-
-showProducts();
-
-showAdminProducts();
-
-document.getElementById(
-"productName"
-).value="";
-
-document.getElementById(
-"productPrice"
-).value="";
-
-document.getElementById(
-"imageUpload"
-).value="";
-
-document
-.getElementById("editor")
-.classList
-.add("hidden");
-
-uploadedImage=new Image();
-
-rotation=0;
-
-alert(
-"🎉 Product successfully uploaded!"
-);
-
-}
+  }
 
 
-/* ==================================================
-ADMIN PRODUCT LIST + DELETE
-================================================== */
-
-function showAdminProducts(){
-
-const box=
-document.getElementById(
-"adminProducts"
-);
-
-document.getElementById(
-"uploadCount"
-).textContent=
-products.length;
-
-box.innerHTML="";
-
-if(!products.length){
-
-box.innerHTML=
-`<div class="empty">
-📦 No products uploaded.
-</div>`;
-
-return;
-
-}
+  const name =
+    document
+      .getElementById("productName")
+      .value.trim();
 
 
-products
-.slice()
-.reverse()
-.forEach(p=>{
+  const price =
+    document
+      .getElementById("productPrice")
+      .value;
 
-const div=
-document.createElement("div");
 
-div.className=
-"admin-product";
+  const category =
+    document
+      .getElementById("productCategory")
+      .value;
 
-div.innerHTML=`
 
-<img
-src="${p.image}"
-onerror="this.src='logo.png'"
->
+  if(
+    !name ||
+    !price ||
+    !uploadedImage.src
+  ){
 
-<div class="admin-info">
+    alert(
+      "Please enter product name, price and photo!"
+    );
 
-<h3>${safe(p.name)}</h3>
+    return;
 
-<div class="admin-price">
-Rs. ${Number(p.price).toLocaleString()}
-</div>
+  }
 
-<small>
-📂 ${safe(p.category)}
-</small>
 
-</div>
+  const editedImage =
+    canvas.toDataURL("image/jpeg",0.85);
 
-<button
-class="delete"
-onclick="deleteProduct(${p.id})">
-🗑️ Delete
-</button>
 
-`;
+  const product = {
 
-box.appendChild(div);
+    id:Date.now(),
 
-});
+    name:name,
+
+    price:price,
+
+    category:category,
+
+    image:editedImage,
+
+    likes:0,
+
+    ratings:[],
+
+    comments:[]
+
+  };
+
+
+  products.push(product);
+
+
+  saveProducts();
+
+
+  displayProducts();
+
+  displayAdminProducts();
+
+
+  alert(
+    "🎉 Product Successfully Added!"
+  );
+
+
+  document
+    .getElementById("productName")
+    .value = "";
+
+
+  document
+    .getElementById("productPrice")
+    .value = "";
+
+
+  document
+    .getElementById("imageUpload")
+    .value = "";
+
+
+  document
+    .getElementById("editor")
+    .classList
+    .add("hidden");
+
+
+  uploadedImage =
+    new Image();
+
+
+  rotation = 0;
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
+
+/* =========================
+ADMIN PRODUCT LIST
+========================= */
+
+function displayAdminProducts(){
+
+  const list =
+    document
+      .getElementById("adminProductList");
+
+
+  if(!list) return;
+
+
+  list.innerHTML = "";
+
+
+  if(products.length === 0){
+
+    list.innerHTML = `
+      <p style="color:#888;">
+        You have not uploaded any products yet.
+      </p>
+    `;
+
+    return;
+
+  }
+
+
+  products.forEach(product => {
+
+    const item =
+      document.createElement("div");
+
+
+    item.className =
+      "admin-product";
+
+
+    item.innerHTML = `
+
+      <img
+        src="${product.image}"
+        alt=""
+      >
+
+      <div class="admin-product-info">
+
+        <strong>
+          ${escapeHTML(product.name)}
+        </strong>
+
+        <br>
+
+        <span style="color:#e63891;">
+          Rs. ${escapeHTML(String(product.price))}
+        </span>
+
+        <br>
+
+        <small>
+          ${getCategoryIcon(product.category)}
+          ${escapeHTML(product.category)}
+        </small>
+
+      </div>
+
+      <button
+        class="delete-btn"
+        onclick="deleteProduct(${product.id})"
+      >
+        🗑️ Delete
+      </button>
+
+    `;
+
+
+    list.appendChild(item);
+
+  });
+
+}
+
+
+/* =========================
+DELETE PRODUCT
+========================= */
 
 function deleteProduct(id){
 
-const p=
-products.find(
-x=>x.id===id
-);
+  if(!loggedIn){
 
-if(!p)return;
+    alert("Admin login required.");
 
-if(!confirm(
-"🗑️ Delete "+p.name+"?"
-))return;
+    return;
+
+  }
 
 
-products=
-products.filter(
-x=>x.id!==id
-);
+  const product =
+    products.find(
+      p => p.id === id
+    );
 
-cart=
-cart.filter(
-x=>x.id!==id
-);
 
-wishlist=
-wishlist.filter(
-x=>x!==id
-);
+  if(!product) return;
 
-delete reviews[id];
 
-delete likes[id];
+  const yes =
+    confirm(
+      'Delete "' +
+      product.name +
+      '"?'
+    );
 
-save();
 
-showProducts();
+  if(!yes) return;
 
-showAdminProducts();
 
-updateCounts();
+  products =
+    products.filter(
+      p => p.id !== id
+    );
 
-if(currentProduct===id){
 
-closeDetail();
+  saveProducts();
 
-}
 
-alert(
-"✅ Product deleted!"
-);
+  displayProducts();
+
+  displayAdminProducts();
 
 }
 
 
-/* ==================================================
-CATEGORY / NAV
-================================================== */
+/* =========================
+RATING
+========================= */
 
-function filterCategory(c){
+function getAverageRating(product){
 
-category=c;
+  if(
+    !product.ratings ||
+    product.ratings.length === 0
+  ){
 
-showProducts();
+    return 5;
 
-document
-.getElementById("products")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
+  }
 
 
-function adminArea(){
-
-document
-.getElementById("adminArea")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
+  const total =
+    product.ratings.reduce(
+      (sum,r) => sum + r,
+      0
+    );
 
 
-function home(){
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  return Math.round(
+    total / product.ratings.length
+  );
 
 }
 
 
-/* ==================================================
-COUNTS
-================================================== */
+function getStars(number){
 
-function updateCounts(){
+  let stars = "";
 
-document.getElementById(
-"cartCount"
-).textContent=
-cart.length;
+  for(let i=1;i<=5;i++){
 
-document.getElementById(
-"wishCount"
-).textContent=
-wishlist.length;
+    stars +=
+      i <= number
+      ? "⭐"
+      : "☆";
 
-}
+  }
 
-
-/* ==================================================
-MODAL
-================================================== */
-
-function closeModal(id){
-
-document
-.getElementById(id)
-.classList
-.add("hidden");
+  return stars;
 
 }
 
 
-/* ==================================================
-SAFE TEXT
-================================================== */
+/* =========================
+INFO
+========================= */
 
-function safe(text){
+function showInfo(){
 
-const d=
-document.createElement("div");
-
-d.textContent=text;
-
-return d.innerHTML;
+  document
+    .getElementById("infoOverlay")
+    .classList
+    .remove("hidden");
 
 }
 
 
-/* ==================================================
+function closeInfo(){
+
+  document
+    .getElementById("infoOverlay")
+    .classList
+    .add("hidden");
+
+}
+
+
+/* =========================
+HOME
+========================= */
+
+function goHome(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================
+ESCAPE HTML
+========================= */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
 START
-================================================== */
+========================= */
 
-showProducts();
-
-updateCounts();
-
-selectStar(5);
+loadProducts();
 
 </script>
 
