@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Crochet Web Shop</title>
 
 <style>
@@ -15,17 +14,17 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:#fff0f7;
+  background:linear-gradient(135deg,#fff0f7,#ffe1f0,#f4ddff);
   color:#333;
+}
+
+.hidden{
+  display:none!important;
 }
 
 button{
   border:none;
   cursor:pointer;
-}
-
-.hidden{
-  display:none !important;
 }
 
 /* HEADER */
@@ -34,17 +33,17 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:linear-gradient(90deg,#ff4fa3,#d946ef,#9c4dff);
+  background:linear-gradient(90deg,#ff3b91,#d946ef,#914cff);
   color:white;
-  padding:14px 5%;
+  padding:13px 5%;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  box-shadow:0 4px 15px rgba(0,0,0,.15);
+  align-items:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
 .logo{
-  font-size:25px;
+  font-size:24px;
   font-weight:bold;
 }
 
@@ -56,47 +55,80 @@ header{
 .header-buttons button{
   background:white;
   color:#d9368a;
-  padding:10px 14px;
+  padding:9px 13px;
   border-radius:12px;
-  font-size:15px;
+}
+
+/* SEARCH */
+
+.search-section{
+  background:white;
+  padding:15px 5%;
+}
+
+.search-box{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fff0f7;
+  border:2px solid #ffd0e5;
+  border-radius:30px;
+  padding:4px 17px;
+  color:#e63891;
+  font-size:21px;
+}
+
+.search-box input{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  padding:12px 5px;
+  font-size:16px;
 }
 
 /* INFO */
 
-.info-overlay{
+.info-overlay,
+.product-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:2000;
+  background:rgba(0,0,0,.65);
+  z-index:3000;
+  overflow-y:auto;
+  padding:25px 15px;
+}
+
+.info-overlay{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px;
 }
 
 .info-box{
-  background:white;
   max-width:500px;
   width:100%;
+  background:white;
   padding:30px;
   border-radius:25px;
   text-align:center;
-  box-shadow:0 15px 50px rgba(0,0,0,.3);
 }
 
 .info-box h2{
   color:#e63891;
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
 .info-box p{
-  line-height:1.7;
   color:#666;
+  line-height:1.7;
   margin-bottom:20px;
 }
 
 .close-btn{
-  background:linear-gradient(90deg,#ff3f99,#a94cff);
+  background:linear-gradient(90deg,#e63891,#a84cff);
   color:white;
   padding:12px 25px;
   border-radius:12px;
@@ -105,8 +137,8 @@ header{
 /* HERO */
 
 .hero{
-  background:linear-gradient(135deg,#ffd1e8,#f4c7ff,#d9c8ff);
-  padding:25px 5%;
+  background:linear-gradient(135deg,#ffd1e8,#f1c7ff,#d6c8ff);
+  padding:20px 5%;
 }
 
 .hero img{
@@ -136,29 +168,26 @@ header{
   color:#777;
 }
 
-/* CATEGORIES */
+/* CATEGORY */
 
 .category-section{
-  padding:20px 5%;
-  background:#fff;
+  background:white;
+  padding:18px 5%;
 }
 
 .category-scroll{
   display:flex;
-  gap:12px;
+  gap:10px;
   overflow-x:auto;
-  padding:5px;
 }
 
 .category{
   min-width:105px;
-  padding:12px 15px;
+  padding:12px;
   border-radius:18px;
   background:#fff0f7;
   color:#d9368a;
   font-weight:bold;
-  text-align:center;
-  border:2px solid transparent;
 }
 
 .category.active,
@@ -176,8 +205,8 @@ header{
 .products-section h2{
   text-align:center;
   color:#e63891;
-  margin-bottom:25px;
   font-size:30px;
+  margin-bottom:25px;
 }
 
 .product-grid{
@@ -210,29 +239,27 @@ header{
 }
 
 .product-info h3{
-  font-size:18px;
-  margin-bottom:8px;
+  margin:7px 0;
 }
 
 .category-tag{
   display:inline-block;
-  background:#ffe2f0;
+  background:#ffe1ef;
   color:#d9368a;
   padding:5px 9px;
   border-radius:10px;
   font-size:12px;
-  margin-bottom:8px;
 }
 
 .price{
   color:#e63891;
   font-size:21px;
   font-weight:bold;
-  margin:7px 0;
+  margin:8px 0;
 }
 
 .rating{
-  color:#ffb000;
+  color:#ffad00;
   margin:7px 0;
 }
 
@@ -242,20 +269,9 @@ header{
   border-radius:10px;
   background:linear-gradient(90deg,#ff3d99,#a84cff);
   color:white;
-  font-size:15px;
-  margin-top:7px;
 }
 
-/* PRODUCT MODAL */
-
-.product-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  z-index:3000;
-  overflow-y:auto;
-  padding:25px 15px;
-}
+/* PRODUCT DETAIL */
 
 .product-detail{
   max-width:750px;
@@ -263,7 +279,6 @@ header{
   background:white;
   border-radius:25px;
   overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.3);
 }
 
 .detail-image{
@@ -278,12 +293,11 @@ header{
 
 .detail-content h2{
   color:#e63891;
-  margin-bottom:10px;
 }
 
 .detail-price{
   color:#e63891;
-  font-size:27px;
+  font-size:28px;
   font-weight:bold;
   margin:10px 0;
 }
@@ -298,27 +312,14 @@ header{
   flex:1;
   padding:13px;
   border-radius:12px;
-  color:white;
   background:#e63891;
-}
-
-.like-btn{
-  background:#ff6b9d !important;
-}
-
-.comments{
-  margin-top:20px;
-}
-
-.comments h3{
-  margin-bottom:12px;
-  color:#d9368a;
+  color:white;
 }
 
 .comment-box{
   display:flex;
   gap:8px;
-  margin-bottom:15px;
+  margin-top:10px;
 }
 
 .comment-box input{
@@ -326,9 +327,9 @@ header{
 }
 
 .comment-box button{
-  padding:10px 15px;
   background:#e63891;
   color:white;
+  padding:10px 15px;
   border-radius:10px;
 }
 
@@ -336,23 +337,23 @@ header{
   background:#fff0f7;
   padding:10px;
   border-radius:12px;
-  margin:7px 0;
+  margin-top:8px;
 }
 
 .close-detail{
   width:100%;
   padding:12px;
+  margin-top:15px;
+  border-radius:10px;
   background:#333;
   color:white;
-  border-radius:10px;
-  margin-top:15px;
 }
 
 /* ORDER */
 
 .delivery-section{
   padding:50px 20px;
-  background:linear-gradient(135deg,#ffd5e8,#ead4ff);
+  background:linear-gradient(135deg,#ffd5e8,#e7d3ff);
 }
 
 .delivery-box{
@@ -365,8 +366,8 @@ header{
 }
 
 .delivery-box h2{
-  color:#e63891;
   text-align:center;
+  color:#e63891;
   margin-bottom:8px;
 }
 
@@ -376,7 +377,9 @@ header{
   margin-bottom:18px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
   width:100%;
   padding:13px;
   margin:7px 0;
@@ -398,16 +401,11 @@ select:focus{
 
 .delivery-submit{
   width:100%;
+  padding:14px;
   background:linear-gradient(90deg,#e63891,#a84cff);
   color:white;
-  padding:14px;
   border-radius:12px;
   font-size:16px;
-}
-
-#orderMessage{
-  color:green;
-  font-weight:bold;
 }
 
 /* LOGIN */
@@ -423,8 +421,8 @@ select:focus{
   background:white;
   padding:30px;
   border-radius:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,.18);
   text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 .login-box h2{
@@ -443,11 +441,6 @@ select:focus{
   border-radius:12px;
   background:linear-gradient(90deg,#e63891,#a84cff);
   color:white;
-  font-size:16px;
-}
-
-#loginMessage{
-  margin-top:12px;
 }
 
 /* ADMIN */
@@ -490,7 +483,6 @@ select:focus{
   text-align:center;
   border-radius:15px;
   margin:15px 0;
-  cursor:pointer;
 }
 
 .editor{
@@ -506,7 +498,7 @@ select:focus{
   object-fit:contain;
   border:2px solid #eee;
   border-radius:15px;
-  margin-bottom:15px;
+  margin:12px 0;
 }
 
 .editor label{
@@ -520,9 +512,9 @@ select:focus{
 }
 
 .editor button{
-  padding:10px 15px;
   background:#e63891;
   color:white;
+  padding:10px 15px;
   border-radius:10px;
   margin:4px;
 }
@@ -530,18 +522,18 @@ select:focus{
 .add-btn{
   width:100%;
   padding:14px;
-  border-radius:12px;
   background:linear-gradient(90deg,#20a96b,#42c985);
   color:white;
+  border-radius:12px;
   font-size:16px;
 }
 
 .logout-btn{
   width:100%;
   padding:12px;
-  border-radius:12px;
   background:#333;
   color:white;
+  border-radius:12px;
   margin-top:10px;
 }
 
@@ -560,9 +552,9 @@ select:focus{
   display:flex;
   align-items:center;
   gap:15px;
+  background:#fff0f7;
   padding:12px;
   border-radius:15px;
-  background:#fff0f7;
   margin:10px 0;
 }
 
@@ -607,7 +599,7 @@ footer p{
 @media(max-width:600px){
 
   .logo{
-    font-size:20px;
+    font-size:19px;
   }
 
   .header-buttons button{
@@ -651,8 +643,8 @@ footer p{
   .admin-product{
     flex-wrap:wrap;
   }
-
 }
+
 </style>
 </head>
 
@@ -681,9 +673,32 @@ footer p{
 </header>
 
 
-<!-- INFORMATION -->
+<!-- SEARCH -->
 
-<div id="infoOverlay" class="info-overlay hidden">
+<section class="search-section">
+
+  <div class="search-box">
+
+    🔍
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search products..."
+      oninput="searchProducts()"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- INFO -->
+
+<div
+  id="infoOverlay"
+  class="info-overlay hidden"
+>
 
   <div class="info-box">
 
@@ -704,7 +719,10 @@ footer p{
       Thank you for visiting Crochet Web! 🧶💗
     </p>
 
-    <button class="close-btn" onclick="closeInfo()">
+    <button
+      class="close-btn"
+      onclick="closeInfo()"
+    >
       Thank You ❤️
     </button>
 
@@ -717,7 +735,10 @@ footer p{
 
 <section class="hero">
 
-  <img src="logo.png" alt="Crochet Web">
+  <img
+    src="logo.png"
+    alt="Crochet Web"
+  >
 
 </section>
 
@@ -726,7 +747,9 @@ footer p{
 
 <section class="welcome">
 
-  <h1>🧶 Crochet Collection</h1>
+  <h1>
+    🧶 Crochet Collection
+  </h1>
 
   <p>
     Beautiful handmade products made with love ❤️
@@ -741,27 +764,45 @@ footer p{
 
   <div class="category-scroll">
 
-    <button class="category active" onclick="filterProducts('All',this)">
+    <button
+      class="category active"
+      onclick="filterProducts('All',this)"
+    >
       🛍️ All
     </button>
 
-    <button class="category" onclick="filterProducts('Bags',this)">
+    <button
+      class="category"
+      onclick="filterProducts('Bags',this)"
+    >
       👜 Bags
     </button>
 
-    <button class="category" onclick="filterProducts('Keychains',this)">
+    <button
+      class="category"
+      onclick="filterProducts('Keychains',this)"
+    >
       🔑 Keychains
     </button>
 
-    <button class="category" onclick="filterProducts('Flowers',this)">
+    <button
+      class="category"
+      onclick="filterProducts('Flowers',this)"
+    >
       🌸 Flowers
     </button>
 
-    <button class="category" onclick="filterProducts('Toys',this)">
+    <button
+      class="category"
+      onclick="filterProducts('Toys',this)"
+    >
       🧸 Toys
     </button>
 
-    <button class="category" onclick="filterProducts('Accessories',this)">
+    <button
+      class="category"
+      onclick="filterProducts('Accessories',this)"
+    >
       🎀 Accessories
     </button>
 
@@ -774,20 +815,30 @@ footer p{
 
 <section class="products-section">
 
-  <h2>🛍️ Our Products</h2>
+  <h2>
+    🛍️ Our Products
+  </h2>
 
-  <div id="productList" class="product-grid"></div>
+  <div
+    id="productList"
+    class="product-grid"
+  ></div>
 
 </section>
 
 
 <!-- ORDER -->
 
-<section class="delivery-section" id="deliverySection">
+<section
+  class="delivery-section"
+  id="deliverySection"
+>
 
   <div class="delivery-box">
 
-    <h2>🚚 Order & Home Delivery</h2>
+    <h2>
+      🚚 Order & Home Delivery
+    </h2>
 
     <p>
       Select a product and fill in your details.
@@ -839,11 +890,16 @@ footer p{
 
 <!-- ADMIN LOGIN -->
 
-<section class="login-section" id="loginSection">
+<section
+  class="login-section"
+  id="loginSection"
+>
 
   <div class="login-box">
 
-    <h2>🔐 Admin Login</h2>
+    <h2>
+      🔐 Admin Login
+    </h2>
 
     <p>
       This login is only for the website admin.
@@ -884,7 +940,9 @@ footer p{
 
   <div class="admin-box">
 
-    <h2>👤 Admin Profile</h2>
+    <h2>
+      👤 Admin Profile
+    </h2>
 
     <div class="profile-info">
 
@@ -903,7 +961,10 @@ footer p{
     </div>
 
 
-    <h2>➕ Add New Product</h2>
+    <h2>
+      ➕ Add New Product
+    </h2>
+
 
     <input
       type="text"
@@ -911,23 +972,35 @@ footer p{
       placeholder="Product Name"
     >
 
+
     <input
       type="number"
       id="productPrice"
       placeholder="Product Price (Rs.)"
     >
 
+
     <select id="productCategory">
 
-      <option value="Bags">👜 Bags</option>
+      <option value="Bags">
+        👜 Bags
+      </option>
 
-      <option value="Keychains">🔑 Keychains</option>
+      <option value="Keychains">
+        🔑 Keychains
+      </option>
 
-      <option value="Flowers">🌸 Flowers</option>
+      <option value="Flowers">
+        🌸 Flowers
+      </option>
 
-      <option value="Toys">🧸 Toys</option>
+      <option value="Toys">
+        🧸 Toys
+      </option>
 
-      <option value="Accessories">🎀 Accessories</option>
+      <option value="Accessories">
+        🎀 Accessories
+      </option>
 
     </select>
 
@@ -952,12 +1025,17 @@ footer p{
       class="editor hidden"
     >
 
-      <h3>✨ Photo Editor</h3>
+      <h3>
+        ✨ Photo Editor
+      </h3>
 
       <canvas id="canvas"></canvas>
 
+
       <label>
+
         ☀️ Brightness
+
         <input
           type="range"
           id="brightness"
@@ -965,10 +1043,14 @@ footer p{
           max="200"
           value="100"
         >
+
       </label>
 
+
       <label>
+
         🎨 Contrast
+
         <input
           type="range"
           id="contrast"
@@ -976,10 +1058,14 @@ footer p{
           max="200"
           value="100"
         >
+
       </label>
 
+
       <label>
+
         🌈 Saturation
+
         <input
           type="range"
           id="saturation"
@@ -987,11 +1073,14 @@ footer p{
           max="200"
           value="100"
         >
+
       </label>
+
 
       <button onclick="rotateImage()">
         🔄 Rotate
       </button>
+
 
       <button onclick="resetImage()">
         ↩️ Reset
@@ -1066,16 +1155,14 @@ footer p{
       <div
         id="detailRating"
         class="rating"
-      >
-        ⭐⭐⭐⭐⭐
-      </div>
+      ></div>
+
 
       <div class="detail-buttons">
 
         <button
-          onclick="likeProduct()"
-          class="like-btn"
           id="likeButton"
+          onclick="likeProduct()"
         >
           ❤️ Like 0
         </button>
@@ -1089,9 +1176,11 @@ footer p{
       </div>
 
 
-      <div class="comments">
+      <div>
 
-        <h3>💬 Comments</h3>
+        <h3 style="color:#d9368a;">
+          💬 Comments
+        </h3>
 
         <div class="comment-box">
 
@@ -1130,14 +1219,16 @@ footer p{
 
 <footer>
 
-  <h2>🚚 FREE HOME DELIVERY</h2>
+  <h2>
+    🚚 FREE HOME DELIVERY
+  </h2>
 
   <p>
     We deliver your favorite products to your home ❤️
   </p>
 
   <p>
-    📞 Contact: 03054330064
+    📞 Contact: 030543330064
   </p>
 
   <p>
@@ -1149,20 +1240,15 @@ footer p{
 
 <script>
 
-/* =========================
-ADMIN LOGIN
-========================= */
+/* ADMIN LOGIN */
 
 const CORRECT_NAME = "Sameeha";
 const CORRECT_PASSWORD = "crochet123";
 
-
 let loggedIn = false;
 
 
-/* =========================
-PRODUCT DATA
-========================= */
+/* PRODUCTS */
 
 let products = [];
 
@@ -1171,35 +1257,7 @@ let selectedCategory = "All";
 let currentProductId = null;
 
 
-/* =========================
-LOAD PRODUCTS
-========================= */
-
-function loadProducts(){
-
-  const saved =
-    localStorage.getItem("crochetProducts");
-
-  if(saved){
-
-    try{
-
-      products = JSON.parse(saved);
-
-    }catch(error){
-
-      products = [];
-
-    }
-
-  }
-
-  displayProducts();
-
-  displayAdminProducts();
-
-}
-
+/* SAVE */
 
 function saveProducts(){
 
@@ -1211,14 +1269,21 @@ function saveProducts(){
 }
 
 
-/* =========================
-DISPLAY PRODUCTS
-========================= */
+/* SEARCH */
 
-function displayProducts(){
+function searchProducts(){
+
+  const search =
+    document
+      .getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
+
 
   const list =
     document.getElementById("productList");
+
 
   list.innerHTML = "";
 
@@ -1229,8 +1294,22 @@ function displayProducts(){
   if(selectedCategory !== "All"){
 
     filtered =
-      products.filter(
-        p => p.category === selectedCategory
+      filtered.filter(
+        product =>
+          product.category === selectedCategory
+      );
+
+  }
+
+
+  if(search){
+
+    filtered =
+      filtered.filter(
+        product =>
+          product.name
+            .toLowerCase()
+            .includes(search)
       );
 
   }
@@ -1239,18 +1318,29 @@ function displayProducts(){
   if(filtered.length === 0){
 
     list.innerHTML = `
+
       <div style="
         grid-column:1/-1;
         text-align:center;
         background:white;
-        padding:35px;
+        padding:40px;
         border-radius:20px;
       ">
-        <h3>🧶 No products yet</h3>
-        <p style="color:#777;margin-top:8px;">
+
+        <div style="font-size:45px;">
+          🔍
+        </div>
+
+        <h3>
+          No product found
+        </h3>
+
+        <p style="color:#888;margin-top:8px;">
           Admin can add products from the login section.
         </p>
+
       </div>
+
     `;
 
     return;
@@ -1266,7 +1356,7 @@ function displayProducts(){
     card.className = "product";
 
 
-    const averageRating =
+    const average =
       getAverageRating(product);
 
 
@@ -1283,8 +1373,10 @@ function displayProducts(){
       <div class="product-info">
 
         <span class="category-tag">
+
           ${getCategoryIcon(product.category)}
           ${escapeHTML(product.category)}
+
         </span>
 
         <h3>
@@ -1296,10 +1388,13 @@ function displayProducts(){
         </div>
 
         <div class="rating">
-          ${getStars(averageRating)}
+
+          ${getStars(average)}
+
           <small style="color:#777;">
             (${product.ratings.length})
           </small>
+
         </div>
 
         <button
@@ -1320,64 +1415,55 @@ function displayProducts(){
 }
 
 
-/* =========================
-CATEGORY
-========================= */
+/* CATEGORY */
 
-function filterProducts(category, button){
+function filterProducts(category,button){
 
   selectedCategory = category;
 
 
   document
     .querySelectorAll(".category")
-    .forEach(btn => {
-      btn.classList.remove("active");
-    });
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
 
   button.classList.add("active");
 
 
-  displayProducts();
+  searchProducts();
 
 }
 
 
-/* =========================
-CATEGORY ICON
-========================= */
+/* CATEGORY ICON */
 
 function getCategoryIcon(category){
 
   const icons = {
 
     Bags:"👜",
-
     Keychains:"🔑",
-
     Flowers:"🌸",
-
     Toys:"🧸",
-
     Accessories:"🎀"
 
   };
-
 
   return icons[category] || "🧶";
 
 }
 
 
-/* =========================
-PRODUCT DETAIL
-========================= */
+/* OPEN PRODUCT */
 
 function openProduct(id){
 
   const product =
-    products.find(p => p.id === id);
+    products.find(
+      p => p.id === id
+    );
 
 
   if(!product) return;
@@ -1393,8 +1479,7 @@ function openProduct(id){
 
   document
     .getElementById("detailName")
-    .textContent =
-      product.name;
+    .textContent = product.name;
 
 
   document
@@ -1412,6 +1497,12 @@ function openProduct(id){
 
 
   document
+    .getElementById("detailRating")
+    .textContent =
+      getStars(getAverageRating(product));
+
+
+  document
     .getElementById("likeButton")
     .textContent =
       "❤️ Like " + product.likes;
@@ -1422,25 +1513,27 @@ function openProduct(id){
 
   document
     .getElementById("productOverlay")
-    .classList.remove("hidden");
+    .classList
+    .remove("hidden");
 
 }
 
+
+/* CLOSE */
 
 function closeProduct(){
 
   document
     .getElementById("productOverlay")
-    .classList.add("hidden");
+    .classList
+    .add("hidden");
 
   currentProductId = null;
 
 }
 
 
-/* =========================
-LIKE
-========================= */
+/* LIKE */
 
 function likeProduct(){
 
@@ -1465,14 +1558,12 @@ function likeProduct(){
       "❤️ Like " + product.likes;
 
 
-  displayProducts();
+  searchProducts();
 
 }
 
 
-/* =========================
-COMMENTS
-========================= */
+/* COMMENTS */
 
 function addComment(){
 
@@ -1484,11 +1575,7 @@ function addComment(){
     input.value.trim();
 
 
-  if(!text){
-
-    return;
-
-  }
+  if(!text) return;
 
 
   const product =
@@ -1535,13 +1622,17 @@ function showComments(){
   list.innerHTML = "";
 
 
-  if(!product ||
-     product.comments.length === 0){
+  if(
+    !product ||
+    product.comments.length === 0
+  ){
 
     list.innerHTML = `
-      <p style="color:#888;">
+
+      <p style="color:#888;margin-top:10px;">
         No comments yet. Be the first! 💗
       </p>
+
     `;
 
     return;
@@ -1556,15 +1647,22 @@ function showComments(){
       const div =
         document.createElement("div");
 
+
       div.className = "comment";
 
+
       div.innerHTML = `
+
         💬 ${escapeHTML(comment.text)}
+
         <br>
+
         <small style="color:#999;">
           ${escapeHTML(comment.date)}
         </small>
+
       `;
+
 
       list.appendChild(div);
 
@@ -1573,9 +1671,7 @@ function showComments(){
 }
 
 
-/* =========================
-BUY
-========================= */
+/* BUY */
 
 function buyCurrentProduct(){
 
@@ -1605,25 +1701,7 @@ function buyCurrentProduct(){
 }
 
 
-function buyProduct(productName){
-
-  document
-    .getElementById("selectedProduct")
-    .value = productName;
-
-
-  document
-    .getElementById("deliverySection")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* =========================
-ORDER
-========================= */
+/* ORDER */
 
 function placeOrder(){
 
@@ -1684,6 +1762,7 @@ function placeOrder(){
 
 
   const message =
+
     "🛍️ NEW ORDER - CROCHET WEB\n\n" +
 
     "📦 Product: " +
@@ -1730,9 +1809,7 @@ function placeOrder(){
 }
 
 
-/* =========================
-LOGIN
-========================= */
+/* LOGIN */
 
 function login(){
 
@@ -1764,13 +1841,17 @@ function login(){
 
     document
       .getElementById("adminPanel")
-      .classList.remove("hidden");
+      .classList
+      .remove("hidden");
 
 
     message.style.color = "green";
 
     message.textContent =
       "✅ Login Successful!";
+
+
+    displayAdminProducts();
 
 
     setTimeout(() => {
@@ -1797,9 +1878,7 @@ function login(){
 }
 
 
-/* =========================
-LOGOUT
-========================= */
+/* LOGOUT */
 
 function logout(){
 
@@ -1808,7 +1887,8 @@ function logout(){
 
   document
     .getElementById("adminPanel")
-    .classList.add("hidden");
+    .classList
+    .add("hidden");
 
 
   document
@@ -1820,18 +1900,10 @@ function logout(){
     .getElementById("loginPassword")
     .value = "";
 
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
 }
 
 
-/* =========================
-PHOTO EDITOR
-========================= */
+/* PHOTO EDITOR */
 
 const canvas =
   document.getElementById("canvas");
@@ -1999,9 +2071,7 @@ function drawImage(){
 }
 
 
-/* =========================
-ROTATE
-========================= */
+/* ROTATE */
 
 function rotateImage(){
 
@@ -2012,9 +2082,7 @@ function rotateImage(){
 }
 
 
-/* =========================
-RESET
-========================= */
+/* RESET */
 
 function resetImage(){
 
@@ -2041,9 +2109,7 @@ function resetImage(){
 }
 
 
-/* =========================
-ADD PRODUCT
-========================= */
+/* ADD PRODUCT */
 
 function addProduct(){
 
@@ -2092,7 +2158,10 @@ function addProduct(){
 
 
   const editedImage =
-    canvas.toDataURL("image/jpeg",0.85);
+    canvas.toDataURL(
+      "image/jpeg",
+      0.85
+    );
 
 
   const product = {
@@ -2122,7 +2191,7 @@ function addProduct(){
   saveProducts();
 
 
-  displayProducts();
+  searchProducts();
 
   displayAdminProducts();
 
@@ -2159,18 +2228,10 @@ function addProduct(){
 
   rotation = 0;
 
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
 }
 
 
-/* =========================
-ADMIN PRODUCT LIST
-========================= */
+/* ADMIN PRODUCTS */
 
 function displayAdminProducts(){
 
@@ -2179,18 +2240,17 @@ function displayAdminProducts(){
       .getElementById("adminProductList");
 
 
-  if(!list) return;
-
-
   list.innerHTML = "";
 
 
   if(products.length === 0){
 
     list.innerHTML = `
+
       <p style="color:#888;">
         You have not uploaded any products yet.
       </p>
+
     `;
 
     return;
@@ -2253,15 +2313,15 @@ function displayAdminProducts(){
 }
 
 
-/* =========================
-DELETE PRODUCT
-========================= */
+/* DELETE */
 
 function deleteProduct(id){
 
   if(!loggedIn){
 
-    alert("Admin login required.");
+    alert(
+      "Admin login required."
+    );
 
     return;
 
@@ -2277,15 +2337,17 @@ function deleteProduct(id){
   if(!product) return;
 
 
-  const yes =
-    confirm(
+  if(
+    !confirm(
       'Delete "' +
       product.name +
       '"?'
-    );
+    )
+  ){
 
+    return;
 
-  if(!yes) return;
+  }
 
 
   products =
@@ -2297,16 +2359,14 @@ function deleteProduct(id){
   saveProducts();
 
 
-  displayProducts();
+  searchProducts();
 
   displayAdminProducts();
 
 }
 
 
-/* =========================
-RATING
-========================= */
+/* RATINGS */
 
 function getAverageRating(product){
 
@@ -2328,7 +2388,8 @@ function getAverageRating(product){
 
 
   return Math.round(
-    total / product.ratings.length
+    total /
+    product.ratings.length
   );
 
 }
@@ -2338,7 +2399,11 @@ function getStars(number){
 
   let stars = "";
 
-  for(let i=1;i<=5;i++){
+  for(
+    let i=1;
+    i<=5;
+    i++
+  ){
 
     stars +=
       i <= number
@@ -2352,9 +2417,7 @@ function getStars(number){
 }
 
 
-/* =========================
-INFO
-========================= */
+/* INFO */
 
 function showInfo(){
 
@@ -2376,9 +2439,7 @@ function closeInfo(){
 }
 
 
-/* =========================
-HOME
-========================= */
+/* HOME */
 
 function goHome(){
 
@@ -2390,9 +2451,7 @@ function goHome(){
 }
 
 
-/* =========================
-ESCAPE HTML
-========================= */
+/* ESCAPE HTML */
 
 function escapeHTML(text){
 
@@ -2406,11 +2465,9 @@ function escapeHTML(text){
 }
 
 
-/* =========================
-START
-========================= */
+/* START */
 
-loadProducts();
+searchProducts();
 
 </script>
 
