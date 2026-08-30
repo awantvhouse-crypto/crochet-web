@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Crochet Web 🧶</title>
 
 <style>
@@ -16,88 +15,74 @@
 body{
   font-family:Arial,sans-serif;
   background:
-    radial-gradient(circle at top left,#ffd6eb 0,#fff0f7 30%,#f5ddff 65%,#ffddec 100%);
+    radial-gradient(circle at top left,#ffd1e6,#fff0f7 45%,#ead8ff);
   color:#333;
   min-height:100vh;
 }
 
+.hidden{display:none!important}
+
 button{
+  border:0;
   cursor:pointer;
-  border:none;
 }
-
-.hidden{
-  display:none!important;
-}
-
-/* HEADER */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(10px);
-  box-shadow:0 3px 15px rgba(150,40,100,.12);
+  background:rgba(255,255,255,.95);
+  box-shadow:0 3px 15px rgba(0,0,0,.1);
 }
 
 .nav{
   max-width:1200px;
   margin:auto;
-  min-height:70px;
-  padding:10px 20px;
+  padding:12px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
+  gap:10px;
 }
 
 .logo{
-  font-size:25px;
+  color:#df3489;
+  font-size:23px;
   font-weight:bold;
-  color:#e83e91;
 }
 
 .nav-buttons{
   display:flex;
-  gap:8px;
+  gap:7px;
 }
 
 .nav-btn{
-  background:#ffe1f0;
-  color:#c12670;
-  padding:10px 13px;
+  padding:9px 12px;
   border-radius:12px;
-  font-size:14px;
+  background:#ffe1ef;
+  color:#c32972;
 }
-
-.nav-btn:hover{
-  background:#ffc6e2;
-}
-
-/* HERO */
 
 .hero{
   max-width:1200px;
   margin:20px auto;
-  padding:0 15px;
+  padding:15px;
 }
 
 .hero-box{
   min-height:260px;
   border-radius:30px;
-  padding:45px 25px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,210,234,.8));
+  padding:30px;
+  background:linear-gradient(135deg,#fff,#ffd8e9);
   box-shadow:0 10px 35px rgba(190,50,120,.15);
 }
 
 .hero h1{
-  color:#df3388;
+  color:#df3489;
   font-size:44px;
   margin-bottom:12px;
 }
@@ -107,44 +92,49 @@ header{
   font-size:18px;
 }
 
-/* INFO */
+.info-section,
+.shop,
+.order-section,
+.login-section,
+.admin-section,
+.wishlist-section{
+  max-width:1200px;
+  margin:25px auto;
+  padding:15px;
+}
 
-.info-section{
-  max-width:1000px;
-  margin:20px auto;
-  padding:0 15px;
+.info-box,
+.order-box,
+.login-box,
+.admin-box{
+  background:white;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 7px 25px rgba(0,0,0,.1);
 }
 
 .info-box{
-  background:white;
-  border-radius:22px;
-  padding:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
   text-align:center;
 }
 
-.info-box h2{
-  color:#e83e91;
-  margin-bottom:12px;
+.info-box h2,
+.shop-title,
+.order-box h2,
+.login-box h2,
+.admin-box h2,
+.wishlist-section h2{
+  color:#df3489;
 }
 
 .info-box p{
   color:#666;
   line-height:1.7;
+  margin-top:10px;
 }
 
-/* SEARCH */
-
-.shop{
-  max-width:1200px;
-  margin:25px auto;
-  padding:0 15px;
-}
-
-.shop-title{
+.shop-title,
+.wishlist-section h2{
   text-align:center;
-  color:#df3388;
-  font-size:32px;
   margin-bottom:20px;
 }
 
@@ -153,49 +143,47 @@ header{
   padding:15px;
   border-radius:18px;
   box-shadow:0 5px 20px rgba(0,0,0,.08);
-  margin-bottom:20px;
 }
 
-.search-box input{
+.search-box input,
+.form-input,
+.admin-input,
+.modal-input{
   width:100%;
-  padding:14px;
-  border:2px solid #f2d7e5;
-  border-radius:12px;
+  padding:13px;
+  margin:7px 0;
+  border:2px solid #eee;
+  border-radius:11px;
+  font-size:15px;
   outline:none;
-  font-size:16px;
 }
 
-.search-box input:focus{
+input:focus,
+textarea:focus,
+select:focus{
   border-color:#e83e91;
 }
-
-/* CATEGORIES */
 
 .categories{
   display:flex;
   gap:10px;
   overflow-x:auto;
-  padding-bottom:12px;
-  margin-bottom:20px;
+  padding:15px 0;
 }
 
 .category{
   flex:0 0 auto;
+  padding:10px 15px;
+  border-radius:22px;
   background:white;
-  color:#c52872;
-  padding:11px 16px;
-  border-radius:25px;
-  box-shadow:0 3px 12px rgba(0,0,0,.07);
+  color:#c32972;
   font-weight:bold;
 }
 
-.category.active,
-.category:hover{
+.category.active{
   background:#e83e91;
   color:white;
 }
-
-/* PRODUCTS */
 
 .product-grid{
   display:grid;
@@ -204,54 +192,27 @@ header{
 }
 
 .product{
+  position:relative;
   background:white;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 6px 20px rgba(0,0,0,.10);
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
   transition:.2s;
-  position:relative;
 }
 
 .product:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px rgba(190,40,120,.18);
+  transform:translateY(-3px);
 }
 
-.product-img-box{
+.product-img{
   width:100%;
-  height:190px;
-  background:#fff4f9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.product-img-box img{
-  width:100%;
-  height:100%;
+  height:180px;
   object-fit:contain;
-}
-
-.heart{
-  position:absolute;
-  top:10px;
-  right:10px;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:white;
-  box-shadow:0 3px 10px rgba(0,0,0,.15);
-  font-size:21px;
-  z-index:5;
-}
-
-.heart.active{
-  color:#e83e91;
+  background:#fff5fa;
 }
 
 .product-info{
-  padding:15px;
+  padding:14px;
 }
 
 .product-info h3{
@@ -263,25 +224,37 @@ header{
   color:#e83e91;
   font-size:20px;
   font-weight:bold;
-  margin-bottom:7px;
 }
 
 .stars{
   color:#ffad00;
-  margin-bottom:10px;
-  font-size:14px;
+  margin:7px 0;
 }
 
-.buy-btn{
+.buy-btn,
+.confirm-btn,
+.login-btn,
+.add-btn{
   width:100%;
-  padding:11px;
-  border-radius:10px;
-  background:linear-gradient(90deg,#e83e91,#a84dff);
+  padding:12px;
+  border-radius:11px;
+  background:linear-gradient(90deg,#e83e91,#a74cff);
   color:white;
   font-weight:bold;
 }
 
-/* EMPTY */
+.heart{
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:white;
+  box-shadow:0 3px 10px rgba(0,0,0,.15);
+  font-size:20px;
+  z-index:5;
+}
 
 .empty{
   grid-column:1/-1;
@@ -292,108 +265,13 @@ header{
   color:#777;
 }
 
-/* MODAL */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  background:rgba(0,0,0,.55);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
-}
-
-.modal-box{
-  width:100%;
-  max-width:650px;
-  max-height:90vh;
-  overflow-y:auto;
-  background:white;
-  border-radius:25px;
-  padding:25px;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  right:15px;
-  top:12px;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:#ffe2ef;
-  color:#d02d78;
-  font-size:20px;
-}
-
-.detail-image{
-  width:100%;
-  height:330px;
-  object-fit:contain;
-  background:#fff5fa;
-  border-radius:18px;
-  margin-bottom:15px;
-}
-
-.modal-box h2{
-  color:#df3388;
-  margin-bottom:8px;
-}
-
-.detail-price{
-  color:#e83e91;
-  font-size:25px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.modal-input{
-  width:100%;
-  padding:12px;
-  margin:6px 0;
-  border:2px solid #eee;
-  border-radius:10px;
-}
-
-.modal-button{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  background:#e83e91;
-  color:white;
-  margin-top:8px;
-}
-
-.review{
-  padding:12px;
-  margin-top:10px;
-  background:#fff3f8;
-  border-radius:12px;
-}
-
-.review-stars{
-  color:#ffad00;
-}
-
-/* ORDER */
-
-.order-section{
-  max-width:700px;
-  margin:30px auto;
-  padding:15px;
-}
-
 .order-box{
-  background:white;
-  border-radius:25px;
-  padding:25px;
-  box-shadow:0 8px 25px rgba(0,0,0,.10);
+  max-width:700px;
+  margin:auto;
 }
 
-.order-box h2{
-  color:#e83e91;
+.order-box h2,
+.login-box h2{
   text-align:center;
   margin-bottom:10px;
 }
@@ -404,88 +282,25 @@ header{
   margin-bottom:15px;
 }
 
-.form-input{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:2px solid #eee;
-  border-radius:11px;
-  font-size:15px;
-}
-
-.confirm{
-  width:100%;
-  padding:13px;
-  background:linear-gradient(90deg,#e83e91,#a84dff);
-  color:white;
-  border-radius:11px;
-  font-weight:bold;
-}
-
-#orderMessage{
-  margin-top:12px;
-  text-align:center;
-}
-
-/* LOGIN */
-
-.login-section{
-  max-width:600px;
-  margin:35px auto;
-  padding:15px;
-}
-
 .login-box{
-  background:white;
-  border-radius:25px;
-  padding:28px;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
+  max-width:500px;
+  margin:auto;
 }
 
-.login-box h2{
-  color:#e83e91;
-  text-align:center;
-  margin-bottom:15px;
+.login-btn{
+  margin-top:8px;
 }
 
-.login-box button{
-  width:100%;
-  padding:13px;
-  border-radius:11px;
-  background:linear-gradient(90deg,#e83e91,#a84dff);
-  color:white;
-}
-
-#loginMessage{
+#loginMessage,
+#orderMessage{
   text-align:center;
   margin-top:10px;
 }
 
-/* ADMIN */
-
-.admin-section{
-  max-width:1000px;
-  margin:30px auto;
-  padding:15px;
-}
-
-.admin-box{
-  background:white;
-  border-radius:25px;
-  padding:28px;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
-}
-
-.admin-box h2{
-  color:#e83e91;
-  text-align:center;
-  margin-bottom:20px;
-}
-
 .profile{
   background:#fff0f7;
-  padding:20px;
   border-radius:18px;
+  padding:20px;
   margin-bottom:20px;
 }
 
@@ -493,32 +308,25 @@ header{
   margin:8px 0;
 }
 
-.admin-input{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:2px solid #eee;
-  border-radius:11px;
-}
-
-.upload-btn{
+.upload-box{
   display:block;
-  padding:14px;
-  background:#fff0f7;
-  border:2px dashed #e83e91;
-  color:#c52b72;
-  border-radius:13px;
   text-align:center;
+  padding:15px;
   margin:10px 0;
+  border:2px dashed #e83e91;
+  border-radius:14px;
+  color:#c32972;
+  background:#fff4f9;
 }
 
-.add-btn{
-  width:100%;
-  padding:13px;
-  border-radius:11px;
-  background:linear-gradient(90deg,#e83e91,#a84dff);
-  color:white;
-  font-weight:bold;
+#imagePreview img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  display:block;
+  margin:15px auto;
+  border-radius:12px;
+  background:#fff4f9;
 }
 
 .admin-products{
@@ -528,11 +336,11 @@ header{
 .admin-product{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:12px;
   padding:12px;
   margin:10px 0;
+  background:#fff3f8;
   border-radius:15px;
-  background:#fff4f9;
 }
 
 .admin-product img{
@@ -554,21 +362,64 @@ header{
   border-radius:9px;
 }
 
-/* WISHLIST */
+.logout-btn{
+  width:100%;
+  padding:12px;
+  margin-top:20px;
+  border-radius:11px;
+  background:#ff4d6d;
+  color:white;
+}
 
-.wishlist-section{
-  max-width:1200px;
-  margin:30px auto;
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding:15px;
 }
 
-.wishlist-section h2{
-  text-align:center;
-  color:#e83e91;
-  margin-bottom:20px;
+.modal-box{
+  width:100%;
+  max-width:650px;
+  max-height:90vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:25px;
+  position:relative;
 }
 
-/* FOOTER */
+.close{
+  position:absolute;
+  right:12px;
+  top:10px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#ffe1ef;
+  color:#c32972;
+  font-size:22px;
+}
+
+.detail-image{
+  width:100%;
+  height:320px;
+  object-fit:contain;
+  background:#fff5fa;
+  border-radius:18px;
+  margin-bottom:15px;
+}
+
+.review{
+  background:#fff3f8;
+  padding:12px;
+  border-radius:12px;
+  margin-top:10px;
+}
 
 footer{
   margin-top:40px;
@@ -585,32 +436,21 @@ footer h2{
 
 footer p{
   margin:8px;
-  color:#eee;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
 
   .logo{
-    font-size:19px;
-  }
-
-  .nav{
-    padding:8px 10px;
+    font-size:18px;
   }
 
   .nav-btn{
-    padding:8px 9px;
-    font-size:12px;
+    font-size:11px;
+    padding:8px;
   }
 
   .hero h1{
-    font-size:31px;
-  }
-
-  .hero-box{
-    min-height:220px;
+    font-size:30px;
   }
 
   .product-grid{
@@ -618,12 +458,12 @@ footer p{
     gap:12px;
   }
 
-  .product-img-box{
+  .product-img{
     height:145px;
   }
 
   .product-info{
-    padding:11px;
+    padding:10px;
   }
 
   .product-info h3{
@@ -635,30 +475,26 @@ footer p{
   }
 
   .detail-image{
-    height:260px;
+    height:250px;
   }
 
   .admin-product{
     flex-wrap:wrap;
   }
-
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
   <div class="nav">
 
-    <div class="logo">
-      🧶 Crochet Web
-    </div>
+    <div class="logo">🧶 Crochet Web</div>
 
     <div class="nav-buttons">
-      <button class="nav-btn" onclick="showInfo()">
+
+      <button class="nav-btn" onclick="toggleInfo()">
         ℹ️ Info
       </button>
 
@@ -666,38 +502,34 @@ footer p{
         ❤️ Wishlist
       </button>
 
-      <button class="nav-btn" onclick="scrollToLogin()">
+      <button class="nav-btn" onclick="goAdmin()">
         🔐 Admin
       </button>
+
     </div>
 
   </div>
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
+
   <div class="hero-box">
 
     <div>
+
       <h1>🧶 Crochet Collection</h1>
 
       <p>
         Beautiful handmade products made with love ❤️
       </p>
-      <p>
-        First, please review the information carefully, 
-        and then place the order so there are no mistakes.
-        This is located in the top-right corner of the website.
-         </p>
+
     </div>
 
   </div>
+
 </section>
 
-
-<!-- INFORMATION -->
 
 <section id="infoSection" class="info-section hidden">
 
@@ -708,9 +540,8 @@ footer p{
     <p>
       Hello friends! Agar aapko yeh website achi lagi
       to thank you so much for visiting Crochet Web. ❤️
-      Neeche jo Admin Login diya gaya hai woh sirf
-      admin ke liye hai, taake admin apne products
-      upload aur manage kar sake.
+      Neeche diya gaya Admin Login sirf admin ke liye hai,
+      jahan admin apne products upload aur manage kar sakta hai.
       <br><br>
       Thank you for visiting Crochet Web! 🧶💕
     </p>
@@ -719,8 +550,6 @@ footer p{
 
 </section>
 
-
-<!-- SHOP -->
 
 <section class="shop">
 
@@ -731,9 +560,9 @@ footer p{
   <div class="search-box">
 
     <input
-      type="search"
       id="searchInput"
-      placeholder="🔎 Search products..."
+      type="search"
+      placeholder="🔎 Search product..."
       oninput="filterProducts()"
     >
 
@@ -742,33 +571,45 @@ footer p{
 
   <div class="categories">
 
-    <button class="category active"
-      onclick="selectCategory('All',this)">
+    <button
+      class="category active"
+      onclick="selectCategory('All',this)"
+    >
       🛍️ All
     </button>
 
-    <button class="category"
-      onclick="selectCategory('Crochet',this)">
+    <button
+      class="category"
+      onclick="selectCategory('Crochet',this)"
+    >
       🧶 Crochet
     </button>
 
-    <button class="category"
-      onclick="selectCategory('Keychain',this)">
+    <button
+      class="category"
+      onclick="selectCategory('Keychain',this)"
+    >
       🔑 Keychains
     </button>
 
-    <button class="category"
-      onclick="selectCategory('Bag',this)">
+    <button
+      class="category"
+      onclick="selectCategory('Bag',this)"
+    >
       👜 Bags
     </button>
 
-    <button class="category"
-      onclick="selectCategory('Flower',this)">
+    <button
+      class="category"
+      onclick="selectCategory('Flower',this)"
+    >
       🌸 Flowers
     </button>
 
-    <button class="category"
-      onclick="selectCategory('Other',this)">
+    <button
+      class="category"
+      onclick="selectCategory('Other',this)"
+    >
       ✨ Other
     </button>
 
@@ -786,17 +627,22 @@ footer p{
 </section>
 
 
-<!-- ORDER -->
+<section id="wishlistSection" class="wishlist-section hidden">
 
-<section id="orderSection" class="order-section">
+  <h2>❤️ My Wishlist</h2>
+
+  <div id="wishlistList" class="product-grid"></div>
+
+</section>
+
+
+<section class="order-section" id="orderSection">
 
   <div class="order-box">
 
     <h2>🚚 Order & Home Delivery</h2>
 
-    <p>
-      Select a product and fill in your details.
-    </p>
+    <p>Select a product and fill your details.</p>
 
     <input
       class="form-input"
@@ -807,15 +653,15 @@ footer p{
     <textarea
       class="form-input"
       id="customerAddress"
-      placeholder="Your Full Address"
       rows="4"
+      placeholder="Your Full Address"
     ></textarea>
 
     <input
       class="form-input"
       id="customerPhone"
-      placeholder="Your Phone Number"
       type="tel"
+      placeholder="Your Phone Number"
     >
 
     <input
@@ -831,7 +677,10 @@ footer p{
       readonly
     >
 
-    <button class="confirm" onclick="placeOrder()">
+    <button
+      class="confirm-btn"
+      onclick="placeOrder()"
+    >
       🚚 Confirm Order
     </button>
 
@@ -842,19 +691,6 @@ footer p{
 </section>
 
 
-<!-- WISHLIST -->
-
-<section id="wishlistSection" class="wishlist-section hidden">
-
-  <h2>❤️ My Wishlist</h2>
-
-  <div id="wishlistList" class="product-grid"></div>
-
-</section>
-
-
-<!-- ADMIN LOGIN -->
-
 <section id="loginSection" class="login-section">
 
   <div class="login-box">
@@ -863,31 +699,36 @@ footer p{
 
     <input
       class="form-input"
-      id="loginName"
-      placeholder="Enter Admin Name"
+      id="loginEmail"
+      type="email"
+      placeholder="Admin Email"
     >
 
     <input
       class="form-input"
       id="loginPassword"
       type="password"
-      placeholder="Enter Password"
+      placeholder="Admin Password"
     >
 
-    <button onclick="login()">
-      Login
+    <button
+      class="login-btn"
+      onclick="login()"
+    >
+      🔐 Login
     </button>
 
-    <p id="loginMessage"></p>
+    <div id="loginMessage"></div>
 
   </div>
 
 </section>
 
 
-<!-- ADMIN PANEL -->
-
-<section id="adminPanel" class="admin-section hidden">
+<section
+  id="adminPanel"
+  class="admin-section hidden"
+>
 
   <div class="admin-box">
 
@@ -896,7 +737,8 @@ footer p{
     <div class="profile">
 
       <p>
-        <strong>Name:</strong> Sameeha
+        <strong>Email:</strong>
+        <span id="adminEmail"></span>
       </p>
 
       <p>
@@ -925,36 +767,25 @@ footer p{
       placeholder="Product Price (Rs.)"
     >
 
-
     <select
       class="admin-input"
       id="productCategory"
     >
 
-      <option value="Crochet">
-        🧶 Crochet
-      </option>
+      <option value="Crochet">🧶 Crochet</option>
 
-      <option value="Keychain">
-        🔑 Keychain
-      </option>
+      <option value="Keychain">🔑 Keychain</option>
 
-      <option value="Bag">
-        👜 Bag
-      </option>
+      <option value="Bag">👜 Bag</option>
 
-      <option value="Flower">
-        🌸 Flower
-      </option>
+      <option value="Flower">🌸 Flower</option>
 
-      <option value="Other">
-        ✨ Other
-      </option>
+      <option value="Other">✨ Other</option>
 
     </select>
 
 
-    <label class="upload-btn">
+    <label class="upload-box">
 
       📷 Select Product Photo
 
@@ -966,7 +797,6 @@ footer p{
       >
 
     </label>
-
 
     <div id="imagePreview"></div>
 
@@ -981,24 +811,15 @@ footer p{
 
     <div class="admin-products">
 
-      <h2>
-        📦 My Uploaded Products
-      </h2>
+      <h2>📦 My Uploaded Products</h2>
 
-      <div id="adminProductList">
-
-        <div class="empty">
-          Loading your products...
-        </div>
-
-      </div>
+      <div id="adminProductList"></div>
 
     </div>
 
 
     <button
-      class="delete-btn"
-      style="width:100%;margin-top:20px"
+      class="logout-btn"
       onclick="logout()"
     >
       🚪 Logout
@@ -1009,17 +830,18 @@ footer p{
 </section>
 
 
-<!-- PRODUCT DETAIL MODAL -->
-
 <div
   id="productModal"
   class="modal hidden"
-  onclick="closeModalOutside(event)"
+  onclick="closeOutside(event)"
 >
 
   <div class="modal-box">
 
-    <button class="close" onclick="closeProductModal()">
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
       ×
     </button>
 
@@ -1030,19 +852,25 @@ footer p{
 
     <h2 id="detailName"></h2>
 
-    <div id="detailPrice" class="detail-price"></div>
+    <div
+      id="detailPrice"
+      class="price"
+      style="font-size:25px;margin:8px 0"
+    ></div>
 
     <div id="detailStars" class="stars"></div>
 
     <button
       id="detailBuy"
-      class="modal-button"
+      class="buy-btn"
     >
       🛒 Buy Now
     </button>
 
 
-    <h3 style="margin-top:25px;color:#df3388">
+    <h3
+      style="color:#df3489;margin-top:25px"
+    >
       💬 Reviews & Comments
     </h3>
 
@@ -1070,16 +898,15 @@ footer p{
 
     </select>
 
-
     <textarea
       class="modal-input"
       id="reviewComment"
-      placeholder="Write your comment..."
       rows="4"
+      placeholder="Write your comment..."
     ></textarea>
 
     <button
-      class="modal-button"
+      class="buy-btn"
       onclick="submitReview()"
     >
       💬 Submit Review
@@ -1094,8 +921,6 @@ footer p{
 
 </div>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1121,21 +946,22 @@ footer p{
 <script>
 
 /* =====================================================
-   SUPABASE
+   SUPABASE CONNECTION
 ===================================================== */
 
 const SUPABASE_URL =
   "https://ocwtzuwjnceushnytira.supabase.co";
 
 /*
-  YAHAN APNI PUBLISHABLE KEY PASTE KARO.
-  sb_publishable_... wali key.
+  IMPORTANT:
+  YAHAN APNI sb_publishable_... KEY PASTE KARO.
 */
 
 const SUPABASE_KEY =
   "sb_publishable_zMT-DSHVHl0vRiAxeAQvmA_YnbWjaOT";
 
-const supabaseClient =
+
+const db =
   supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
@@ -1143,27 +969,14 @@ const supabaseClient =
 
 
 /* =====================================================
-   ADMIN
-===================================================== */
-
-const ADMIN_NAME = "Sameeha";
-const ADMIN_PASSWORD = "crochet123";
-
-let isAdmin = false;
-
-
-/* =====================================================
-   PRODUCTS
+   VARIABLES
 ===================================================== */
 
 let allProducts = [];
+
 let selectedCategory = "All";
+
 let currentProduct = null;
-
-
-/* =====================================================
-   WISHLIST
-===================================================== */
 
 let wishlist =
   JSON.parse(
@@ -1183,8 +996,9 @@ async function loadProducts(){
   list.innerHTML =
     '<div class="empty">⏳ Loading products...</div>';
 
-  const { data, error } =
-    await supabaseClient
+
+  const {data,error} =
+    await db
       .from("products")
       .select("*")
       .order("created_at",{ascending:false});
@@ -1195,7 +1009,10 @@ async function loadProducts(){
     console.error(error);
 
     list.innerHTML =
-      '<div class="empty">❌ Products load nahi ho sake.</div>';
+      `<div class="empty">
+        ❌ Products load nahi hue.<br><br>
+        ${escapeHTML(error.message)}
+      </div>`;
 
     return;
   }
@@ -1203,11 +1020,9 @@ async function loadProducts(){
 
   allProducts = data || [];
 
-  renderProducts(allProducts);
-
-  if(isAdmin){
-    renderAdminProducts();
-  }
+  renderProducts(
+    getFilteredProducts()
+  );
 
 }
 
@@ -1221,12 +1036,14 @@ function renderProducts(products){
   const list =
     document.getElementById("productList");
 
+
   if(!products.length){
 
     list.innerHTML =
       '<div class="empty">🛍️ No products found.</div>';
 
     return;
+
   }
 
 
@@ -1235,39 +1052,33 @@ function renderProducts(products){
 
   products.forEach(product => {
 
+    const liked =
+      wishlist.includes(product.id);
+
+
     const card =
       document.createElement("div");
 
     card.className = "product";
 
 
-    const isLiked =
-      wishlist.includes(product.id);
-
-
     card.innerHTML = `
 
       <button
-        class="heart ${isLiked ? "active" : ""}"
+        class="heart ${liked ? "active" : ""}"
         onclick="toggleWishlist(event,${product.id})"
       >
-        ${isLiked ? "❤️" : "🤍"}
+        ${liked ? "❤️" : "🤍"}
       </button>
 
-      <div
-        class="product-img-box"
+      <img
+        class="product-img"
+        src="${escapeAttribute(product.image_url)}"
+        alt="${escapeAttribute(product.name)}"
         onclick="openProduct(${product.id})"
       >
-        <img
-          src="${escapeAttribute(product.image_url)}"
-          alt="${escapeAttribute(product.name)}"
-        >
-      </div>
 
-      <div
-        class="product-info"
-        onclick="openProduct(${product.id})"
-      >
+      <div class="product-info">
 
         <h3>
           ${escapeHTML(product.name)}
@@ -1278,7 +1089,7 @@ function renderProducts(products){
         </div>
 
         <div class="stars">
-          ${getStars(product.rating || 0)}
+          ${getStars(product.rating)}
           (${product.review_count || 0})
         </div>
 
@@ -1293,6 +1104,7 @@ function renderProducts(products){
 
     `;
 
+
     list.appendChild(card);
 
   });
@@ -1301,10 +1113,10 @@ function renderProducts(products){
 
 
 /* =====================================================
-   SEARCH
+   SEARCH + FILTER
 ===================================================== */
 
-function filterProducts(){
+function getFilteredProducts(){
 
   const search =
     document
@@ -1314,33 +1126,34 @@ function filterProducts(){
       .trim();
 
 
-  const filtered =
-    allProducts.filter(product => {
+  return allProducts.filter(product => {
 
-      const matchesSearch =
-        product.name
-          .toLowerCase()
-          .includes(search);
-
-
-      const matchesCategory =
-        selectedCategory === "All" ||
-        product.category === selectedCategory;
+    const searchMatch =
+      product.name
+        .toLowerCase()
+        .includes(search);
 
 
-      return matchesSearch && matchesCategory;
+    const categoryMatch =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
 
-    });
 
+    return searchMatch && categoryMatch;
 
-  renderProducts(filtered);
+  });
 
 }
 
 
-/* =====================================================
-   CATEGORY
-===================================================== */
+function filterProducts(){
+
+  renderProducts(
+    getFilteredProducts()
+  );
+
+}
+
 
 function selectCategory(category,button){
 
@@ -1355,6 +1168,7 @@ function selectCategory(category,button){
 
 
   button.classList.add("active");
+
 
   filterProducts();
 
@@ -1373,7 +1187,7 @@ function toggleWishlist(event,id){
   if(wishlist.includes(id)){
 
     wishlist =
-      wishlist.filter(item => item !== id);
+      wishlist.filter(x => x !== id);
 
   }else{
 
@@ -1395,40 +1209,11 @@ function toggleWishlist(event,id){
 }
 
 
-function getFilteredProducts(){
-
-  const search =
-    document
-      .getElementById("searchInput")
-      .value
-      .toLowerCase()
-      .trim();
-
-
-  return allProducts.filter(product => {
-
-    const matchesSearch =
-      product.name
-        .toLowerCase()
-        .includes(search);
-
-
-    const matchesCategory =
-      selectedCategory === "All" ||
-      product.category === selectedCategory;
-
-
-    return matchesSearch && matchesCategory;
-
-  });
-
-}
-
-
 function showWishlist(){
 
   const section =
     document.getElementById("wishlistSection");
+
 
   section.classList.toggle("hidden");
 
@@ -1438,8 +1223,8 @@ function showWishlist(){
 
 
   const products =
-    allProducts.filter(product =>
-      wishlist.includes(product.id)
+    allProducts.filter(p =>
+      wishlist.includes(p.id)
     );
 
 
@@ -1452,12 +1237,14 @@ function showWishlist(){
 
     list.innerHTML = "";
 
+
     products.forEach(product => {
 
       const card =
         document.createElement("div");
 
       card.className = "product";
+
 
       card.innerHTML = `
 
@@ -1468,16 +1255,17 @@ function showWishlist(){
           ❤️
         </button>
 
-        <div
-          class="product-img-box"
+        <img
+          class="product-img"
+          src="${escapeAttribute(product.image_url)}"
           onclick="openProduct(${product.id})"
         >
-          <img src="${escapeAttribute(product.image_url)}">
-        </div>
 
         <div class="product-info">
 
-          <h3>${escapeHTML(product.name)}</h3>
+          <h3>
+            ${escapeHTML(product.name)}
+          </h3>
 
           <div class="price">
             Rs. ${Number(product.price).toLocaleString()}
@@ -1494,11 +1282,13 @@ function showWishlist(){
 
       `;
 
+
       list.appendChild(card);
 
     });
 
   }
+
 
   section.scrollIntoView({
     behavior:"smooth"
@@ -1508,7 +1298,7 @@ function showWishlist(){
 
 
 /* =====================================================
-   PRODUCT DETAIL
+   PRODUCT DETAILS
 ===================================================== */
 
 async function openProduct(id){
@@ -1516,7 +1306,9 @@ async function openProduct(id){
   const product =
     allProducts.find(p => p.id === id);
 
+
   if(!product) return;
+
 
   currentProduct = product;
 
@@ -1524,14 +1316,17 @@ async function openProduct(id){
   document.getElementById("detailImage").src =
     product.image_url;
 
+
   document.getElementById("detailName").textContent =
     product.name;
+
 
   document.getElementById("detailPrice").textContent =
     "Rs. " + Number(product.price).toLocaleString();
 
+
   document.getElementById("detailStars").innerHTML =
-    getStars(product.rating || 0) +
+    getStars(product.rating) +
     " (" + (product.review_count || 0) + ")";
 
 
@@ -1540,7 +1335,7 @@ async function openProduct(id){
 
       buyProduct(null,product.id);
 
-      closeProductModal();
+      closeModal();
 
     };
 
@@ -1555,7 +1350,7 @@ async function openProduct(id){
 }
 
 
-function closeProductModal(){
+function closeModal(){
 
   document
     .getElementById("productModal")
@@ -1564,10 +1359,10 @@ function closeProductModal(){
 }
 
 
-function closeModalOutside(event){
+function closeOutside(event){
 
   if(event.target.id === "productModal"){
-    closeProductModal();
+    closeModal();
   }
 
 }
@@ -1582,12 +1377,13 @@ async function loadReviews(productId){
   const list =
     document.getElementById("reviewsList");
 
+
   list.innerHTML =
     "⏳ Loading reviews...";
 
 
   const {data,error} =
-    await supabaseClient
+    await db
       .from("reviews")
       .select("*")
       .eq("product_id",productId)
@@ -1597,18 +1393,20 @@ async function loadReviews(productId){
   if(error){
 
     list.innerHTML =
-      "❌ Reviews load nahi ho sake.";
+      "❌ Reviews load nahi hue.";
 
     return;
+
   }
 
 
-  if(!data || !data.length){
+  if(!data.length){
 
     list.innerHTML =
-      "<p style='margin-top:12px;color:#777'>No reviews yet. Be the first! 💕</p>";
+      "<p style='color:#777;margin-top:10px'>No reviews yet. Be the first! 💕</p>";
 
     return;
+
   }
 
 
@@ -1622,21 +1420,23 @@ async function loadReviews(productId){
 
     div.className = "review";
 
+
     div.innerHTML = `
 
       <strong>
         ${escapeHTML(review.customer_name)}
       </strong>
 
-      <div class="review-stars">
+      <div class="stars">
         ${"⭐".repeat(review.rating)}
       </div>
 
-      <p style="margin-top:5px">
+      <p>
         ${escapeHTML(review.comment)}
       </p>
 
     `;
+
 
     list.appendChild(div);
 
@@ -1681,7 +1481,7 @@ async function submitReview(){
     message.style.color = "red";
 
     message.textContent =
-      "Please name aur comment fill karein.";
+      "Name aur comment fill karein.";
 
     return;
 
@@ -1689,7 +1489,7 @@ async function submitReview(){
 
 
   const {error} =
-    await supabaseClient
+    await db
       .from("reviews")
       .insert({
 
@@ -1706,12 +1506,12 @@ async function submitReview(){
 
   if(error){
 
-    console.error(error);
-
     message.style.color = "red";
 
     message.textContent =
       "❌ Review submit nahi hua.";
+
+    console.error(error);
 
     return;
 
@@ -1729,7 +1529,7 @@ async function submitReview(){
   document.getElementById("reviewComment").value = "";
 
 
-  await updateProductRating(
+  await updateRating(
     currentProduct.id
   );
 
@@ -1744,13 +1544,13 @@ async function submitReview(){
 
 
 /* =====================================================
-   RATING UPDATE
+   UPDATE RATING
 ===================================================== */
 
-async function updateProductRating(productId){
+async function updateRating(productId){
 
   const {data,error} =
-    await supabaseClient
+    await db
       .from("reviews")
       .select("rating")
       .eq("product_id",productId);
@@ -1759,25 +1559,21 @@ async function updateProductRating(productId){
   if(error || !data) return;
 
 
-  const count = data.length;
+  const count =
+    data.length;
 
 
-  let average = 0;
+  const average =
+    count
+      ? data.reduce(
+          (sum,x) =>
+            sum + Number(x.rating),
+          0
+        ) / count
+      : 0;
 
 
-  if(count){
-
-    average =
-      data.reduce(
-        (sum,item) =>
-          sum + Number(item.rating),
-        0
-      ) / count;
-
-  }
-
-
-  await supabaseClient
+  await db
     .from("products")
     .update({
 
@@ -1807,6 +1603,7 @@ function buyProduct(event,id){
   const product =
     allProducts.find(p => p.id === id);
 
+
   if(!product) return;
 
 
@@ -1826,56 +1623,36 @@ function buyProduct(event,id){
 
 
 /* =====================================================
-   ORDER
+   ORDER / WHATSAPP
 ===================================================== */
 
 function placeOrder(){
 
   const name =
-    document
-      .getElementById("customerName")
-      .value.trim();
-
+    document.getElementById("customerName").value.trim();
 
   const address =
-    document
-      .getElementById("customerAddress")
-      .value.trim();
-
+    document.getElementById("customerAddress").value.trim();
 
   const phone =
-    document
-      .getElementById("customerPhone")
-      .value.trim();
-
+    document.getElementById("customerPhone").value.trim();
 
   const country =
-    document
-      .getElementById("customerCountry")
-      .value.trim();
-
+    document.getElementById("customerCountry").value.trim();
 
   const product =
-    document
-      .getElementById("selectedProduct")
-      .value.trim();
+    document.getElementById("selectedProduct").value.trim();
 
 
-  const messageBox =
+  const box =
     document.getElementById("orderMessage");
 
 
-  if(
-    !name ||
-    !address ||
-    !phone ||
-    !country ||
-    !product
-  ){
+  if(!name || !address || !phone || !country || !product){
 
-    messageBox.style.color = "red";
+    box.style.color = "red";
 
-    messageBox.textContent =
+    box.textContent =
       "❌ Product select karein aur tamam details fill karein.";
 
     return;
@@ -1904,15 +1681,11 @@ function placeOrder(){
     "🚚 Home Delivery Order";
 
 
-  const whatsappURL =
+  window.open(
     "https://wa.me/" +
     myWhatsAppNumber +
     "?text=" +
-    encodeURIComponent(message);
-
-
-  window.open(
-    whatsappURL,
+    encodeURIComponent(message),
     "_blank"
   );
 
@@ -1920,14 +1693,14 @@ function placeOrder(){
 
 
 /* =====================================================
-   ADMIN LOGIN
+   SUPABASE AUTH LOGIN
 ===================================================== */
 
-function login(){
+async function login(){
 
-  const name =
+  const email =
     document
-      .getElementById("loginName")
+      .getElementById("loginEmail")
       .value
       .trim();
 
@@ -1942,42 +1715,104 @@ function login(){
     document.getElementById("loginMessage");
 
 
-  if(
-    name.toLowerCase() ===
-      ADMIN_NAME.toLowerCase()
-    &&
-    password === ADMIN_PASSWORD
-  ){
-
-    isAdmin = true;
-
-
-    document
-      .getElementById("adminPanel")
-      .classList.remove("hidden");
-
-
-    message.style.color = "green";
-
-    message.textContent =
-      "✅ Login Successful!";
-
-
-    document
-      .getElementById("adminPanel")
-      .scrollIntoView({
-        behavior:"smooth"
-      });
-
-
-    renderAdminProducts();
-
-  }else{
+  if(!email || !password){
 
     message.style.color = "red";
 
     message.textContent =
-      "❌ Wrong name or password!";
+      "Email aur password enter karein.";
+
+    return;
+
+  }
+
+
+  const {data,error} =
+    await db.auth.signInWithPassword({
+
+      email:email,
+
+      password:password
+
+    });
+
+
+  if(error){
+
+    message.style.color = "red";
+
+    message.textContent =
+      "❌ Login failed: " +
+      error.message;
+
+    return;
+
+  }
+
+
+  message.style.color = "green";
+
+  message.textContent =
+    "✅ Login Successful!";
+
+
+  showAdmin(data.user);
+
+}
+
+
+/* =====================================================
+   SHOW ADMIN
+===================================================== */
+
+function showAdmin(user){
+
+  if(!user) return;
+
+
+  document
+    .getElementById("adminPanel")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("adminEmail")
+    .textContent =
+      user.email || "";
+
+
+  document
+    .getElementById("loginSection")
+    .classList.add("hidden");
+
+
+  renderAdminProducts();
+
+
+  document
+    .getElementById("adminPanel")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CHECK EXISTING LOGIN
+===================================================== */
+
+async function checkLogin(){
+
+  const {data} =
+    await db.auth.getSession();
+
+
+  if(data.session){
+
+    showAdmin(
+      data.session.user
+    );
 
   }
 
@@ -1985,22 +1820,67 @@ function login(){
 
 
 /* =====================================================
-   ADMIN PRODUCTS
+   LOGOUT
+===================================================== */
+
+async function logout(){
+
+  await db.auth.signOut();
+
+
+  document
+    .getElementById("adminPanel")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("loginSection")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("loginMessage")
+    .textContent =
+      "Logged out.";
+
+}
+
+
+/* =====================================================
+   ADMIN PRODUCT LIST
 ===================================================== */
 
 async function renderAdminProducts(){
-
-  if(!isAdmin) return;
-
 
   const list =
     document.getElementById("adminProductList");
 
 
+  const {
+    data:userData
+  } =
+    await db.auth.getUser();
+
+
+  const user =
+    userData.user;
+
+
+  if(!user){
+
+    list.innerHTML =
+      '<div class="empty">Please login.</div>';
+
+    return;
+
+  }
+
+
   const {data,error} =
-    await supabaseClient
+    await db
       .from("products")
       .select("*")
+      .eq("user_id",user.id)
       .order("created_at",{ascending:false});
 
 
@@ -2008,6 +1888,8 @@ async function renderAdminProducts(){
 
     list.innerHTML =
       '<div class="empty">❌ Products load nahi hue.</div>';
+
+    console.error(error);
 
     return;
 
@@ -2076,7 +1958,7 @@ async function renderAdminProducts(){
 
 
 /* =====================================================
-   UPLOAD IMAGE
+   IMAGE SELECT
 ===================================================== */
 
 let selectedImageData = "";
@@ -2091,7 +1973,21 @@ document
       const file =
         event.target.files[0];
 
+
       if(!file) return;
+
+
+      if(file.size > 2 * 1024 * 1024){
+
+        alert(
+          "Photo 2MB se choti rakhein."
+        );
+
+        event.target.value = "";
+
+        return;
+
+      }
 
 
       const reader =
@@ -2109,31 +2005,9 @@ document
             .getElementById("imagePreview")
             .innerHTML = `
 
-              <div
-                style="
-                  margin:15px 0;
-                  background:#fff4f9;
-                  padding:15px;
-                  border-radius:15px;
-                  text-align:center;
-                "
+              <img
+                src="${selectedImageData}"
               >
-
-                <p style="margin-bottom:10px">
-                  📷 Selected Photo
-                </p>
-
-                <img
-                  src="${selectedImageData}"
-                  style="
-                    width:150px;
-                    height:150px;
-                    object-fit:contain;
-                    border-radius:12px;
-                  "
-                >
-
-              </div>
 
             `;
 
@@ -2152,9 +2026,21 @@ document
 
 async function addProduct(){
 
-  if(!isAdmin){
+  const {
+    data:userData
+  } =
+    await db.auth.getUser();
 
-    alert("Admin login required.");
+
+  const user =
+    userData.user;
+
+
+  if(!user){
+
+    alert(
+      "Please login as admin first."
+    );
 
     return;
 
@@ -2189,7 +2075,7 @@ async function addProduct(){
   ){
 
     alert(
-      "Product name, price aur photo select karein."
+      "Name, price aur photo zaroor select karein."
     );
 
     return;
@@ -2198,7 +2084,7 @@ async function addProduct(){
 
 
   const {error} =
-    await supabaseClient
+    await db
       .from("products")
       .insert({
 
@@ -2212,7 +2098,9 @@ async function addProduct(){
 
         rating:0,
 
-        review_count:0
+        review_count:0,
+
+        user_id:user.id
 
       });
 
@@ -2222,7 +2110,7 @@ async function addProduct(){
     console.error(error);
 
     alert(
-      "❌ Product upload nahi hua.\n\n" +
+      "❌ Product upload nahi hua:\n\n" +
       error.message
     );
 
@@ -2260,15 +2148,6 @@ async function addProduct(){
 
 async function deleteProduct(id){
 
-  if(!isAdmin){
-
-    alert("Admin login required.");
-
-    return;
-
-  }
-
-
   const yes =
     confirm(
       "Kya aap is product ko delete karna chahte hain?"
@@ -2279,7 +2158,7 @@ async function deleteProduct(id){
 
 
   const {error} =
-    await supabaseClient
+    await db
       .from("products")
       .delete()
       .eq("id",id);
@@ -2288,9 +2167,11 @@ async function deleteProduct(id){
   if(error){
 
     alert(
-      "❌ Delete nahi hua.\n\n" +
+      "❌ Delete nahi hua:\n\n" +
       error.message
     );
+
+    console.error(error);
 
     return;
 
@@ -2298,16 +2179,13 @@ async function deleteProduct(id){
 
 
   wishlist =
-    wishlist.filter(item => item !== id);
+    wishlist.filter(x => x !== id);
 
 
   localStorage.setItem(
     "crochetWishlist",
     JSON.stringify(wishlist)
   );
-
-
-  alert("🗑️ Product deleted.");
 
 
   await loadProducts();
@@ -2318,56 +2196,26 @@ async function deleteProduct(id){
 
 
 /* =====================================================
-   LOGOUT
+   INFO / ADMIN NAVIGATION
 ===================================================== */
 
-function logout(){
+function toggleInfo(){
 
-  isAdmin = false;
-
-
-  document
-    .getElementById("adminPanel")
-    .classList.add("hidden");
-
-
-  document
-    .getElementById("loginMessage")
-    .textContent = "";
-
-
-  document
-    .getElementById("loginSection")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   INFO
-===================================================== */
-
-function showInfo(){
-
-  const info =
+  const section =
     document.getElementById("infoSection");
 
-  info.classList.toggle("hidden");
 
-  info.scrollIntoView({
+  section.classList.toggle("hidden");
+
+
+  section.scrollIntoView({
     behavior:"smooth"
   });
 
 }
 
 
-/* =====================================================
-   LOGIN SCROLL
-===================================================== */
-
-function scrollToLogin(){
+function goAdmin(){
 
   document
     .getElementById("loginSection")
@@ -2384,17 +2232,24 @@ function scrollToLogin(){
 
 function getStars(rating){
 
-  const rounded =
-    Math.round(Number(rating) || 0);
+  const r =
+    Math.max(
+      0,
+      Math.min(
+        5,
+        Math.round(Number(rating) || 0)
+      )
+    );
 
-  return "⭐".repeat(rounded) +
-         "☆".repeat(5-rounded);
+
+  return "⭐".repeat(r) +
+         "☆".repeat(5-r);
 
 }
 
 
 /* =====================================================
-   SECURITY / HTML ESCAPING
+   ESCAPE
 ===================================================== */
 
 function escapeHTML(value){
@@ -2421,6 +2276,8 @@ function escapeAttribute(value){
 ===================================================== */
 
 loadProducts();
+
+checkLogin();
 
 </script>
 
