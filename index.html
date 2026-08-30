@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Crochet Web Shop</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -14,8 +16,11 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#fff0f7,#ffe1f0,#f4ddff);
+  background:
+    radial-gradient(circle at top left,#ffd8ec,transparent 35%),
+    linear-gradient(135deg,#fff0f7,#f8e8ff,#ffe5f1);
   color:#333;
+  min-height:100vh;
 }
 
 .hidden{
@@ -27,8 +32,6 @@ button{
   cursor:pointer;
 }
 
-/* HEADER */
-
 header{
   position:sticky;
   top:0;
@@ -39,7 +42,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow:0 4px 15px rgba(0,0,0,.18);
+  box-shadow:0 4px 18px rgba(0,0,0,.2);
 }
 
 .logo{
@@ -58,8 +61,6 @@ header{
   padding:9px 13px;
   border-radius:12px;
 }
-
-/* SEARCH */
 
 .search-section{
   background:white;
@@ -88,8 +89,6 @@ header{
   padding:12px 5px;
   font-size:16px;
 }
-
-/* INFO */
 
 .info-overlay,
 .product-overlay{
@@ -134,8 +133,6 @@ header{
   border-radius:12px;
 }
 
-/* HERO */
-
 .hero{
   background:linear-gradient(135deg,#ffd1e8,#f1c7ff,#d6c8ff);
   padding:20px 5%;
@@ -149,8 +146,6 @@ header{
   display:block;
   box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-
-/* WELCOME */
 
 .welcome{
   text-align:center;
@@ -167,8 +162,6 @@ header{
 .welcome p{
   color:#777;
 }
-
-/* CATEGORY */
 
 .category-section{
   background:white;
@@ -195,8 +188,6 @@ header{
   background:#e63891;
   color:white;
 }
-
-/* PRODUCTS */
 
 .products-section{
   padding:35px 5%;
@@ -270,8 +261,6 @@ header{
   background:linear-gradient(90deg,#ff3d99,#a84cff);
   color:white;
 }
-
-/* PRODUCT DETAIL */
 
 .product-detail{
   max-width:750px;
@@ -349,8 +338,6 @@ header{
   color:white;
 }
 
-/* ORDER */
-
 .delivery-section{
   padding:50px 20px;
   background:linear-gradient(135deg,#ffd5e8,#e7d3ff);
@@ -408,8 +395,6 @@ select:focus{
   font-size:16px;
 }
 
-/* LOGIN */
-
 .login-section{
   padding:60px 20px;
   background:linear-gradient(135deg,#ffc5df,#dfc5ff,#c6e8ff);
@@ -442,8 +427,6 @@ select:focus{
   background:linear-gradient(90deg,#e63891,#a84cff);
   color:white;
 }
-
-/* ADMIN */
 
 .admin-panel{
   padding:40px 20px;
@@ -537,8 +520,6 @@ select:focus{
   margin-top:10px;
 }
 
-/* ADMIN PRODUCTS */
-
 .my-products{
   margin-top:30px;
 }
@@ -576,8 +557,6 @@ select:focus{
   border-radius:9px;
 }
 
-/* FOOTER */
-
 footer{
   background:#222;
   color:white;
@@ -593,8 +572,6 @@ footer h2{
 footer p{
   margin:8px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
 
@@ -643,14 +620,13 @@ footer p{
   .admin-product{
     flex-wrap:wrap;
   }
+
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -673,8 +649,6 @@ footer p{
 </header>
 
 
-<!-- SEARCH -->
-
 <section class="search-section">
 
   <div class="search-box">
@@ -693,8 +667,6 @@ footer p{
 </section>
 
 
-<!-- INFO -->
-
 <div
   id="infoOverlay"
   class="info-overlay hidden"
@@ -708,12 +680,15 @@ footer p{
       Hello friends! 👋<br><br>
 
       If you like this website, that's great! ❤️
+
       This website is made for our Crochet Collection
       where you can explore beautiful handmade products.
+
       <br><br>
 
       Friends, the login option below is only for the
       admin so the admin can add and manage products.
+
       <br><br>
 
       Thank you for visiting Crochet Web! 🧶💗
@@ -731,8 +706,6 @@ footer p{
 </div>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
   <img
@@ -742,8 +715,6 @@ footer p{
 
 </section>
 
-
-<!-- WELCOME -->
 
 <section class="welcome">
 
@@ -757,8 +728,6 @@ footer p{
 
 </section>
 
-
-<!-- CATEGORIES -->
 
 <section class="category-section">
 
@@ -811,8 +780,6 @@ footer p{
 </section>
 
 
-<!-- PRODUCTS -->
-
 <section class="products-section">
 
   <h2>
@@ -826,8 +793,6 @@ footer p{
 
 </section>
 
-
-<!-- ORDER -->
 
 <section
   class="delivery-section"
@@ -888,8 +853,6 @@ footer p{
 </section>
 
 
-<!-- ADMIN LOGIN -->
-
 <section
   class="login-section"
   id="loginSection"
@@ -930,8 +893,6 @@ footer p{
 
 </section>
 
-
-<!-- ADMIN PANEL -->
 
 <section
   id="adminPanel"
@@ -1018,8 +979,6 @@ footer p{
     </label>
 
 
-    <!-- PHOTO EDITOR -->
-
     <div
       id="editor"
       class="editor hidden"
@@ -1033,7 +992,6 @@ footer p{
 
 
       <label>
-
         ☀️ Brightness
 
         <input
@@ -1043,12 +1001,10 @@ footer p{
           max="200"
           value="100"
         >
-
       </label>
 
 
       <label>
-
         🎨 Contrast
 
         <input
@@ -1058,12 +1014,10 @@ footer p{
           max="200"
           value="100"
         >
-
       </label>
 
 
       <label>
-
         🌈 Saturation
 
         <input
@@ -1073,7 +1027,6 @@ footer p{
           max="200"
           value="100"
         >
-
       </label>
 
 
@@ -1097,8 +1050,6 @@ footer p{
     </button>
 
 
-    <!-- MY PRODUCTS -->
-
     <div class="my-products">
 
       <h3>
@@ -1121,8 +1072,6 @@ footer p{
 
 </section>
 
-
-<!-- PRODUCT DETAILS -->
 
 <div
   id="productOverlay"
@@ -1176,29 +1125,25 @@ footer p{
       </div>
 
 
-      <div>
+      <h3 style="color:#d9368a;">
+        💬 Comments
+      </h3>
 
-        <h3 style="color:#d9368a;">
-          💬 Comments
-        </h3>
+      <div class="comment-box">
 
-        <div class="comment-box">
+        <input
+          type="text"
+          id="commentInput"
+          placeholder="Write a comment..."
+        >
 
-          <input
-            type="text"
-            id="commentInput"
-            placeholder="Write a comment..."
-          >
-
-          <button onclick="addComment()">
-            Post
-          </button>
-
-        </div>
-
-        <div id="commentList"></div>
+        <button onclick="addComment()">
+          Post
+        </button>
 
       </div>
+
+      <div id="commentList"></div>
 
 
       <button
@@ -1214,8 +1159,6 @@ footer p{
 
 </div>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1238,9 +1181,32 @@ footer p{
 </footer>
 
 
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
-/* ADMIN LOGIN */
+/* =========================================
+   SUPABASE CONNECTION
+   ========================================= */
+
+const SUPABASE_URL =
+  "https://ocwtzuwjnceushnytira.supabase.co";
+
+const SUPABASE_KEY =
+  "sb_publishable_zMT-DSHVHl0vRiAxeAQvmA_YnbWjaOT";
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+/* =========================================
+   ADMIN LOGIN
+   ========================================= */
 
 const CORRECT_NAME = "Sameeha";
 const CORRECT_PASSWORD = "crochet123";
@@ -1248,7 +1214,9 @@ const CORRECT_PASSWORD = "crochet123";
 let loggedIn = false;
 
 
-/* PRODUCTS */
+/* =========================================
+   PRODUCTS
+   ========================================= */
 
 let products = [];
 
@@ -1257,19 +1225,69 @@ let selectedCategory = "All";
 let currentProductId = null;
 
 
-/* SAVE */
+/* =========================================
+   LOAD PRODUCTS FROM SUPABASE
+   ========================================= */
 
-function saveProducts(){
+async function loadProducts(){
 
-  localStorage.setItem(
-    "crochetProducts",
-    JSON.stringify(products)
-  );
+  const list =
+    document.getElementById("productList");
+
+
+  list.innerHTML = `
+    <div style="
+      grid-column:1/-1;
+      text-align:center;
+      padding:40px;
+      background:white;
+      border-radius:20px;
+    ">
+      ⏳ Loading products...
+    </div>
+  `;
+
+
+  const { data,error } =
+    await supabaseClient
+      .from("products")
+      .select("*")
+      .order("created_at",{ascending:false});
+
+
+  if(error){
+
+    console.error(error);
+
+    list.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        text-align:center;
+        padding:40px;
+        background:white;
+        border-radius:20px;
+      ">
+        ❌ Could not load products.
+        <br><br>
+        Check your Supabase URL, key and policies.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  products = data || [];
+
+  searchProducts();
 
 }
 
 
-/* SEARCH */
+/* =========================================
+   SEARCH
+   ========================================= */
 
 function searchProducts(){
 
@@ -1288,7 +1306,7 @@ function searchProducts(){
   list.innerHTML = "";
 
 
-  let filtered = products;
+  let filtered = [...products];
 
 
   if(selectedCategory !== "All"){
@@ -1353,6 +1371,7 @@ function searchProducts(){
     const card =
       document.createElement("div");
 
+
     card.className = "product";
 
 
@@ -1364,7 +1383,7 @@ function searchProducts(){
 
       <img
         class="product-image"
-        src="${product.image}"
+        src="${escapeHTML(product.image_url || "")}"
         alt="${escapeHTML(product.name)}"
         onclick="openProduct(${product.id})"
         style="cursor:pointer"
@@ -1375,7 +1394,7 @@ function searchProducts(){
         <span class="category-tag">
 
           ${getCategoryIcon(product.category)}
-          ${escapeHTML(product.category)}
+          ${escapeHTML(product.category || "Other")}
 
         </span>
 
@@ -1390,10 +1409,6 @@ function searchProducts(){
         <div class="rating">
 
           ${getStars(average)}
-
-          <small style="color:#777;">
-            (${product.ratings.length})
-          </small>
 
         </div>
 
@@ -1415,7 +1430,9 @@ function searchProducts(){
 }
 
 
-/* CATEGORY */
+/* =========================================
+   CATEGORY
+   ========================================= */
 
 function filterProducts(category,button){
 
@@ -1437,28 +1454,37 @@ function filterProducts(category,button){
 }
 
 
-/* CATEGORY ICON */
+/* =========================================
+   CATEGORY ICON
+   ========================================= */
 
 function getCategoryIcon(category){
 
   const icons = {
 
     Bags:"👜",
+
     Keychains:"🔑",
+
     Flowers:"🌸",
+
     Toys:"🧸",
+
     Accessories:"🎀"
 
   };
+
 
   return icons[category] || "🧶";
 
 }
 
 
-/* OPEN PRODUCT */
+/* =========================================
+   OPEN PRODUCT
+   ========================================= */
 
-function openProduct(id){
+async function openProduct(id){
 
   const product =
     products.find(
@@ -1474,12 +1500,13 @@ function openProduct(id){
 
   document
     .getElementById("detailImage")
-    .src = product.image;
+    .src = product.image_url;
 
 
   document
     .getElementById("detailName")
-    .textContent = product.name;
+    .textContent =
+      product.name;
 
 
   document
@@ -1497,18 +1524,9 @@ function openProduct(id){
 
 
   document
-    .getElementById("detailRating")
-    .textContent =
-      getStars(getAverageRating(product));
-
-
-  document
     .getElementById("likeButton")
     .textContent =
-      "❤️ Like " + product.likes;
-
-
-  showComments();
+      "❤️ Like " + (product.likes || 0);
 
 
   document
@@ -1516,10 +1534,15 @@ function openProduct(id){
     .classList
     .remove("hidden");
 
+
+  await showComments();
+
 }
 
 
-/* CLOSE */
+/* =========================================
+   CLOSE PRODUCT
+   ========================================= */
 
 function closeProduct(){
 
@@ -1533,9 +1556,11 @@ function closeProduct(){
 }
 
 
-/* LIKE */
+/* =========================================
+   LIKE
+   ========================================= */
 
-function likeProduct(){
+async function likeProduct(){
 
   const product =
     products.find(
@@ -1546,16 +1571,37 @@ function likeProduct(){
   if(!product) return;
 
 
-  product.likes++;
+  const newLikes =
+    (product.likes || 0) + 1;
 
 
-  saveProducts();
+  const { error } =
+    await supabaseClient
+      .from("products")
+      .update({
+        likes:newLikes
+      })
+      .eq("id",product.id);
+
+
+  if(error){
+
+    alert("Could not like product.");
+
+    console.error(error);
+
+    return;
+
+  }
+
+
+  product.likes = newLikes;
 
 
   document
     .getElementById("likeButton")
     .textContent =
-      "❤️ Like " + product.likes;
+      "❤️ Like " + newLikes;
 
 
   searchProducts();
@@ -1563,9 +1609,11 @@ function likeProduct(){
 }
 
 
-/* COMMENTS */
+/* =========================================
+   COMMENTS
+   ========================================= */
 
-function addComment(){
+async function addComment(){
 
   const input =
     document.getElementById("commentInput");
@@ -1575,57 +1623,85 @@ function addComment(){
     input.value.trim();
 
 
-  if(!text) return;
+  if(!text){
+
+    return;
+
+  }
 
 
-  const product =
-    products.find(
-      p => p.id === currentProductId
-    );
+  if(!currentProductId){
+
+    return;
+
+  }
 
 
-  if(!product) return;
+  const { error } =
+    await supabaseClient
+      .from("comments")
+      .insert({
+
+        product_id:currentProductId,
+
+        comment_text:text
+
+      });
 
 
-  product.comments.push({
+  if(error){
 
-    text:text,
+    alert("Could not post comment.");
 
-    date:new Date().toLocaleString()
+    console.error(error);
 
-  });
+    return;
+
+  }
 
 
   input.value = "";
 
 
-  saveProducts();
-
-
-  showComments();
+  await showComments();
 
 }
 
 
-function showComments(){
-
-  const product =
-    products.find(
-      p => p.id === currentProductId
-    );
-
+async function showComments(){
 
   const list =
     document.getElementById("commentList");
 
 
+  list.innerHTML =
+    "⏳ Loading comments...";
+
+
+  const { data,error } =
+    await supabaseClient
+      .from("comments")
+      .select("*")
+      .eq("product_id",currentProductId)
+      .order("created_at",{ascending:false});
+
+
+  if(error){
+
+    list.innerHTML =
+      "❌ Could not load comments.";
+
+    console.error(error);
+
+    return;
+
+  }
+
+
   list.innerHTML = "";
 
 
-  if(
-    !product ||
-    product.comments.length === 0
-  ){
+  if(!data || data.length === 0){
 
     list.innerHTML = `
 
@@ -1640,38 +1716,39 @@ function showComments(){
   }
 
 
-  [...product.comments]
-    .reverse()
-    .forEach(comment => {
+  data.forEach(comment => {
 
-      const div =
-        document.createElement("div");
+    const div =
+      document.createElement("div");
 
 
-      div.className = "comment";
+    div.className = "comment";
 
 
-      div.innerHTML = `
+    div.innerHTML = `
 
-        💬 ${escapeHTML(comment.text)}
+      💬 ${escapeHTML(comment.comment_text)}
 
-        <br>
+      <br>
 
-        <small style="color:#999;">
-          ${escapeHTML(comment.date)}
-        </small>
+      <small style="color:#999;">
+        ${new Date(comment.created_at)
+          .toLocaleString()}
+      </small>
 
-      `;
+    `;
 
 
-      list.appendChild(div);
+    list.appendChild(div);
 
-    });
+  });
 
 }
 
 
-/* BUY */
+/* =========================================
+   BUY
+   ========================================= */
 
 function buyCurrentProduct(){
 
@@ -1686,7 +1763,8 @@ function buyCurrentProduct(){
 
   document
     .getElementById("selectedProduct")
-    .value = product.name;
+    .value =
+      product.name;
 
 
   closeProduct();
@@ -1701,7 +1779,9 @@ function buyCurrentProduct(){
 }
 
 
-/* ORDER */
+/* =========================================
+   WHATSAPP ORDER
+   ========================================= */
 
 function placeOrder(){
 
@@ -1801,7 +1881,8 @@ function placeOrder(){
   );
 
 
-  messageBox.style.color = "green";
+  messageBox.style.color =
+    "green";
 
   messageBox.textContent =
     "✅ Opening WhatsApp...";
@@ -1809,7 +1890,9 @@ function placeOrder(){
 }
 
 
-/* LOGIN */
+/* =========================================
+   LOGIN
+   ========================================= */
 
 function login(){
 
@@ -1845,7 +1928,9 @@ function login(){
       .remove("hidden");
 
 
-    message.style.color = "green";
+    message.style.color =
+      "green";
+
 
     message.textContent =
       "✅ Login Successful!";
@@ -1868,7 +1953,9 @@ function login(){
 
   else{
 
-    message.style.color = "red";
+    message.style.color =
+      "red";
+
 
     message.textContent =
       "❌ Wrong name or password!";
@@ -1878,7 +1965,9 @@ function login(){
 }
 
 
-/* LOGOUT */
+/* =========================================
+   LOGOUT
+   ========================================= */
 
 function logout(){
 
@@ -1903,7 +1992,9 @@ function logout(){
 }
 
 
-/* PHOTO EDITOR */
+/* =========================================
+   PHOTO EDITOR
+   ========================================= */
 
 const canvas =
   document.getElementById("canvas");
@@ -2071,7 +2162,9 @@ function drawImage(){
 }
 
 
-/* ROTATE */
+/* =========================================
+   ROTATE
+   ========================================= */
 
 function rotateImage(){
 
@@ -2082,7 +2175,9 @@ function rotateImage(){
 }
 
 
-/* RESET */
+/* =========================================
+   RESET
+   ========================================= */
 
 function resetImage(){
 
@@ -2109,9 +2204,11 @@ function resetImage(){
 }
 
 
-/* ADD PRODUCT */
+/* =========================================
+   ADD PRODUCT
+   ========================================= */
 
-function addProduct(){
+async function addProduct(){
 
   if(!loggedIn){
 
@@ -2157,81 +2254,181 @@ function addProduct(){
   }
 
 
-  const editedImage =
-    canvas.toDataURL(
-      "image/jpeg",
-      0.85
+  const button =
+    document.querySelector(".add-btn");
+
+
+  button.disabled = true;
+
+  button.textContent =
+    "⏳ Uploading...";
+
+
+  try{
+
+    /* CREATE IMAGE FILE */
+
+    const blob =
+      await new Promise(resolve =>
+        canvas.toBlob(
+          resolve,
+          "image/jpeg",
+          0.85
+        )
+      );
+
+
+    const fileName =
+      Date.now() +
+      "-" +
+      Math.random()
+        .toString(36)
+        .substring(2,9) +
+      ".jpg";
+
+
+    /* UPLOAD IMAGE */
+
+    const { error:uploadError } =
+      await supabaseClient
+        .storage
+        .from("product-images")
+        .upload(
+          fileName,
+          blob,
+          {
+            contentType:"image/jpeg",
+            upsert:false
+          }
+        );
+
+
+    if(uploadError){
+
+      throw uploadError;
+
+    }
+
+
+    /* GET PUBLIC URL */
+
+    const { data:urlData } =
+      supabaseClient
+        .storage
+        .from("product-images")
+        .getPublicUrl(fileName);
+
+
+    const imageUrl =
+      urlData.publicUrl;
+
+
+    /* INSERT PRODUCT */
+
+    const { data,error } =
+      await supabaseClient
+        .from("products")
+        .insert({
+
+          name:name,
+
+          price:Number(price),
+
+          category:category,
+
+          image_url:imageUrl,
+
+          likes:0
+
+        })
+        .select()
+        .single();
+
+
+    if(error){
+
+      /* If database insert fails,
+         remove uploaded image */
+
+      await supabaseClient
+        .storage
+        .from("product-images")
+        .remove([fileName]);
+
+
+      throw error;
+
+    }
+
+
+    products.unshift(data);
+
+
+    searchProducts();
+
+    displayAdminProducts();
+
+
+    alert(
+      "🎉 Product successfully uploaded online!"
     );
 
 
-  const product = {
-
-    id:Date.now(),
-
-    name:name,
-
-    price:price,
-
-    category:category,
-
-    image:editedImage,
-
-    likes:0,
-
-    ratings:[],
-
-    comments:[]
-
-  };
+    document
+      .getElementById("productName")
+      .value = "";
 
 
-  products.push(product);
+    document
+      .getElementById("productPrice")
+      .value = "";
 
 
-  saveProducts();
+    document
+      .getElementById("imageUpload")
+      .value = "";
 
 
-  searchProducts();
-
-  displayAdminProducts();
-
-
-  alert(
-    "🎉 Product Successfully Added!"
-  );
+    document
+      .getElementById("editor")
+      .classList
+      .add("hidden");
 
 
-  document
-    .getElementById("productName")
-    .value = "";
+    uploadedImage =
+      new Image();
 
 
-  document
-    .getElementById("productPrice")
-    .value = "";
+    rotation = 0;
 
+  }
 
-  document
-    .getElementById("imageUpload")
-    .value = "";
+  catch(error){
 
+    console.error(error);
 
-  document
-    .getElementById("editor")
-    .classList
-    .add("hidden");
+    alert(
+      "❌ Upload failed.\n\n" +
+      error.message
+    );
 
+  }
 
-  uploadedImage =
-    new Image();
+  finally{
 
+    button.disabled = false;
 
-  rotation = 0;
+    button.textContent =
+      "✅ DONE - ADD PRODUCT";
+
+  }
 
 }
 
 
-/* ADMIN PRODUCTS */
+/* =========================================
+   ADMIN PRODUCT LIST
+   ========================================= */
 
 function displayAdminProducts(){
 
@@ -2271,7 +2468,7 @@ function displayAdminProducts(){
     item.innerHTML = `
 
       <img
-        src="${product.image}"
+        src="${escapeHTML(product.image_url || "")}"
         alt=""
       >
 
@@ -2291,7 +2488,7 @@ function displayAdminProducts(){
 
         <small>
           ${getCategoryIcon(product.category)}
-          ${escapeHTML(product.category)}
+          ${escapeHTML(product.category || "")}
         </small>
 
       </div>
@@ -2313,9 +2510,11 @@ function displayAdminProducts(){
 }
 
 
-/* DELETE */
+/* =========================================
+   DELETE PRODUCT
+   ========================================= */
 
-function deleteProduct(id){
+async function deleteProduct(id){
 
   if(!loggedIn){
 
@@ -2350,47 +2549,95 @@ function deleteProduct(id){
   }
 
 
-  products =
-    products.filter(
-      p => p.id !== id
+  try{
+
+    /* DELETE DATABASE RECORD */
+
+    const { error } =
+      await supabaseClient
+        .from("products")
+        .delete()
+        .eq("id",id);
+
+
+    if(error){
+
+      throw error;
+
+    }
+
+
+    /* TRY TO DELETE IMAGE */
+
+    if(product.image_url){
+
+      const marker =
+        "/product-images/";
+
+
+      const index =
+        product.image_url.indexOf(marker);
+
+
+      if(index !== -1){
+
+        const filePath =
+          decodeURIComponent(
+            product.image_url
+              .substring(
+                index + marker.length
+              )
+          );
+
+
+        await supabaseClient
+          .storage
+          .from("product-images")
+          .remove([filePath]);
+
+      }
+
+    }
+
+
+    products =
+      products.filter(
+        p => p.id !== id
+      );
+
+
+    searchProducts();
+
+    displayAdminProducts();
+
+
+    alert(
+      "🗑️ Product deleted successfully."
     );
 
+  }
 
-  saveProducts();
+  catch(error){
 
+    console.error(error);
 
-  searchProducts();
+    alert(
+      "❌ Delete failed.\n\n" +
+      error.message
+    );
 
-  displayAdminProducts();
+  }
 
 }
 
 
-/* RATINGS */
+/* =========================================
+   RATINGS
+   ========================================= */
 
 function getAverageRating(product){
 
-  if(
-    !product.ratings ||
-    product.ratings.length === 0
-  ){
-
-    return 5;
-
-  }
-
-
-  const total =
-    product.ratings.reduce(
-      (sum,r) => sum + r,
-      0
-    );
-
-
-  return Math.round(
-    total /
-    product.ratings.length
-  );
+  return 5;
 
 }
 
@@ -2417,7 +2664,9 @@ function getStars(number){
 }
 
 
-/* INFO */
+/* =========================================
+   INFO
+   ========================================= */
 
 function showInfo(){
 
@@ -2439,7 +2688,9 @@ function closeInfo(){
 }
 
 
-/* HOME */
+/* =========================================
+   HOME
+   ========================================= */
 
 function goHome(){
 
@@ -2451,7 +2702,9 @@ function goHome(){
 }
 
 
-/* ESCAPE HTML */
+/* =========================================
+   ESCAPE HTML
+   ========================================= */
 
 function escapeHTML(text){
 
@@ -2465,9 +2718,11 @@ function escapeHTML(text){
 }
 
 
-/* START */
+/* =========================================
+   START
+   ========================================= */
 
-searchProducts();
+loadProducts();
 
 </script>
 
