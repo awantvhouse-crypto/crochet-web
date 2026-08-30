@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Crochet Web Shop</title>
+<title>Crochet Web</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -16,209 +15,177 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:
-    radial-gradient(circle at top left,#ffd8ec,transparent 35%),
-    linear-gradient(135deg,#fff0f7,#f8e8ff,#ffe5f1);
+  background:linear-gradient(135deg,#fff0f7,#ffe0ef,#f6e5ff);
   color:#333;
-  min-height:100vh;
+}
+
+button{
+  border:0;
+  cursor:pointer;
 }
 
 .hidden{
   display:none!important;
 }
 
-button{
-  border:none;
-  cursor:pointer;
-}
+/* HEADER */
 
 header{
+  background:linear-gradient(135deg,#e83e93,#a94cff);
+  color:white;
+  padding:15px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
   position:sticky;
   top:0;
-  z-index:1000;
-  background:linear-gradient(90deg,#ff3b91,#d946ef,#914cff);
-  color:white;
-  padding:13px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 4px 18px rgba(0,0,0,.2);
+  z-index:100;
+  box-shadow:0 3px 15px #0002;
 }
 
 .logo{
-  font-size:24px;
+  font-size:25px;
   font-weight:bold;
+  white-space:nowrap;
 }
 
-.header-buttons{
+.nav-icons{
   display:flex;
   gap:8px;
 }
 
-.header-buttons button{
-  background:white;
-  color:#d9368a;
-  padding:9px 13px;
+.nav-icons button{
+  background:#ffffff25;
+  color:white;
+  padding:10px 13px;
   border-radius:12px;
 }
 
-.search-section{
-  background:white;
-  padding:15px 5%;
+/* INFO */
+
+.info-wrap{
+  padding:18px 6%;
 }
 
-.search-box{
-  max-width:700px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  background:#fff0f7;
-  border:2px solid #ffd0e5;
-  border-radius:30px;
-  padding:4px 17px;
-  color:#e63891;
-  font-size:21px;
-}
-
-.search-box input{
+.info-button{
   width:100%;
-  border:none;
-  outline:none;
-  background:transparent;
-  padding:12px 5px;
+  background:white;
+  color:#d62d80;
+  border-radius:16px;
+  padding:16px;
   font-size:16px;
-}
-
-.info-overlay,
-.product-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  z-index:3000;
-  overflow-y:auto;
-  padding:25px 15px;
-}
-
-.info-overlay{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  box-shadow:0 5px 18px #0001;
 }
 
 .info-box{
-  max-width:500px;
-  width:100%;
   background:white;
-  padding:30px;
-  border-radius:25px;
-  text-align:center;
-}
-
-.info-box h2{
-  color:#e63891;
-  margin-bottom:15px;
-}
-
-.info-box p{
-  color:#666;
+  margin-top:10px;
+  padding:20px;
+  border-radius:16px;
   line-height:1.7;
-  margin-bottom:20px;
+  box-shadow:0 5px 18px #0001;
 }
 
-.close-btn{
-  background:linear-gradient(90deg,#e63891,#a84cff);
-  color:white;
-  padding:12px 25px;
-  border-radius:12px;
-}
+/* HERO */
 
 .hero{
-  background:linear-gradient(135deg,#ffd1e8,#f1c7ff,#d6c8ff);
-  padding:20px 5%;
+  padding:25px 6%;
 }
 
-.hero img{
-  width:100%;
-  max-height:430px;
-  object-fit:cover;
+.hero-box{
+  min-height:250px;
   border-radius:25px;
-  display:block;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-.welcome{
+  background:linear-gradient(135deg,#ff91c7,#d69cff,#a9d9ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:35px 20px;
-  background:white;
+  color:white;
+  padding:30px;
+  box-shadow:0 10px 30px #0002;
 }
 
-.welcome h1{
-  color:#e63891;
-  font-size:38px;
+.hero-box h1{
+  font-size:42px;
   margin-bottom:10px;
 }
 
-.welcome p{
-  color:#777;
+/* SEARCH */
+
+.search-section{
+  padding:10px 6%;
 }
 
-.category-section{
+.search{
+  width:100%;
+  padding:15px;
+  border:2px solid #eee;
+  border-radius:15px;
+  font-size:17px;
   background:white;
-  padding:18px 5%;
+  outline:none;
 }
 
-.category-scroll{
+.search:focus{
+  border-color:#e83e93;
+}
+
+/* CATEGORIES */
+
+.categories{
+  padding:15px 6%;
   display:flex;
   gap:10px;
   overflow-x:auto;
 }
 
 .category{
-  min-width:105px;
-  padding:12px;
-  border-radius:18px;
-  background:#fff0f7;
-  color:#d9368a;
-  font-weight:bold;
+  min-width:max-content;
+  padding:11px 18px;
+  border-radius:25px;
+  background:white;
+  color:#d52d80;
+  box-shadow:0 4px 15px #0001;
 }
 
-.category.active,
-.category:hover{
-  background:#e63891;
+.category.active{
+  background:#e83e93;
   color:white;
 }
 
-.products-section{
-  padding:35px 5%;
+/* PRODUCTS */
+
+.products{
+  padding:20px 6% 50px;
 }
 
-.products-section h2{
+.section-title{
+  color:#d92f82;
   text-align:center;
-  color:#e63891;
+  margin-bottom:20px;
   font-size:30px;
-  margin-bottom:25px;
 }
 
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   gap:20px;
 }
 
-.product{
+.product-card{
   background:white;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 5px 18px rgba(0,0,0,.12);
+  box-shadow:0 7px 22px #0002;
   transition:.2s;
 }
 
-.product:hover{
+.product-card:hover{
   transform:translateY(-4px);
 }
 
-.product-image{
+.product-card img{
   width:100%;
   height:220px;
   object-fit:cover;
@@ -226,592 +193,463 @@ header{
 }
 
 .product-info{
-  padding:15px;
+  padding:16px;
 }
 
 .product-info h3{
-  margin:7px 0;
-}
-
-.category-tag{
-  display:inline-block;
-  background:#ffe1ef;
-  color:#d9368a;
-  padding:5px 9px;
-  border-radius:10px;
-  font-size:12px;
+  margin-bottom:8px;
 }
 
 .price{
-  color:#e63891;
+  color:#e32986;
   font-size:21px;
   font-weight:bold;
-  margin:8px 0;
+  margin-bottom:12px;
 }
 
 .rating{
-  color:#ffad00;
-  margin:7px 0;
+  color:#f5a400;
+  margin-bottom:10px;
 }
 
-.buy-btn{
+.view-btn{
   width:100%;
-  padding:11px;
-  border-radius:10px;
-  background:linear-gradient(90deg,#ff3d99,#a84cff);
+  padding:12px;
+  border-radius:12px;
   color:white;
+  background:linear-gradient(90deg,#e83e93,#a84cff);
 }
 
-.product-detail{
-  max-width:750px;
-  margin:auto;
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.modal-box{
+  width:100%;
+  max-width:650px;
+  max-height:92vh;
+  overflow:auto;
   background:white;
   border-radius:25px;
-  overflow:hidden;
+  padding:20px;
+}
+
+.close{
+  float:right;
+  background:#eee;
+  color:#333;
+  width:35px;
+  height:35px;
+  border-radius:50%;
 }
 
 .detail-image{
   width:100%;
-  max-height:450px;
-  object-fit:cover;
-}
-
-.detail-content{
-  padding:25px;
-}
-
-.detail-content h2{
-  color:#e63891;
-}
-
-.detail-price{
-  color:#e63891;
-  font-size:28px;
-  font-weight:bold;
-  margin:10px 0;
-}
-
-.detail-buttons{
-  display:flex;
-  gap:10px;
-  margin:15px 0;
-}
-
-.detail-buttons button{
-  flex:1;
-  padding:13px;
-  border-radius:12px;
-  background:#e63891;
-  color:white;
-}
-
-.comment-box{
-  display:flex;
-  gap:8px;
+  max-height:380px;
+  object-fit:contain;
+  border-radius:18px;
   margin-top:10px;
 }
 
-.comment-box input{
-  flex:1;
+.detail-title{
+  color:#d92f82;
+  margin-top:15px;
 }
 
-.comment-box button{
-  background:#e63891;
+.like-btn{
+  margin-top:12px;
+  padding:11px 16px;
+  border-radius:12px;
+  background:#ffe4f1;
+  color:#d92f82;
+}
+
+.buy-btn{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border-radius:12px;
   color:white;
-  padding:10px 15px;
+  font-size:17px;
+  background:linear-gradient(90deg,#e83e93,#a84cff);
+}
+
+.comment-box{
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid #eee;
+}
+
+.comment-box input,
+.comment-box textarea,
+.delivery-box input,
+.delivery-box textarea,
+.login-box input,
+.admin-box input,
+.admin-box select{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:2px solid #eee;
+  border-radius:12px;
+  font-size:15px;
+}
+
+.comment-box textarea{
+  min-height:80px;
+}
+
+.comment-btn{
+  background:#e83e93;
+  color:white;
+  padding:11px 18px;
   border-radius:10px;
 }
 
+.comments{
+  margin-top:15px;
+}
+
 .comment{
-  background:#fff0f7;
-  padding:10px;
+  background:#fff2f8;
+  padding:12px;
   border-radius:12px;
   margin-top:8px;
 }
 
-.close-detail{
-  width:100%;
-  padding:12px;
-  margin-top:15px;
-  border-radius:10px;
-  background:#333;
-  color:white;
-}
+/* DELIVERY */
 
 .delivery-section{
-  padding:50px 20px;
-  background:linear-gradient(135deg,#ffd5e8,#e7d3ff);
+  padding:50px 6%;
+  background:white;
 }
 
 .delivery-box{
   max-width:600px;
   margin:auto;
-  background:white;
-  padding:30px;
+  padding:25px;
   border-radius:25px;
-  box-shadow:0 10px 35px rgba(0,0,0,.15);
+  box-shadow:0 5px 25px #0002;
 }
 
 .delivery-box h2{
   text-align:center;
-  color:#e63891;
+  color:#df3285;
   margin-bottom:8px;
 }
 
 .delivery-box p{
   text-align:center;
   color:#777;
-  margin-bottom:18px;
 }
 
-input,
-textarea,
-select{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:2px solid #eee;
-  border-radius:11px;
-  font-size:15px;
-}
-
-textarea{
+.delivery-box textarea{
   min-height:100px;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-  outline:none;
-  border-color:#e63891;
 }
 
 .delivery-submit{
   width:100%;
   padding:14px;
-  background:linear-gradient(90deg,#e63891,#a84cff);
+  background:linear-gradient(90deg,#e83e93,#a84cff);
   color:white;
   border-radius:12px;
   font-size:16px;
 }
 
+#orderMessage{
+  margin-top:12px;
+  font-weight:bold;
+}
+
+/* LOGIN */
+
 .login-section{
-  padding:60px 20px;
-  background:linear-gradient(135deg,#ffc5df,#dfc5ff,#c6e8ff);
+  padding:50px 6%;
 }
 
 .login-box{
   max-width:430px;
   margin:auto;
   background:white;
-  padding:30px;
+  padding:28px;
   border-radius:25px;
+  box-shadow:0 7px 25px #0002;
   text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 .login-box h2{
-  color:#e63891;
+  color:#df3285;
   margin-bottom:8px;
-}
-
-.login-box p{
-  color:#777;
-  margin-bottom:15px;
 }
 
 .login-btn{
   width:100%;
   padding:13px;
-  border-radius:12px;
-  background:linear-gradient(90deg,#e63891,#a84cff);
   color:white;
+  border-radius:12px;
+  background:linear-gradient(90deg,#e83e93,#a84cff);
 }
 
-.admin-panel{
-  padding:40px 20px;
-  background:#fff0f7;
+#loginMessage{
+  margin-top:10px;
+}
+
+/* ADMIN */
+
+.admin-section{
+  padding:40px 6%;
 }
 
 .admin-box{
-  max-width:850px;
+  max-width:750px;
   margin:auto;
   background:white;
-  padding:30px;
+  padding:25px;
   border-radius:25px;
-  box-shadow:0 5px 25px rgba(0,0,0,.12);
+  box-shadow:0 7px 25px #0002;
 }
 
 .admin-box h2{
   text-align:center;
-  color:#e63891;
+  color:#df3285;
   margin-bottom:20px;
 }
 
-.profile-info{
-  background:#fff0f7;
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:25px;
-}
-
-.profile-info p{
-  margin:8px 0;
-}
-
-.upload-box{
-  display:block;
+.profile{
   background:#fff0f7;
   padding:18px;
-  text-align:center;
   border-radius:15px;
-  margin:15px 0;
+  margin-bottom:20px;
 }
 
-.editor{
-  background:#fafafa;
-  padding:15px;
-  border-radius:15px;
-  margin:15px 0;
-}
-
-#canvas{
-  width:100%;
-  max-height:400px;
-  object-fit:contain;
-  border:2px solid #eee;
-  border-radius:15px;
-  margin:12px 0;
-}
-
-.editor label{
+.upload-btn{
   display:block;
-  margin:13px 0;
-  font-weight:bold;
+  text-align:center;
+  padding:14px;
+  background:#ffe1ef;
+  color:#d82f80;
+  border-radius:12px;
+  margin:10px 0;
+  cursor:pointer;
 }
 
-.editor input[type="range"]{
-  padding:0;
-}
-
-.editor button{
-  background:#e63891;
-  color:white;
-  padding:10px 15px;
-  border-radius:10px;
-  margin:4px;
+.upload-btn input{
+  display:none;
 }
 
 .add-btn{
   width:100%;
   padding:14px;
-  background:linear-gradient(90deg,#20a96b,#42c985);
   color:white;
+  background:linear-gradient(90deg,#20ad70,#35c987);
   border-radius:12px;
-  font-size:16px;
 }
 
 .logout-btn{
   width:100%;
   padding:12px;
-  background:#333;
+  background:#444;
   color:white;
   border-radius:12px;
   margin-top:10px;
 }
 
 .my-products{
-  margin-top:30px;
+  margin-top:25px;
 }
 
-.my-products h3{
-  color:#e63891;
-  margin-bottom:15px;
-}
-
-.admin-product{
+.my-product{
   display:flex;
   align-items:center;
-  gap:15px;
-  background:#fff0f7;
-  padding:12px;
-  border-radius:15px;
-  margin:10px 0;
+  gap:12px;
+  padding:10px;
+  border-bottom:1px solid #eee;
 }
 
-.admin-product img{
-  width:80px;
-  height:80px;
+.my-product img{
+  width:70px;
+  height:70px;
   object-fit:cover;
-  border-radius:12px;
-}
-
-.admin-product-info{
-  flex:1;
+  border-radius:10px;
 }
 
 .delete-btn{
-  background:#e53935;
-  color:white;
-  padding:9px 13px;
+  margin-left:auto;
+  padding:9px 12px;
   border-radius:9px;
+  background:#ffdddd;
+  color:#d00;
 }
+
+/* FOOTER */
 
 footer{
   background:#222;
   color:white;
-  text-align:center;
   padding:35px 20px;
+  text-align:center;
 }
 
 footer h2{
-  color:#ff70b8;
+  color:#ff72b8;
   margin-bottom:12px;
 }
 
 footer p{
-  margin:8px;
+  margin:7px;
 }
 
 @media(max-width:600px){
-
-  .logo{
-    font-size:19px;
+  .hero-box h1{
+    font-size:30px;
   }
 
-  .header-buttons button{
-    padding:8px 10px;
-    font-size:13px;
+  .product-card img{
+    height:190px;
   }
 
-  .hero{
-    padding:12px;
+  header{
+    padding:12px 4%;
   }
-
-  .welcome h1{
-    font-size:28px;
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
-
-  .product-image{
-    height:170px;
-  }
-
-  .product-info{
-    padding:11px;
-  }
-
-  .product-info h3{
-    font-size:15px;
-  }
-
-  .price{
-    font-size:18px;
-  }
-
-  .detail-buttons{
-    flex-direction:column;
-  }
-
-  .admin-product{
-    flex-wrap:wrap;
-  }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
+  <div class="logo">🧶 Crochet Web</div>
 
-  <div class="logo">
-    🧶 Crochet Web
+  <div class="nav-icons">
+    <button onclick="scrollToProducts()">🛍️ Shop</button>
+    <button onclick="scrollToDelivery()">🚚 Order</button>
+    <button onclick="scrollToLogin()">🔐 Admin</button>
   </div>
-
-  <div class="header-buttons">
-
-    <button onclick="showInfo()">
-      ℹ️ Info
-    </button>
-
-    <button onclick="goHome()">
-      🏠 Home
-    </button>
-
-  </div>
-
 </header>
 
+<!-- INFORMATION -->
 
-<section class="search-section">
+<section class="info-wrap">
 
-  <div class="search-box">
+  <button class="info-button" onclick="toggleInfo()">
+    ℹ️ About Crochet Web
+  </button>
 
-    🔍
-
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search products..."
-      oninput="searchProducts()"
-    >
-
+  <div id="infoBox" class="info-box hidden">
+    <b>Hello Dosto! 👋</b><br>
+    Agar apko yeh website achi lagi to thank you! ❤️
+    <br><br>
+    Dosto, neeche diya gaya Login sirf admin ke liye hai,
+    takay admin apne products website par add aur manage kar sakay.
+    <br><br>
+    🧶 Thank you for visiting Crochet Web!
   </div>
 
 </section>
 
+<!-- HERO -->
 
-<div
-  id="infoOverlay"
-  class="info-overlay hidden"
->
+<section class="hero">
+  <div class="hero-box">
+    <div>
+      <h1>🧶 Crochet Collection</h1>
+      <p>Beautiful handmade products made with love ❤️</p>
+    </div>
+  </div>
+</section>
 
-  <div class="info-box">
+<!-- SEARCH -->
 
-    <h2>ℹ️ Information</h2>
+<section class="search-section">
+  <input
+    id="searchInput"
+    class="search"
+    type="search"
+    placeholder="🔍 Search products..."
+    oninput="filterProducts()"
+  >
+</section>
 
-    <p>
-      Hello friends! 👋<br><br>
+<!-- CATEGORIES -->
 
-      If you like this website, that's great! ❤️
+<section class="categories">
 
-      This website is made for our Crochet Collection
-      where you can explore beautiful handmade products.
+  <button class="category active" onclick="selectCategory('All',this)">
+    🛍️ All
+  </button>
 
-      <br><br>
+  <button class="category" onclick="selectCategory('Bags',this)">
+    👜 Bags
+  </button>
 
-      Friends, the login option below is only for the
-      admin so the admin can add and manage products.
+  <button class="category" onclick="selectCategory('Keychains',this)">
+    🔑 Keychains
+  </button>
 
-      <br><br>
+  <button class="category" onclick="selectCategory('Toys',this)">
+    🧸 Toys
+  </button>
 
-      Thank you for visiting Crochet Web! 🧶💗
-    </p>
+  <button class="category" onclick="selectCategory('Flowers',this)">
+    🌸 Flowers
+  </button>
 
-    <button
-      class="close-btn"
-      onclick="closeInfo()"
-    >
-      Thank You ❤️
+  <button class="category" onclick="selectCategory('Other',this)">
+    ✨ Other
+  </button>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="productsSection" class="products">
+
+  <h2 class="section-title">🛍️ Our Products</h2>
+
+  <div id="productList" class="product-grid">
+    <p>Loading products...</p>
+  </div>
+
+</section>
+
+<!-- PRODUCT DETAIL -->
+
+<div id="productModal" class="modal hidden">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeProduct()">
+      ✕
     </button>
+
+    <div id="productDetail"></div>
 
   </div>
 
 </div>
 
+<!-- DELIVERY -->
 
-<section class="hero">
-
-  <img
-    src="logo.png"
-    alt="Crochet Web"
-  >
-
-</section>
-
-
-<section class="welcome">
-
-  <h1>
-    🧶 Crochet Collection
-  </h1>
-
-  <p>
-    Beautiful handmade products made with love ❤️
-  </p>
-
-</section>
-
-
-<section class="category-section">
-
-  <div class="category-scroll">
-
-    <button
-      class="category active"
-      onclick="filterProducts('All',this)"
-    >
-      🛍️ All
-    </button>
-
-    <button
-      class="category"
-      onclick="filterProducts('Bags',this)"
-    >
-      👜 Bags
-    </button>
-
-    <button
-      class="category"
-      onclick="filterProducts('Keychains',this)"
-    >
-      🔑 Keychains
-    </button>
-
-    <button
-      class="category"
-      onclick="filterProducts('Flowers',this)"
-    >
-      🌸 Flowers
-    </button>
-
-    <button
-      class="category"
-      onclick="filterProducts('Toys',this)"
-    >
-      🧸 Toys
-    </button>
-
-    <button
-      class="category"
-      onclick="filterProducts('Accessories',this)"
-    >
-      🎀 Accessories
-    </button>
-
-  </div>
-
-</section>
-
-
-<section class="products-section">
-
-  <h2>
-    🛍️ Our Products
-  </h2>
-
-  <div
-    id="productList"
-    class="product-grid"
-  ></div>
-
-</section>
-
-
-<section
-  class="delivery-section"
-  id="deliverySection"
->
+<section id="deliverySection" class="delivery-section">
 
   <div class="delivery-box">
 
-    <h2>
-      🚚 Order & Home Delivery
-    </h2>
+    <h2>🚚 Order & Home Delivery</h2>
 
-    <p>
-      Select a product and fill in your details.
-    </p>
+    <p>Fill your details to order a product.</p>
 
     <input
-      type="text"
       id="customerName"
+      type="text"
       placeholder="Your Name"
     >
 
@@ -821,20 +659,20 @@ footer p{
     ></textarea>
 
     <input
-      type="tel"
       id="customerPhone"
+      type="tel"
       placeholder="Your Phone Number"
     >
 
     <input
-      type="text"
       id="customerCountry"
+      type="text"
       placeholder="Your Country"
     >
 
     <input
-      type="text"
       id="selectedProduct"
+      type="text"
       placeholder="Selected Product"
       readonly
     >
@@ -843,7 +681,7 @@ footer p{
       class="delivery-submit"
       onclick="placeOrder()"
     >
-      🚚 Confirm Order
+      🚚 Confirm Order on WhatsApp
     </button>
 
     <p id="orderMessage"></p>
@@ -852,39 +690,30 @@ footer p{
 
 </section>
 
+<!-- LOGIN -->
 
-<section
-  class="login-section"
-  id="loginSection"
->
+<section id="loginSection" class="login-section">
 
   <div class="login-box">
 
-    <h2>
-      🔐 Admin Login
-    </h2>
+    <h2>🔐 Admin Login</h2>
 
-    <p>
-      This login is only for the website admin.
-    </p>
+    <p>Only admin can add and delete products.</p>
 
     <input
-      type="text"
       id="loginName"
+      type="text"
       placeholder="Admin Name"
     >
 
     <input
-      type="password"
       id="loginPassword"
-      placeholder="Admin Password"
+      type="password"
+      placeholder="Password"
     >
 
-    <button
-      class="login-btn"
-      onclick="login()"
-    >
-      🔐 Login
+    <button class="login-btn" onclick="login()">
+      Login
     </button>
 
     <p id="loginMessage"></p>
@@ -893,178 +722,66 @@ footer p{
 
 </section>
 
+<!-- ADMIN -->
 
-<section
-  id="adminPanel"
-  class="admin-panel hidden"
->
+<section id="adminSection" class="admin-section hidden">
 
   <div class="admin-box">
 
-    <h2>
-      👤 Admin Profile
-    </h2>
+    <h2>👤 My Admin Profile</h2>
 
-    <div class="profile-info">
-
-      <p>
-        <strong>Name:</strong> Sameeha
-      </p>
-
-      <p>
-        <strong>Gender:</strong> Female
-      </p>
-
-      <p>
-        <strong>Role:</strong> Website Admin
-      </p>
-
+    <div class="profile">
+      <p><b>Name:</b> Sameeha</p>
+      <p><b>Gender:</b> Female</p>
+      <p><b>Role:</b> Website Admin</p>
     </div>
 
-
-    <h2>
-      ➕ Add New Product
-    </h2>
-
+    <h2>➕ Add New Product</h2>
 
     <input
-      type="text"
       id="productName"
+      type="text"
       placeholder="Product Name"
     >
 
-
     <input
-      type="number"
       id="productPrice"
+      type="number"
       placeholder="Product Price (Rs.)"
     >
 
-
     <select id="productCategory">
-
-      <option value="Bags">
-        👜 Bags
-      </option>
-
-      <option value="Keychains">
-        🔑 Keychains
-      </option>
-
-      <option value="Flowers">
-        🌸 Flowers
-      </option>
-
-      <option value="Toys">
-        🧸 Toys
-      </option>
-
-      <option value="Accessories">
-        🎀 Accessories
-      </option>
-
+      <option value="Other">✨ Other</option>
+      <option value="Bags">👜 Bags</option>
+      <option value="Keychains">🔑 Keychains</option>
+      <option value="Toys">🧸 Toys</option>
+      <option value="Flowers">🌸 Flowers</option>
     </select>
 
-
-    <label class="upload-box">
-
+    <label class="upload-btn">
       📷 Select Product Photo
-
       <input
-        type="file"
         id="imageUpload"
+        type="file"
         accept="image/*"
       >
-
     </label>
 
-
-    <div
-      id="editor"
-      class="editor hidden"
-    >
-
-      <h3>
-        ✨ Photo Editor
-      </h3>
-
-      <canvas id="canvas"></canvas>
-
-
-      <label>
-        ☀️ Brightness
-
-        <input
-          type="range"
-          id="brightness"
-          min="0"
-          max="200"
-          value="100"
-        >
-      </label>
-
-
-      <label>
-        🎨 Contrast
-
-        <input
-          type="range"
-          id="contrast"
-          min="0"
-          max="200"
-          value="100"
-        >
-      </label>
-
-
-      <label>
-        🌈 Saturation
-
-        <input
-          type="range"
-          id="saturation"
-          min="0"
-          max="200"
-          value="100"
-        >
-      </label>
-
-
-      <button onclick="rotateImage()">
-        🔄 Rotate
-      </button>
-
-
-      <button onclick="resetImage()">
-        ↩️ Reset
-      </button>
-
-    </div>
-
-
-    <button
-      class="add-btn"
-      onclick="addProduct()"
-    >
-      ✅ DONE - ADD PRODUCT
+    <button class="add-btn" onclick="addProduct()">
+      ✅ ADD PRODUCT
     </button>
-
 
     <div class="my-products">
 
-      <h3>
-        📦 My Uploaded Products
-      </h3>
+      <h2>📦 My Uploaded Products</h2>
 
-      <div id="adminProductList"></div>
+      <div id="myProducts">
+        <p>No products yet.</p>
+      </div>
 
     </div>
 
-
-    <button
-      class="logout-btn"
-      onclick="logout()"
-    >
+    <button class="logout-btn" onclick="logout()">
       🚪 Logout
     </button>
 
@@ -1072,372 +789,301 @@ footer p{
 
 </section>
 
-
-<div
-  id="productOverlay"
-  class="product-overlay hidden"
->
-
-  <div class="product-detail">
-
-    <img
-      id="detailImage"
-      class="detail-image"
-      src=""
-      alt=""
-    >
-
-    <div class="detail-content">
-
-      <h2 id="detailName"></h2>
-
-      <div
-        id="detailCategory"
-        class="category-tag"
-      ></div>
-
-      <div
-        id="detailPrice"
-        class="detail-price"
-      ></div>
-
-      <div
-        id="detailRating"
-        class="rating"
-      ></div>
-
-
-      <div class="detail-buttons">
-
-        <button
-          id="likeButton"
-          onclick="likeProduct()"
-        >
-          ❤️ Like 0
-        </button>
-
-        <button
-          onclick="buyCurrentProduct()"
-        >
-          🛒 Buy Now
-        </button>
-
-      </div>
-
-
-      <h3 style="color:#d9368a;">
-        💬 Comments
-      </h3>
-
-      <div class="comment-box">
-
-        <input
-          type="text"
-          id="commentInput"
-          placeholder="Write a comment..."
-        >
-
-        <button onclick="addComment()">
-          Post
-        </button>
-
-      </div>
-
-      <div id="commentList"></div>
-
-
-      <button
-        class="close-detail"
-        onclick="closeProduct()"
-      >
-        ✖ Close
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
+<!-- FOOTER -->
 
 <footer>
 
-  <h2>
-    🚚 FREE HOME DELIVERY
-  </h2>
+  <h2>🚚 FREE HOME DELIVERY</h2>
 
-  <p>
-    We deliver your favorite products to your home ❤️
-  </p>
+  <p>We deliver your favorite crochet products to your home ❤️</p>
 
-  <p>
-    📞 Contact: 030543330064
-  </p>
+  <p>📞 Contact: 03054330064</p>
 
-  <p>
-    © 2026 Crochet Web
-  </p>
+  <p>© 2026 Crochet Web</p>
 
 </footer>
 
 
-<!-- SUPABASE -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 
-/* =========================================
-   SUPABASE CONNECTION
-   ========================================= */
+/* ==================================================
+   SUPABASE
+================================================== */
 
 const SUPABASE_URL =
-  "https://ocwtzuwjnceushnytira.supabase.co";
+"https://ocwtzuwjnceushnytira.supabase.co";
 
 const SUPABASE_KEY =
-  "sb_publishable_zMT-DSHVHl0vRiAxeAQvmA_YnbWjaOT";
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+"sb_publishable_zMT-DSHVHl0vRiAxeAQvmA_YnbWjaOT";
 
 
-/* =========================================
-   ADMIN LOGIN
-   ========================================= */
+/*
+IMPORTANT:
 
-const CORRECT_NAME = "Sameeha";
-const CORRECT_PASSWORD = "crochet123";
+Supabase REST API is used directly.
+Table name required:
 
-let loggedIn = false;
+products
 
+Required columns:
 
-/* =========================================
-   PRODUCTS
-   ========================================= */
+id
+name
+price
+category
+image_url
+likes
+created_at
+*/
+
 
 let products = [];
-
 let selectedCategory = "All";
-
 let currentProductId = null;
 
 
-/* =========================================
-   LOAD PRODUCTS FROM SUPABASE
-   ========================================= */
+/* ==================================================
+   INFO
+================================================== */
 
-async function loadProducts(){
+function toggleInfo(){
 
-  const list =
-    document.getElementById("productList");
-
-
-  list.innerHTML = `
-    <div style="
-      grid-column:1/-1;
-      text-align:center;
-      padding:40px;
-      background:white;
-      border-radius:20px;
-    ">
-      ⏳ Loading products...
-    </div>
-  `;
-
-
-  const { data,error } =
-    await supabaseClient
-      .from("products")
-      .select("*")
-      .order("created_at",{ascending:false});
-
-
-  if(error){
-
-    console.error(error);
-
-    list.innerHTML = `
-      <div style="
-        grid-column:1/-1;
-        text-align:center;
-        padding:40px;
-        background:white;
-        border-radius:20px;
-      ">
-        ❌ Could not load products.
-        <br><br>
-        Check your Supabase URL, key and policies.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  products = data || [];
-
-  searchProducts();
+  document
+    .getElementById("infoBox")
+    .classList.toggle("hidden");
 
 }
 
 
-/* =========================================
-   SEARCH
-   ========================================= */
+/* ==================================================
+   NAVIGATION
+================================================== */
 
-function searchProducts(){
+function scrollToProducts(){
+
+  document
+    .getElementById("productsSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+function scrollToDelivery(){
+
+  document
+    .getElementById("deliverySection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+function scrollToLogin(){
+
+  document
+    .getElementById("loginSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* ==================================================
+   SUPABASE REQUEST
+================================================== */
+
+async function supabaseRequest(
+  endpoint,
+  options={}
+){
+
+  const response =
+    await fetch(
+      SUPABASE_URL +
+      "/rest/v1/" +
+      endpoint,
+      {
+        ...options,
+
+        headers:{
+          "apikey":SUPABASE_KEY,
+
+          "Authorization":
+          "Bearer " + SUPABASE_KEY,
+
+          "Content-Type":
+          "application/json",
+
+          ...(options.headers || {})
+        }
+      }
+    );
+
+  if(!response.ok){
+
+    const error =
+      await response.text();
+
+    throw new Error(error);
+
+  }
+
+  const text =
+    await response.text();
+
+  return text ? JSON.parse(text) : null;
+
+}
+
+
+/* ==================================================
+   LOAD PRODUCTS
+================================================== */
+
+async function loadProducts(){
+
+  try{
+
+    products =
+      await supabaseRequest(
+        "products?select=*&order=created_at.desc"
+      );
+
+    displayProducts();
+    displayMyProducts();
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    document
+      .getElementById("productList")
+      .innerHTML =
+      "<p>❌ Products load nahi ho rahe. Supabase table/policies check karo.</p>";
+
+  }
+
+}
+
+
+/* ==================================================
+   DISPLAY PRODUCTS
+================================================== */
+
+function displayProducts(){
+
+  const list =
+    document.getElementById("productList");
 
   const search =
     document
       .getElementById("searchInput")
       .value
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
 
 
-  const list =
-    document.getElementById("productList");
+  let filtered =
+    products.filter(product => {
+
+      const name =
+        String(product.name || "")
+        .toLowerCase();
+
+      const category =
+        String(product.category || "")
+        .toLowerCase();
 
 
-  list.innerHTML = "";
+      const searchMatch =
+        !search ||
+        name.includes(search) ||
+        category.includes(search);
 
 
-  let filtered = [...products];
+      const categoryMatch =
+        selectedCategory === "All" ||
+        category ===
+        selectedCategory.toLowerCase();
 
 
-  if(selectedCategory !== "All"){
+      return searchMatch && categoryMatch;
 
-    filtered =
-      filtered.filter(
-        product =>
-          product.category === selectedCategory
-      );
-
-  }
+    });
 
 
-  if(search){
+  if(!filtered.length){
 
-    filtered =
-      filtered.filter(
-        product =>
-          product.name
-            .toLowerCase()
-            .includes(search)
-      );
-
-  }
-
-
-  if(filtered.length === 0){
-
-    list.innerHTML = `
-
-      <div style="
-        grid-column:1/-1;
-        text-align:center;
-        background:white;
-        padding:40px;
-        border-radius:20px;
-      ">
-
-        <div style="font-size:45px;">
-          🔍
-        </div>
-
-        <h3>
-          No product found
-        </h3>
-
-        <p style="color:#888;margin-top:8px;">
-          Admin can add products from the login section.
-        </p>
-
-      </div>
-
-    `;
+    list.innerHTML =
+      "<p>No products found ✨</p>";
 
     return;
 
   }
 
 
-  filtered.forEach(product => {
+  list.innerHTML =
+    filtered.map(product => {
 
-    const card =
-      document.createElement("div");
+      const likes =
+        Number(product.likes || 0);
 
+      return `
 
-    card.className = "product";
+        <div class="product-card">
 
+          <img
+            src="${escapeHtml(product.image_url)}"
+            alt="${escapeHtml(product.name)}"
+          >
 
-    const average =
-      getAverageRating(product);
+          <div class="product-info">
 
+            <h3>
+              ${escapeHtml(product.name)}
+            </h3>
 
-    card.innerHTML = `
+            <div class="rating">
+              ⭐⭐⭐⭐⭐
+            </div>
 
-      <img
-        class="product-image"
-        src="${escapeHTML(product.image_url || "")}"
-        alt="${escapeHTML(product.name)}"
-        onclick="openProduct(${product.id})"
-        style="cursor:pointer"
-      >
+            <div class="price">
+              Rs. ${escapeHtml(product.price)}
+            </div>
 
-      <div class="product-info">
+            <small>
+              ❤️ ${likes} Likes
+            </small>
 
-        <span class="category-tag">
+            <button
+              class="view-btn"
+              onclick="openProduct('${product.id}')"
+            >
+              🛒 View Product
+            </button>
 
-          ${getCategoryIcon(product.category)}
-          ${escapeHTML(product.category || "Other")}
-
-        </span>
-
-        <h3>
-          ${escapeHTML(product.name)}
-        </h3>
-
-        <div class="price">
-          Rs. ${escapeHTML(String(product.price))}
-        </div>
-
-        <div class="rating">
-
-          ${getStars(average)}
+          </div>
 
         </div>
 
-        <button
-          class="buy-btn"
-          onclick="openProduct(${product.id})"
-        >
-          🛒 View Product
-        </button>
+      `;
 
-      </div>
-    `;
-
-
-    list.appendChild(card);
-
-  });
+    }).join("");
 
 }
 
 
-/* =========================================
+/* ==================================================
    CATEGORY
-   ========================================= */
+================================================== */
 
-function filterProducts(category,button){
+function selectCategory(category,button){
 
-  selectedCategory = category;
-
+  selectedCategory =
+    category;
 
   document
     .querySelectorAll(".category")
@@ -1445,326 +1091,178 @@ function filterProducts(category,button){
       btn.classList.remove("active")
     );
 
-
   button.classList.add("active");
 
-
-  searchProducts();
-
-}
-
-
-/* =========================================
-   CATEGORY ICON
-   ========================================= */
-
-function getCategoryIcon(category){
-
-  const icons = {
-
-    Bags:"👜",
-
-    Keychains:"🔑",
-
-    Flowers:"🌸",
-
-    Toys:"🧸",
-
-    Accessories:"🎀"
-
-  };
-
-
-  return icons[category] || "🧶";
+  displayProducts();
 
 }
 
 
-/* =========================================
-   OPEN PRODUCT
-   ========================================= */
+/* ==================================================
+   SEARCH
+================================================== */
+
+function filterProducts(){
+
+  displayProducts();
+
+}
+
+
+/* ==================================================
+   PRODUCT DETAIL
+================================================== */
 
 async function openProduct(id){
 
+  currentProductId =
+    id;
+
   const product =
     products.find(
-      p => p.id === id
+      p => String(p.id) === String(id)
     );
 
+  if(!product){
 
-  if(!product) return;
+    alert("Product not found!");
+    return;
 
-
-  currentProductId = id;
-
-
-  document
-    .getElementById("detailImage")
-    .src = product.image_url;
+  }
 
 
-  document
-    .getElementById("detailName")
-    .textContent =
-      product.name;
+  const modal =
+    document.getElementById("productModal");
+
+  const detail =
+    document.getElementById("productDetail");
 
 
-  document
-    .getElementById("detailCategory")
-    .textContent =
-      getCategoryIcon(product.category)
-      + " "
-      + product.category;
+  detail.innerHTML = `
+
+    <img
+      class="detail-image"
+      src="${escapeHtml(product.image_url)}"
+      alt="${escapeHtml(product.name)}"
+    >
+
+    <h2 class="detail-title">
+      ${escapeHtml(product.name)}
+    </h2>
+
+    <div class="rating">
+      ⭐⭐⭐⭐⭐
+    </div>
+
+    <div class="price">
+      Rs. ${escapeHtml(product.price)}
+    </div>
+
+    <p>
+      Category:
+      <b>${escapeHtml(product.category || "Other")}</b>
+    </p>
+
+    <button
+      class="like-btn"
+      onclick="likeProduct('${product.id}')"
+    >
+      ❤️ Like
+      <span id="likeCount">
+        ${Number(product.likes || 0)}
+      </span>
+    </button>
+
+    <button
+      class="buy-btn"
+      onclick="buyProduct('${product.id}')"
+    >
+      🛒 Buy Now
+    </button>
+
+    <div class="comment-box">
+
+      <h3>💬 Comments</h3>
+
+      <input
+        id="commentName"
+        placeholder="Your Name"
+      >
+
+      <textarea
+        id="commentText"
+        placeholder="Write a comment..."
+      ></textarea>
+
+      <button
+        class="comment-btn"
+        onclick="addComment('${product.id}')"
+      >
+        Post Comment
+      </button>
+
+      <div
+        id="comments"
+        class="comments"
+      >
+        Loading comments...
+      </div>
+
+    </div>
+
+  `;
 
 
-  document
-    .getElementById("detailPrice")
-    .textContent =
-      "Rs. " + product.price;
+  modal.classList.remove("hidden");
 
-
-  document
-    .getElementById("likeButton")
-    .textContent =
-      "❤️ Like " + (product.likes || 0);
-
-
-  document
-    .getElementById("productOverlay")
-    .classList
-    .remove("hidden");
-
-
-  await showComments();
+  loadComments(product.id);
 
 }
 
 
-/* =========================================
+/* ==================================================
    CLOSE PRODUCT
-   ========================================= */
+================================================== */
 
 function closeProduct(){
 
   document
-    .getElementById("productOverlay")
-    .classList
-    .add("hidden");
-
-  currentProductId = null;
+    .getElementById("productModal")
+    .classList.add("hidden");
 
 }
 
 
-/* =========================================
-   LIKE
-   ========================================= */
+/* ==================================================
+   BUY PRODUCT
+================================================== */
 
-async function likeProduct(){
+function buyProduct(id){
 
   const product =
     products.find(
-      p => p.id === currentProductId
+      p => String(p.id) === String(id)
     );
 
+  if(!product){
 
-  if(!product) return;
-
-
-  const newLikes =
-    (product.likes || 0) + 1;
-
-
-  const { error } =
-    await supabaseClient
-      .from("products")
-      .update({
-        likes:newLikes
-      })
-      .eq("id",product.id);
-
-
-  if(error){
-
-    alert("Could not like product.");
-
-    console.error(error);
-
+    alert("Product not found!");
     return;
 
   }
 
 
-  product.likes = newLikes;
-
-
-  document
-    .getElementById("likeButton")
-    .textContent =
-      "❤️ Like " + newLikes;
-
-
-  searchProducts();
-
-}
-
-
-/* =========================================
-   COMMENTS
-   ========================================= */
-
-async function addComment(){
-
-  const input =
-    document.getElementById("commentInput");
-
-
-  const text =
-    input.value.trim();
-
-
-  if(!text){
-
-    return;
-
-  }
-
-
-  if(!currentProductId){
-
-    return;
-
-  }
-
-
-  const { error } =
-    await supabaseClient
-      .from("comments")
-      .insert({
-
-        product_id:currentProductId,
-
-        comment_text:text
-
-      });
-
-
-  if(error){
-
-    alert("Could not post comment.");
-
-    console.error(error);
-
-    return;
-
-  }
-
-
-  input.value = "";
-
-
-  await showComments();
-
-}
-
-
-async function showComments(){
-
-  const list =
-    document.getElementById("commentList");
-
-
-  list.innerHTML =
-    "⏳ Loading comments...";
-
-
-  const { data,error } =
-    await supabaseClient
-      .from("comments")
-      .select("*")
-      .eq("product_id",currentProductId)
-      .order("created_at",{ascending:false});
-
-
-  if(error){
-
-    list.innerHTML =
-      "❌ Could not load comments.";
-
-    console.error(error);
-
-    return;
-
-  }
-
-
-  list.innerHTML = "";
-
-
-  if(!data || data.length === 0){
-
-    list.innerHTML = `
-
-      <p style="color:#888;margin-top:10px;">
-        No comments yet. Be the first! 💗
-      </p>
-
-    `;
-
-    return;
-
-  }
-
-
-  data.forEach(comment => {
-
-    const div =
-      document.createElement("div");
-
-
-    div.className = "comment";
-
-
-    div.innerHTML = `
-
-      💬 ${escapeHTML(comment.comment_text)}
-
-      <br>
-
-      <small style="color:#999;">
-        ${new Date(comment.created_at)
-          .toLocaleString()}
-      </small>
-
-    `;
-
-
-    list.appendChild(div);
-
-  });
-
-}
-
-
-/* =========================================
-   BUY
-   ========================================= */
-
-function buyCurrentProduct(){
-
-  const product =
-    products.find(
-      p => p.id === currentProductId
-    );
-
-
-  if(!product) return;
-
+  /*
+  THIS IS THE IMPORTANT PART:
+
+  Product name is automatically
+  placed inside Selected Product.
+  */
 
   document
     .getElementById("selectedProduct")
     .value =
-      product.name;
+    product.name;
 
 
   closeProduct();
@@ -1779,44 +1277,606 @@ function buyCurrentProduct(){
 }
 
 
-/* =========================================
-   WHATSAPP ORDER
-   ========================================= */
+/* ==================================================
+   LIKE PRODUCT
+================================================== */
+
+async function likeProduct(id){
+
+  const product =
+    products.find(
+      p => String(p.id) === String(id)
+    );
+
+  if(!product) return;
+
+
+  const newLikes =
+    Number(product.likes || 0) + 1;
+
+
+  try{
+
+    await supabaseRequest(
+      "products?id=eq." + id,
+      {
+        method:"PATCH",
+
+        headers:{
+          "Prefer":"return=minimal"
+        },
+
+        body:JSON.stringify({
+          likes:newLikes
+        })
+      }
+    );
+
+
+    product.likes =
+      newLikes;
+
+
+    const count =
+      document.getElementById("likeCount");
+
+    if(count)
+      count.innerText =
+        newLikes;
+
+
+    displayProducts();
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    alert("Like save nahi hua.");
+
+  }
+
+}
+
+
+/* ==================================================
+   COMMENTS
+================================================== */
+
+async function loadComments(productId){
+
+  const box =
+    document.getElementById("comments");
+
+  if(!box) return;
+
+
+  try{
+
+    const comments =
+      await supabaseRequest(
+        "comments?product_id=eq." +
+        encodeURIComponent(productId) +
+        "&select=*&order=created_at.desc"
+      );
+
+
+    if(!comments.length){
+
+      box.innerHTML =
+        "<p>No comments yet 💬</p>";
+
+      return;
+
+    }
+
+
+    box.innerHTML =
+      comments.map(comment => `
+
+        <div class="comment">
+
+          <b>
+            ${escapeHtml(comment.name || "Anonymous")}
+          </b>
+
+          <p>
+            ${escapeHtml(comment.comment || "")}
+          </p>
+
+        </div>
+
+      `).join("");
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    box.innerHTML =
+      "<p>Comments load nahi ho rahe.</p>";
+
+  }
+
+}
+
+
+/* ==================================================
+   ADD COMMENT
+================================================== */
+
+async function addComment(productId){
+
+  const name =
+    document
+      .getElementById("commentName")
+      .value
+      .trim();
+
+  const comment =
+    document
+      .getElementById("commentText")
+      .value
+      .trim();
+
+
+  if(!name || !comment){
+
+    alert("Name aur comment likho.");
+    return;
+
+  }
+
+
+  try{
+
+    await supabaseRequest(
+      "comments",
+      {
+        method:"POST",
+
+        headers:{
+          "Prefer":"return=minimal"
+        },
+
+        body:JSON.stringify({
+          product_id:productId,
+          name:name,
+          comment:comment
+        })
+      }
+    );
+
+
+    document
+      .getElementById("commentName")
+      .value = "";
+
+    document
+      .getElementById("commentText")
+      .value = "";
+
+
+    loadComments(productId);
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    alert("Comment save nahi hua.");
+
+  }
+
+}
+
+
+/* ==================================================
+   ADMIN LOGIN
+================================================== */
+
+const ADMIN_NAME =
+"Sameeha";
+
+const ADMIN_PASSWORD =
+"crochet123";
+
+
+function login(){
+
+  const name =
+    document
+      .getElementById("loginName")
+      .value
+      .trim();
+
+  const password =
+    document
+      .getElementById("loginPassword")
+      .value;
+
+
+  if(
+    name.toLowerCase() ===
+    ADMIN_NAME.toLowerCase()
+    &&
+    password === ADMIN_PASSWORD
+  ){
+
+    localStorage.setItem(
+      "crochetAdmin",
+      "true"
+    );
+
+
+    document
+      .getElementById("loginMessage")
+      .innerText =
+      "✅ Login Successful!";
+
+
+    showAdmin();
+
+
+  }
+  else{
+
+    document
+      .getElementById("loginMessage")
+      .innerText =
+      "❌ Wrong name or password!";
+
+  }
+
+}
+
+
+/* ==================================================
+   SHOW ADMIN
+================================================== */
+
+function showAdmin(){
+
+  document
+    .getElementById("adminSection")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("adminSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+
+  displayMyProducts();
+
+}
+
+
+/* ==================================================
+   LOGOUT
+================================================== */
+
+function logout(){
+
+  localStorage.removeItem(
+    "crochetAdmin"
+  );
+
+  document
+    .getElementById("adminSection")
+    .classList.add("hidden");
+
+  document
+    .getElementById("loginMessage")
+    .innerText =
+    "Logged out.";
+
+}
+
+
+/* ==================================================
+   ADD PRODUCT
+================================================== */
+
+async function addProduct(){
+
+  if(
+    localStorage.getItem("crochetAdmin")
+    !==
+    "true"
+  ){
+
+    alert("Pehle admin login karo.");
+    return;
+
+  }
+
+
+  const name =
+    document
+      .getElementById("productName")
+      .value
+      .trim();
+
+  const price =
+    document
+      .getElementById("productPrice")
+      .value;
+
+  const category =
+    document
+      .getElementById("productCategory")
+      .value;
+
+  const file =
+    document
+      .getElementById("imageUpload")
+      .files[0];
+
+
+  if(!name || !price || !file){
+
+    alert(
+      "Product name, price aur photo zaroori hain."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    /*
+    For this simple version the image
+    is converted to a data URL.
+
+    It is stored in the products table.
+    */
+
+    const imageUrl =
+      await fileToDataURL(file);
+
+
+    await supabaseRequest(
+      "products",
+      {
+        method:"POST",
+
+        headers:{
+          "Prefer":"return=minimal"
+        },
+
+        body:JSON.stringify({
+
+          name:name,
+
+          price:Number(price),
+
+          category:category,
+
+          image_url:imageUrl,
+
+          likes:0
+
+        })
+      }
+    );
+
+
+    alert(
+      "🎉 Product Successfully Added!"
+    );
+
+
+    document
+      .getElementById("productName")
+      .value = "";
+
+    document
+      .getElementById("productPrice")
+      .value = "";
+
+    document
+      .getElementById("imageUpload")
+      .value = "";
+
+
+    await loadProducts();
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    alert(
+      "❌ Product upload failed.\n\n" +
+      error.message
+    );
+
+  }
+
+}
+
+
+/* ==================================================
+   FILE TO DATA URL
+================================================== */
+
+function fileToDataURL(file){
+
+  return new Promise(
+    (resolve,reject)=>{
+
+      const reader =
+        new FileReader();
+
+      reader.onload =
+        () => resolve(reader.result);
+
+      reader.onerror =
+        reject;
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+}
+
+
+/* ==================================================
+   ADMIN PRODUCT LIST
+================================================== */
+
+function displayMyProducts(){
+
+  const box =
+    document.getElementById("myProducts");
+
+  if(!box) return;
+
+
+  if(!products.length){
+
+    box.innerHTML =
+      "<p>No products uploaded yet.</p>";
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    products.map(product => `
+
+      <div class="my-product">
+
+        <img
+          src="${escapeHtml(product.image_url)}"
+        >
+
+        <div>
+
+          <b>
+            ${escapeHtml(product.name)}
+          </b>
+
+          <p>
+            Rs. ${escapeHtml(product.price)}
+          </p>
+
+        </div>
+
+        <button
+          class="delete-btn"
+          onclick="deleteProduct('${product.id}')"
+        >
+          🗑️ Delete
+        </button>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ==================================================
+   DELETE PRODUCT
+================================================== */
+
+async function deleteProduct(id){
+
+  if(
+    !confirm(
+      "Kya aap is product ko delete karna chahte hain?"
+    )
+  ){
+
+    return;
+
+  }
+
+
+  try{
+
+    await supabaseRequest(
+      "products?id=eq." + id,
+      {
+        method:"DELETE",
+
+        headers:{
+          "Prefer":"return=minimal"
+        }
+      }
+    );
+
+
+    alert(
+      "🗑️ Product deleted."
+    );
+
+
+    await loadProducts();
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    alert(
+      "Delete nahi hua.\n\n" +
+      error.message
+    );
+
+  }
+
+}
+
+
+/* ==================================================
+   PLACE ORDER
+================================================== */
 
 function placeOrder(){
 
   const name =
     document
       .getElementById("customerName")
-      .value.trim();
-
+      .value
+      .trim();
 
   const address =
     document
       .getElementById("customerAddress")
-      .value.trim();
-
+      .value
+      .trim();
 
   const phone =
     document
       .getElementById("customerPhone")
-      .value.trim();
-
+      .value
+      .trim();
 
   const country =
     document
       .getElementById("customerCountry")
-      .value.trim();
-
+      .value
+      .trim();
 
   const product =
     document
       .getElementById("selectedProduct")
-      .value.trim();
+      .value
+      .trim();
 
 
   const messageBox =
-    document.getElementById("orderMessage");
+    document
+      .getElementById("orderMessage");
 
 
   if(
@@ -1827,15 +1887,20 @@ function placeOrder(){
     !product
   ){
 
-    messageBox.style.color = "red";
+    messageBox.style.color =
+      "red";
 
-    messageBox.textContent =
-      "❌ Please select a product and fill all details!";
+    messageBox.innerText =
+      "❌ Product select karo aur saari details fill karo.";
 
     return;
 
   }
 
+
+  /*
+  WhatsApp number
+  */
 
   const myWhatsAppNumber =
     "923054330064";
@@ -1869,6 +1934,7 @@ function placeOrder(){
 
 
   const whatsappURL =
+
     "https://wa.me/" +
     myWhatsAppNumber +
     "?text=" +
@@ -1880,835 +1946,16 @@ function placeOrder(){
     "_blank"
   );
 
-
-  messageBox.style.color =
-    "green";
-
-  messageBox.textContent =
-    "✅ Opening WhatsApp...";
-
 }
 
 
-/* =========================================
-   LOGIN
-   ========================================= */
+/* ==================================================
+   SECURITY / HTML ESCAPE
+================================================== */
 
-function login(){
+function escapeHtml(value){
 
-  const name =
-    document
-      .getElementById("loginName")
-      .value.trim();
-
-
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
-
-
-  const message =
-    document.getElementById("loginMessage");
-
-
-  if(
-    name.toLowerCase() ===
-      CORRECT_NAME.toLowerCase()
-    &&
-    password === CORRECT_PASSWORD
-  ){
-
-    loggedIn = true;
-
-
-    document
-      .getElementById("adminPanel")
-      .classList
-      .remove("hidden");
-
-
-    message.style.color =
-      "green";
-
-
-    message.textContent =
-      "✅ Login Successful!";
-
-
-    displayAdminProducts();
-
-
-    setTimeout(() => {
-
-      document
-        .getElementById("adminPanel")
-        .scrollIntoView({
-          behavior:"smooth"
-        });
-
-    },300);
-
-  }
-
-  else{
-
-    message.style.color =
-      "red";
-
-
-    message.textContent =
-      "❌ Wrong name or password!";
-
-  }
-
-}
-
-
-/* =========================================
-   LOGOUT
-   ========================================= */
-
-function logout(){
-
-  loggedIn = false;
-
-
-  document
-    .getElementById("adminPanel")
-    .classList
-    .add("hidden");
-
-
-  document
-    .getElementById("loginName")
-    .value = "";
-
-
-  document
-    .getElementById("loginPassword")
-    .value = "";
-
-}
-
-
-/* =========================================
-   PHOTO EDITOR
-   ========================================= */
-
-const canvas =
-  document.getElementById("canvas");
-
-
-const ctx =
-  canvas.getContext("2d");
-
-
-let uploadedImage =
-  new Image();
-
-
-let rotation = 0;
-
-
-document
-  .getElementById("imageUpload")
-  .addEventListener(
-    "change",
-    function(event){
-
-      const file =
-        event.target.files[0];
-
-
-      if(!file) return;
-
-
-      const reader =
-        new FileReader();
-
-
-      reader.onload =
-        function(e){
-
-          uploadedImage.onload =
-            function(){
-
-              canvas.width =
-                uploadedImage.width;
-
-
-              canvas.height =
-                uploadedImage.height;
-
-
-              document
-                .getElementById("editor")
-                .classList
-                .remove("hidden");
-
-
-              drawImage();
-
-            };
-
-
-          uploadedImage.src =
-            e.target.result;
-
-        };
-
-
-      reader.readAsDataURL(file);
-
-    }
-  );
-
-
-document
-  .getElementById("brightness")
-  .addEventListener(
-    "input",
-    drawImage
-  );
-
-
-document
-  .getElementById("contrast")
-  .addEventListener(
-    "input",
-    drawImage
-  );
-
-
-document
-  .getElementById("saturation")
-  .addEventListener(
-    "input",
-    drawImage
-  );
-
-
-function drawImage(){
-
-  if(!uploadedImage.src) return;
-
-
-  const brightness =
-    document
-      .getElementById("brightness")
-      .value;
-
-
-  const contrast =
-    document
-      .getElementById("contrast")
-      .value;
-
-
-  const saturation =
-    document
-      .getElementById("saturation")
-      .value;
-
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  ctx.save();
-
-
-  ctx.filter =
-    "brightness(" +
-    brightness +
-    "%) " +
-
-    "contrast(" +
-    contrast +
-    "%) " +
-
-    "saturate(" +
-    saturation +
-    "%)";
-
-
-  ctx.translate(
-    canvas.width / 2,
-    canvas.height / 2
-  );
-
-
-  ctx.rotate(
-    rotation *
-    Math.PI /
-    180
-  );
-
-
-  ctx.drawImage(
-    uploadedImage,
-    -uploadedImage.width / 2,
-    -uploadedImage.height / 2
-  );
-
-
-  ctx.restore();
-
-}
-
-
-/* =========================================
-   ROTATE
-   ========================================= */
-
-function rotateImage(){
-
-  rotation += 90;
-
-  drawImage();
-
-}
-
-
-/* =========================================
-   RESET
-   ========================================= */
-
-function resetImage(){
-
-  rotation = 0;
-
-
-  document
-    .getElementById("brightness")
-    .value = 100;
-
-
-  document
-    .getElementById("contrast")
-    .value = 100;
-
-
-  document
-    .getElementById("saturation")
-    .value = 100;
-
-
-  drawImage();
-
-}
-
-
-/* =========================================
-   ADD PRODUCT
-   ========================================= */
-
-async function addProduct(){
-
-  if(!loggedIn){
-
-    alert(
-      "Please login as admin first."
-    );
-
-    return;
-
-  }
-
-
-  const name =
-    document
-      .getElementById("productName")
-      .value.trim();
-
-
-  const price =
-    document
-      .getElementById("productPrice")
-      .value;
-
-
-  const category =
-    document
-      .getElementById("productCategory")
-      .value;
-
-
-  if(
-    !name ||
-    !price ||
-    !uploadedImage.src
-  ){
-
-    alert(
-      "Please enter product name, price and photo!"
-    );
-
-    return;
-
-  }
-
-
-  const button =
-    document.querySelector(".add-btn");
-
-
-  button.disabled = true;
-
-  button.textContent =
-    "⏳ Uploading...";
-
-
-  try{
-
-    /* CREATE IMAGE FILE */
-
-    const blob =
-      await new Promise(resolve =>
-        canvas.toBlob(
-          resolve,
-          "image/jpeg",
-          0.85
-        )
-      );
-
-
-    const fileName =
-      Date.now() +
-      "-" +
-      Math.random()
-        .toString(36)
-        .substring(2,9) +
-      ".jpg";
-
-
-    /* UPLOAD IMAGE */
-
-    const { error:uploadError } =
-      await supabaseClient
-        .storage
-        .from("product-images")
-        .upload(
-          fileName,
-          blob,
-          {
-            contentType:"image/jpeg",
-            upsert:false
-          }
-        );
-
-
-    if(uploadError){
-
-      throw uploadError;
-
-    }
-
-
-    /* GET PUBLIC URL */
-
-    const { data:urlData } =
-      supabaseClient
-        .storage
-        .from("product-images")
-        .getPublicUrl(fileName);
-
-
-    const imageUrl =
-      urlData.publicUrl;
-
-
-    /* INSERT PRODUCT */
-
-    const { data,error } =
-      await supabaseClient
-        .from("products")
-        .insert({
-
-          name:name,
-
-          price:Number(price),
-
-          category:category,
-
-          image_url:imageUrl,
-
-          likes:0
-
-        })
-        .select()
-        .single();
-
-
-    if(error){
-
-      /* If database insert fails,
-         remove uploaded image */
-
-      await supabaseClient
-        .storage
-        .from("product-images")
-        .remove([fileName]);
-
-
-      throw error;
-
-    }
-
-
-    products.unshift(data);
-
-
-    searchProducts();
-
-    displayAdminProducts();
-
-
-    alert(
-      "🎉 Product successfully uploaded online!"
-    );
-
-
-    document
-      .getElementById("productName")
-      .value = "";
-
-
-    document
-      .getElementById("productPrice")
-      .value = "";
-
-
-    document
-      .getElementById("imageUpload")
-      .value = "";
-
-
-    document
-      .getElementById("editor")
-      .classList
-      .add("hidden");
-
-
-    uploadedImage =
-      new Image();
-
-
-    rotation = 0;
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "❌ Upload failed.\n\n" +
-      error.message
-    );
-
-  }
-
-  finally{
-
-    button.disabled = false;
-
-    button.textContent =
-      "✅ DONE - ADD PRODUCT";
-
-  }
-
-}
-
-
-/* =========================================
-   ADMIN PRODUCT LIST
-   ========================================= */
-
-function displayAdminProducts(){
-
-  const list =
-    document
-      .getElementById("adminProductList");
-
-
-  list.innerHTML = "";
-
-
-  if(products.length === 0){
-
-    list.innerHTML = `
-
-      <p style="color:#888;">
-        You have not uploaded any products yet.
-      </p>
-
-    `;
-
-    return;
-
-  }
-
-
-  products.forEach(product => {
-
-    const item =
-      document.createElement("div");
-
-
-    item.className =
-      "admin-product";
-
-
-    item.innerHTML = `
-
-      <img
-        src="${escapeHTML(product.image_url || "")}"
-        alt=""
-      >
-
-      <div class="admin-product-info">
-
-        <strong>
-          ${escapeHTML(product.name)}
-        </strong>
-
-        <br>
-
-        <span style="color:#e63891;">
-          Rs. ${escapeHTML(String(product.price))}
-        </span>
-
-        <br>
-
-        <small>
-          ${getCategoryIcon(product.category)}
-          ${escapeHTML(product.category || "")}
-        </small>
-
-      </div>
-
-      <button
-        class="delete-btn"
-        onclick="deleteProduct(${product.id})"
-      >
-        🗑️ Delete
-      </button>
-
-    `;
-
-
-    list.appendChild(item);
-
-  });
-
-}
-
-
-/* =========================================
-   DELETE PRODUCT
-   ========================================= */
-
-async function deleteProduct(id){
-
-  if(!loggedIn){
-
-    alert(
-      "Admin login required."
-    );
-
-    return;
-
-  }
-
-
-  const product =
-    products.find(
-      p => p.id === id
-    );
-
-
-  if(!product) return;
-
-
-  if(
-    !confirm(
-      'Delete "' +
-      product.name +
-      '"?'
-    )
-  ){
-
-    return;
-
-  }
-
-
-  try{
-
-    /* DELETE DATABASE RECORD */
-
-    const { error } =
-      await supabaseClient
-        .from("products")
-        .delete()
-        .eq("id",id);
-
-
-    if(error){
-
-      throw error;
-
-    }
-
-
-    /* TRY TO DELETE IMAGE */
-
-    if(product.image_url){
-
-      const marker =
-        "/product-images/";
-
-
-      const index =
-        product.image_url.indexOf(marker);
-
-
-      if(index !== -1){
-
-        const filePath =
-          decodeURIComponent(
-            product.image_url
-              .substring(
-                index + marker.length
-              )
-          );
-
-
-        await supabaseClient
-          .storage
-          .from("product-images")
-          .remove([filePath]);
-
-      }
-
-    }
-
-
-    products =
-      products.filter(
-        p => p.id !== id
-      );
-
-
-    searchProducts();
-
-    displayAdminProducts();
-
-
-    alert(
-      "🗑️ Product deleted successfully."
-    );
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "❌ Delete failed.\n\n" +
-      error.message
-    );
-
-  }
-
-}
-
-
-/* =========================================
-   RATINGS
-   ========================================= */
-
-function getAverageRating(product){
-
-  return 5;
-
-}
-
-
-function getStars(number){
-
-  let stars = "";
-
-  for(
-    let i=1;
-    i<=5;
-    i++
-  ){
-
-    stars +=
-      i <= number
-      ? "⭐"
-      : "☆";
-
-  }
-
-  return stars;
-
-}
-
-
-/* =========================================
-   INFO
-   ========================================= */
-
-function showInfo(){
-
-  document
-    .getElementById("infoOverlay")
-    .classList
-    .remove("hidden");
-
-}
-
-
-function closeInfo(){
-
-  document
-    .getElementById("infoOverlay")
-    .classList
-    .add("hidden");
-
-}
-
-
-/* =========================================
-   HOME
-   ========================================= */
-
-function goHome(){
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   ESCAPE HTML
-   ========================================= */
-
-function escapeHTML(text){
-
-  return String(text)
+  return String(value ?? "")
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
@@ -2718,11 +1965,29 @@ function escapeHTML(text){
 }
 
 
-/* =========================================
+/* ==================================================
    START
-   ========================================= */
+================================================== */
 
-loadProducts();
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    loadProducts();
+
+
+    if(
+      localStorage.getItem(
+        "crochetAdmin"
+      ) === "true"
+    ){
+
+      showAdmin();
+
+    }
+
+  }
+);
 
 </script>
 
