@@ -699,6 +699,7 @@ function buyProduct(productName){
 PLACE ORDER
 ================================= */
 
+<script>
 function placeOrder(){
 
   const name =
@@ -719,31 +720,56 @@ function placeOrder(){
 
   if(!name || !address || !phone || !country || !product){
 
-    document
-      .getElementById("orderMessage")
-      .style.color = "red";
+    document.getElementById("orderMessage").style.color = "red";
 
-    document
-      .getElementById("orderMessage")
-      .innerHTML =
+    document.getElementById("orderMessage").innerHTML =
       "❌ Please select a product and fill all details!";
 
     return;
-
   }
 
 
-  document
-    .getElementById("orderMessage")
-    .style.color = "green";
+  /* YOUR WHATSAPP NUMBER */
+
+  const myWhatsAppNumber = "923054330064";
 
 
-  document
-    .getElementById("orderMessage")
-    .innerHTML =
-    "✅ Thank you! Your order request has been received.";
+  /* ORDER MESSAGE */
+
+  const message =
+
+    "🛍️ NEW ORDER - CROCHET COLLECTION\n\n" +
+
+    "📦 Product: " + product + "\n\n" +
+
+    "👤 Customer Name: " + name + "\n" +
+
+    "📞 Customer Phone: " + phone + "\n" +
+
+    "📍 Address: " + address + "\n" +
+
+    "🌍 Country: " + country + "\n\n" +
+
+    "🚚 Home Delivery Order";
+
+
+  /* OPEN WHATSAPP */
+
+  const whatsappURL =
+
+    "https://wa.me/" +
+    myWhatsAppNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
 
 }
+</script>
 
 
 /* =================================
