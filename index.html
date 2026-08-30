@@ -7,27 +7,38 @@
 <title>Crochet Collection</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,sans-serif;
   color:#222;
-  background:
-    radial-gradient(circle at top left, #ffd6eb, transparent 35%),
-    radial-gradient(circle at bottom right, #e8c7ff, transparent 35%),
-    linear-gradient(135deg, #fff0f7, #ffd1e5, #f7d9ff);
   min-height:100vh;
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.6), transparent 25%),
+    radial-gradient(circle at 90% 90%, rgba(255,255,255,.5), transparent 25%),
+    linear-gradient(135deg,#ff9fca,#ffc1df,#e8b8ff,#ffd0e8);
 }
-/* ================= LOGO ================= */
+
+.hidden{
+  display:none !important;
+}
+
+
+/* ================= HERO ================= */
 
 .hero{
   width:100%;
-  background:#eee;
+  padding:15px;
+  background:rgba(255,255,255,.2);
 }
 
 .hero img{
@@ -35,36 +46,42 @@ body{
   max-height:550px;
   object-fit:cover;
   display:block;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(150,40,100,.2);
 }
 
-/* ================= TITLE ================= */
+
+/* ================= WELCOME ================= */
 
 .welcome{
   text-align:center;
-  padding:40px 20px;
-  background:white;
+  padding:50px 20px;
+  background:transparent;
 }
 
 .welcome h1{
-  color:#e63c91;
-  font-size:38px;
+  color:#c92879;
+  font-size:42px;
   margin-bottom:12px;
 }
 
 .welcome p{
-  color:#666;
+  color:#63354f;
+  font-size:18px;
 }
+
 
 /* ================= PRODUCTS ================= */
 
 .products-section{
-  padding:40px 7%;
+  padding:50px 7%;
+  background:transparent;
 }
 
 .products-section h2{
   text-align:center;
-  font-size:32px;
-  color:#e63c91;
+  font-size:34px;
+  color:#b91f70;
   margin-bottom:30px;
 }
 
@@ -76,15 +93,21 @@ body{
 
 .product{
   background:white;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,.12);
+  box-shadow:0 8px 25px rgba(120,30,90,.18);
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-7px);
 }
 
 .product img{
   width:100%;
   height:260px;
   object-fit:cover;
+  display:block;
 }
 
 .product-info{
@@ -96,32 +119,38 @@ body{
 }
 
 .price{
-  color:#e63c91;
+  color:#d72d83;
   font-size:22px;
   font-weight:bold;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .buy-btn{
   width:100%;
   border:none;
-  padding:12px;
-  border-radius:10px;
-  background:#e63c91;
+  padding:13px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#e63c91,#a64dff);
   color:white;
   font-size:16px;
   cursor:pointer;
 }
 
-.buy-btn:hover{
-  background:#bd2672;
+#emptyProducts{
+  background:rgba(255,255,255,.8);
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  color:#777;
+  grid-column:1/-1;
 }
+
 
 /* ================= DELIVERY ================= */
 
 .delivery-section{
-  background:white;
-  padding:50px 20px;
+  padding:60px 20px;
+  background:transparent;
 }
 
 .delivery-box{
@@ -129,28 +158,31 @@ body{
   margin:auto;
   padding:30px;
   border-radius:25px;
-  box-shadow:0 5px 25px rgba(0,0,0,.12);
+  background:white;
+  box-shadow:0 10px 35px rgba(100,30,90,.2);
 }
 
 .delivery-box h2{
   text-align:center;
-  color:#e63c91;
+  color:#d02b7e;
   margin-bottom:10px;
 }
 
-.delivery-box p{
+.delivery-box > p{
   text-align:center;
-  color:#666;
+  color:#777;
   margin-bottom:20px;
 }
 
-input,textarea,select{
+input,
+textarea{
   width:100%;
   padding:14px;
   margin:8px 0;
-  border:2px solid #eee;
+  border:2px solid #f0dce8;
   border-radius:12px;
   font-size:16px;
+  background:#fffafd;
 }
 
 textarea{
@@ -159,8 +191,7 @@ textarea{
 }
 
 input:focus,
-textarea:focus,
-select:focus{
+textarea:focus{
   outline:none;
   border-color:#e63c91;
 }
@@ -178,36 +209,35 @@ button{
 
 .delivery-submit{
   width:100%;
-  margin-top:15px;
 }
 
 #orderMessage{
   text-align:center;
-  color:green;
   font-weight:bold;
   margin-top:15px;
 }
 
+
 /* ================= LOGIN ================= */
 
 .login-section{
-  padding:60px 20px;
-  background:linear-gradient(135deg,#ffd1e5,#e3c7ff,#c9e5ff);
+  padding:70px 20px;
+  background:rgba(255,255,255,.15);
 }
 
 .login-box{
   width:100%;
   max-width:430px;
   background:white;
-  padding:30px;
+  padding:35px;
   margin:auto;
-  border-radius:25px;
+  border-radius:28px;
   text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.2);
+  box-shadow:0 15px 45px rgba(100,30,90,.25);
 }
 
 .login-box h1{
-  color:#e63c91;
+  color:#d52e82;
   margin-bottom:10px;
 }
 
@@ -217,15 +247,15 @@ button{
 }
 
 #loginMessage{
-  color:red;
   font-weight:bold;
 }
+
 
 /* ================= ADMIN ================= */
 
 .admin-panel{
-  padding:40px 20px;
-  background:#fff7fb;
+  padding:50px 20px;
+  background:transparent;
 }
 
 .admin-box{
@@ -233,14 +263,14 @@ button{
   margin:auto;
   background:white;
   padding:30px;
-  border-radius:25px;
-  box-shadow:0 5px 25px rgba(0,0,0,.12);
+  border-radius:28px;
+  box-shadow:0 10px 35px rgba(100,30,90,.2);
 }
 
 .admin-box h1,
 .admin-box h2{
   text-align:center;
-  color:#e63c91;
+  color:#d52e82;
   margin-bottom:20px;
 }
 
@@ -262,11 +292,17 @@ button{
   text-align:center;
   border-radius:15px;
   margin:15px 0;
+  border:2px dashed #ef8fbb;
+  cursor:pointer;
 }
+
+
+/* ================= EDITOR ================= */
 
 #canvas{
   width:100%;
   max-height:400px;
+  object-fit:contain;
   border-radius:15px;
   border:2px solid #eee;
   margin-top:15px;
@@ -294,10 +330,16 @@ button{
   background:linear-gradient(90deg,#20a96b,#48c986);
 }
 
+.logout-button{
+  width:100%;
+  background:#555;
+}
+
+
 /* ================= FOOTER ================= */
 
 footer{
-  background:#1c1c1c;
+  background:rgba(30,20,30,.95);
   color:white;
   text-align:center;
   padding:40px 20px;
@@ -312,59 +354,72 @@ footer p{
   margin:10px;
 }
 
+
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
   .welcome h1{
-    font-size:28px;
+    font-size:30px;
   }
 
   .products-section{
     padding:35px 5%;
   }
 
-}
+  .delivery-box,
+  .admin-box,
+  .login-box{
+    padding:22px;
+  }
 
+  .product img{
+    height:230px;
+  }
+
+}
 </style>
 </head>
+
 
 <body>
 
 
-<!-- ===============================
-LOGO AT START
-=============================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-  <img src="logo.png" alt="Crochet Collection">
+  <img
+    src="logo.png"
+    alt="Crochet Collection"
+  >
 
 </section>
 
 
-<!-- ===============================
-WELCOME
-=============================== -->
+<!-- ================= WELCOME ================= -->
 
 <section class="welcome">
 
   <h1>🧶 Crochet Collection</h1>
 
-  <p>Beautiful handmade products made with love ❤️</p>
+  <p>
+    Beautiful handmade products made with love ❤️
+  </p>
 
 </section>
 
 
-<!-- ===============================
-PRODUCTS
-=============================== -->
+<!-- ================= PRODUCTS ================= -->
 
 <section class="products-section">
 
   <h2>🛍️ Our Products</h2>
 
-  <div id="productList" class="product-grid">
+  <div
+    id="productList"
+    class="product-grid"
+  >
 
     <p id="emptyProducts">
       No products available yet ✨
@@ -375,17 +430,20 @@ PRODUCTS
 </section>
 
 
-<!-- ===============================
-DELIVERY / BUY FORM
-=============================== -->
+<!-- ================= DELIVERY ================= -->
 
-<section class="delivery-section" id="deliverySection">
+<section
+  class="delivery-section"
+  id="deliverySection"
+>
 
   <div class="delivery-box">
 
     <h2>🚚 Order & Home Delivery</h2>
 
-    <p>Fill in your details to order a product.</p>
+    <p>
+      Fill in your details to order a product.
+    </p>
 
     <input
       type="text"
@@ -431,9 +489,7 @@ DELIVERY / BUY FORM
 </section>
 
 
-<!-- ===============================
-LOGIN AGAIN / ADMIN LOGIN
-=============================== -->
+<!-- ================= ADMIN LOGIN ================= -->
 
 <section class="login-section">
 
@@ -441,7 +497,9 @@ LOGIN AGAIN / ADMIN LOGIN
 
     <h1>🔐 Admin Login</h1>
 
-    <p>Login to add new products</p>
+    <p>
+      Login to add new products
+    </p>
 
     <input
       type="text"
@@ -466,9 +524,7 @@ LOGIN AGAIN / ADMIN LOGIN
 </section>
 
 
-<!-- ===============================
-ADMIN PROFILE + ADD PRODUCT
-=============================== -->
+<!-- ================= ADMIN PANEL ================= -->
 
 <section
   id="adminPanel"
@@ -494,13 +550,11 @@ ADMIN PROFILE + ADD PRODUCT
 
     <h2>➕ Add New Product</h2>
 
-
     <input
       type="text"
       id="productName"
       placeholder="Product Name"
     >
-
 
     <input
       type="number"
@@ -524,17 +578,18 @@ ADMIN PROFILE + ADD PRODUCT
 
     <!-- PHOTO EDITOR -->
 
-    <div id="editor" class="hidden">
+    <div
+      id="editor"
+      class="hidden"
+    >
 
       <h2>✨ Photo Editor</h2>
 
       <canvas id="canvas"></canvas>
 
-
       <div class="editor-controls">
 
         <label>
-
           ☀️ Brightness
 
           <input
@@ -544,12 +599,10 @@ ADMIN PROFILE + ADD PRODUCT
             max="200"
             value="100"
           >
-
         </label>
 
 
         <label>
-
           🎨 Contrast
 
           <input
@@ -559,12 +612,10 @@ ADMIN PROFILE + ADD PRODUCT
             max="200"
             value="100"
           >
-
         </label>
 
 
         <label>
-
           🌈 Saturation
 
           <input
@@ -574,7 +625,6 @@ ADMIN PROFILE + ADD PRODUCT
             max="200"
             value="100"
           >
-
         </label>
 
 
@@ -599,58 +649,90 @@ ADMIN PROFILE + ADD PRODUCT
       ✅ DONE - ADD PRODUCT
     </button>
 
+
+    <button
+      class="logout-button"
+      onclick="logout()"
+    >
+      🚪 Logout
+    </button>
+
   </div>
 
 </section>
 
 
-<!-- ===============================
-FOOTER
-=============================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
   <h2>🚚 FREE HOME DELIVERY</h2>
 
-  <p>We deliver your favorite products to your home ❤️</p>
+  <p>
+    We deliver your favorite products to your home ❤️
+  </p>
 
-  <p>📞 Contact: 03054330064</p>
+  <p>
+    📞 Contact: 03054330064
+  </p>
 
-  <p>© 2026 Crochet Collection</p>
+  <p>
+    © 2026 Crochet Collection
+  </p>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-/* =================================
-LOGIN
-================================= */
+/* =========================
+   LOGIN DETAILS
+========================= */
 
 const CORRECT_NAME = "Sameeha";
 const CORRECT_PASSWORD = "crochet123";
 
+
+/* =========================
+   LOGIN
+========================= */
+
 function login(){
 
   const name =
-    document.getElementById("loginName").value.trim();
+    document
+      .getElementById("loginName")
+      .value
+      .trim();
 
   const password =
-    document.getElementById("loginPassword").value;
+    document
+      .getElementById("loginPassword")
+      .value;
+
+  const message =
+    document
+      .getElementById("loginMessage");
+
 
   if(
-    name.toLowerCase() === CORRECT_NAME.toLowerCase()
+    name.toLowerCase() ===
+      CORRECT_NAME.toLowerCase()
     &&
     password === CORRECT_PASSWORD
   ){
 
     document
       .getElementById("adminPanel")
-      .classList.remove("hidden");
+      .classList
+      .remove("hidden");
 
-    document
-      .getElementById("loginMessage")
-      .innerHTML = "✅ Login Successful!";
+    message.style.color = "green";
+
+    message.innerHTML =
+      "✅ Login Successful!";
 
     setTimeout(function(){
 
@@ -666,18 +748,50 @@ function login(){
 
   else{
 
-    document
-      .getElementById("loginMessage")
-      .innerHTML = "❌ Wrong name or password!";
+    message.style.color = "red";
+
+    message.innerHTML =
+      "❌ Wrong name or password!";
 
   }
 
 }
 
 
-/* =================================
-SELECT PRODUCT
-================================= */
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+  document
+    .getElementById("adminPanel")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("loginName")
+    .value = "";
+
+  document
+    .getElementById("loginPassword")
+    .value = "";
+
+  document
+    .getElementById("loginMessage")
+    .style.color = "green";
+
+  document
+    .getElementById("loginMessage")
+    .innerHTML =
+      "🚪 Logged out successfully!";
+
+}
+
+
+/* =========================
+   BUY PRODUCT
+========================= */
 
 function buyProduct(productName){
 
@@ -694,43 +808,69 @@ function buyProduct(productName){
 }
 
 
-/* =================================
-PLACE ORDER
-================================= */
+/* =========================
+   PLACE ORDER
+========================= */
 
-<script>
 function placeOrder(){
 
   const name =
-    document.getElementById("customerName").value.trim();
+    document
+      .getElementById("customerName")
+      .value
+      .trim();
 
   const address =
-    document.getElementById("customerAddress").value.trim();
+    document
+      .getElementById("customerAddress")
+      .value
+      .trim();
 
   const phone =
-    document.getElementById("customerPhone").value.trim();
+    document
+      .getElementById("customerPhone")
+      .value
+      .trim();
 
   const country =
-    document.getElementById("customerCountry").value.trim();
+    document
+      .getElementById("customerCountry")
+      .value
+      .trim();
 
   const product =
-    document.getElementById("selectedProduct").value.trim();
+    document
+      .getElementById("selectedProduct")
+      .value
+      .trim();
+
+  const orderMessage =
+    document
+      .getElementById("orderMessage");
 
 
-  if(!name || !address || !phone || !country || !product){
+  if(
+    !name ||
+    !address ||
+    !phone ||
+    !country ||
+    !product
+  ){
 
-    document.getElementById("orderMessage").style.color = "red";
+    orderMessage.style.color = "red";
 
-    document.getElementById("orderMessage").innerHTML =
+    orderMessage.innerHTML =
       "❌ Please select a product and fill all details!";
 
     return;
+
   }
 
 
-  /* YOUR WHATSAPP NUMBER */
+  /* WHATSAPP NUMBER */
 
-  const myWhatsAppNumber = "923054330064";
+  const myWhatsAppNumber =
+    "923054330064";
 
 
   /* ORDER MESSAGE */
@@ -739,23 +879,30 @@ function placeOrder(){
 
     "🛍️ NEW ORDER - CROCHET COLLECTION\n\n" +
 
-    "📦 Product: " + product + "\n\n" +
+    "📦 Product: " +
+    product +
+    "\n\n" +
 
-    "👤 Customer Name: " + name + "\n" +
+    "👤 Customer Name: " +
+    name +
+    "\n" +
 
-    "📞 Customer Phone: " + phone + "\n" +
+    "📞 Customer Phone: " +
+    phone +
+    "\n" +
 
-    "📍 Address: " + address + "\n" +
+    "📍 Address: " +
+    address +
+    "\n" +
 
-    "🌍 Country: " + country + "\n\n" +
+    "🌍 Country: " +
+    country +
+    "\n\n" +
 
     "🚚 Home Delivery Order";
 
 
-  /* OPEN WHATSAPP */
-
   const whatsappURL =
-
     "https://wa.me/" +
     myWhatsAppNumber +
     "?text=" +
@@ -770,10 +917,9 @@ function placeOrder(){
 }
 
 
-
-/* =================================
-PHOTO EDITOR
-================================= */
+/* =========================
+   PHOTO EDITOR
+========================= */
 
 const canvas =
   document.getElementById("canvas");
@@ -787,77 +933,103 @@ let uploadedImage =
 let rotation = 0;
 
 
+/* =========================
+   IMAGE UPLOAD
+========================= */
+
 document
   .getElementById("imageUpload")
-  .addEventListener("change",function(event){
+  .addEventListener(
+    "change",
+    function(event){
 
-    const file =
-      event.target.files[0];
+      const file =
+        event.target.files[0];
 
-    if(!file) return;
+      if(!file){
+        return;
+      }
 
-    const reader =
-      new FileReader();
+      const reader =
+        new FileReader();
 
-    reader.onload = function(e){
+      reader.onload =
+        function(e){
 
-      uploadedImage.onload = function(){
+          uploadedImage.onload =
+            function(){
 
-        canvas.width =
-          uploadedImage.width;
+              canvas.width =
+                uploadedImage.width;
 
-        canvas.height =
-          uploadedImage.height;
+              canvas.height =
+                uploadedImage.height;
 
-        document
-          .getElementById("editor")
-          .classList.remove("hidden");
+              document
+                .getElementById("editor")
+                .classList
+                .remove("hidden");
 
-        drawImage();
+              drawImage();
 
-      };
+            };
 
-      uploadedImage.src =
-        e.target.result;
+          uploadedImage.src =
+            e.target.result;
 
-    };
+        };
 
-    reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
 
-  });
+    }
+  );
 
+
+/* =========================
+   EDITOR CONTROLS
+========================= */
 
 document
   .getElementById("brightness")
-  .addEventListener("input",drawImage);
-
+  .addEventListener(
+    "input",
+    drawImage
+  );
 
 document
   .getElementById("contrast")
-  .addEventListener("input",drawImage);
-
+  .addEventListener(
+    "input",
+    drawImage
+  );
 
 document
   .getElementById("saturation")
-  .addEventListener("input",drawImage);
+  .addEventListener(
+    "input",
+    drawImage
+  );
 
+
+/* =========================
+   DRAW IMAGE
+========================= */
 
 function drawImage(){
 
-  if(!uploadedImage.src) return;
-
+  if(!uploadedImage.src){
+    return;
+  }
 
   const brightness =
     document
       .getElementById("brightness")
       .value;
 
-
   const contrast =
     document
       .getElementById("contrast")
       .value;
-
 
   const saturation =
     document
@@ -877,9 +1049,17 @@ function drawImage(){
 
 
   ctx.filter =
-    "brightness(" + brightness + "%) " +
-    "contrast(" + contrast + "%) " +
-    "saturate(" + saturation + "%)";
+    "brightness(" +
+    brightness +
+    "%) " +
+
+    "contrast(" +
+    contrast +
+    "%) " +
+
+    "saturate(" +
+    saturation +
+    "%)";
 
 
   ctx.translate(
@@ -889,7 +1069,9 @@ function drawImage(){
 
 
   ctx.rotate(
-    rotation * Math.PI / 180
+    rotation *
+    Math.PI /
+    180
   );
 
 
@@ -905,22 +1087,26 @@ function drawImage(){
 }
 
 
-/* =================================
-ROTATE
-================================= */
+/* =========================
+   ROTATE
+========================= */
 
 function rotateImage(){
 
   rotation += 90;
+
+  if(rotation >= 360){
+    rotation = 0;
+  }
 
   drawImage();
 
 }
 
 
-/* =================================
-RESET
-================================= */
+/* =========================
+   RESET
+========================= */
 
 function resetImage(){
 
@@ -943,9 +1129,9 @@ function resetImage(){
 }
 
 
-/* =================================
-ADD PRODUCT
-================================= */
+/* =========================
+   ADD PRODUCT
+========================= */
 
 function addProduct(){
 
@@ -955,14 +1141,17 @@ function addProduct(){
       .value
       .trim();
 
-
   const price =
     document
       .getElementById("productPrice")
       .value;
 
 
-  if(!name || !price || !uploadedImage.src){
+  if(
+    !name ||
+    !price ||
+    !uploadedImage.src
+  ){
 
     alert(
       "Please enter product name, price and photo!"
@@ -977,16 +1166,13 @@ function addProduct(){
     document
       .getElementById("productList");
 
-
   const emptyProducts =
     document
       .getElementById("emptyProducts");
 
 
   if(emptyProducts){
-
     emptyProducts.remove();
-
   }
 
 
@@ -997,62 +1183,117 @@ function addProduct(){
   const product =
     document.createElement("div");
 
+  product.className =
+    "product";
 
-  product.className = "product";
+
+  const image =
+    document.createElement("img");
+
+  image.src =
+    editedImage;
+
+  image.alt =
+    name;
 
 
-  product.innerHTML =
+  const productInfo =
+    document.createElement("div");
 
-    '<img src="' + editedImage + '">' +
+  productInfo.className =
+    "product-info";
 
-    '<div class="product-info">' +
 
-    '<h3>' + name + '</h3>' +
+  const title =
+    document.createElement("h3");
 
-    '<p class="price">Rs. ' +
-    price +
-    '</p>' +
+  title.textContent =
+    name;
 
-    '<button class="buy-btn" onclick="buyProduct(\'' +
-    name.replace(/'/g,"\\'") +
-    '\')">' +
 
-    '🛒 Buy Now' +
+  const priceText =
+    document.createElement("p");
 
-    '</button>' +
+  priceText.className =
+    "price";
 
-    '</div>';
+  priceText.textContent =
+    "Rs. " + price;
 
+
+  const buyButton =
+    document.createElement("button");
+
+  buyButton.className =
+    "buy-btn";
+
+  buyButton.textContent =
+    "🛒 Buy Now";
+
+
+  buyButton.onclick =
+    function(){
+
+      buyProduct(name);
+
+    };
+
+
+  productInfo.appendChild(title);
+
+  productInfo.appendChild(priceText);
+
+  productInfo.appendChild(buyButton);
+
+  product.appendChild(image);
+
+  product.appendChild(productInfo);
 
   productList.appendChild(product);
 
 
-  alert("🎉 Product Successfully Added!");
+  alert(
+    "🎉 Product Successfully Added!"
+  );
 
+
+  /* CLEAR FORM */
 
   document
     .getElementById("productName")
     .value = "";
 
-
   document
     .getElementById("productPrice")
     .value = "";
-
 
   document
     .getElementById("imageUpload")
     .value = "";
 
-
   document
     .getElementById("editor")
-    .classList.add("hidden");
+    .classList
+    .add("hidden");
 
 
-  uploadedImage = new Image();
+  uploadedImage =
+    new Image();
 
   rotation = 0;
+
+
+  document
+    .getElementById("brightness")
+    .value = 100;
+
+  document
+    .getElementById("contrast")
+    .value = 100;
+
+  document
+    .getElementById("saturation")
+    .value = 100;
 
 
   window.scrollTo({
