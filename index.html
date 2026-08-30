@@ -7,6 +7,11 @@
 <title>Crochet Collection</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -18,14 +23,19 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
+  background:#fdf0f7;
   color:#222;
-  min-height:100vh;
+}
 
-  background:
-    radial-gradient(circle at 10% 10%, rgba(255,255,255,.6), transparent 25%),
-    radial-gradient(circle at 90% 90%, rgba(255,255,255,.5), transparent 25%),
-    linear-gradient(135deg,#ff9fca,#ffc1df,#e8b8ff,#ffd0e8);
+button,
+input,
+select{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
 }
 
 .hidden{
@@ -33,351 +43,697 @@ body{
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#e52f83;
+  color:white;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.top-header{
+  max-width:1250px;
+  margin:auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.search-box{
+  flex:1;
+  display:flex;
+  background:white;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.search-box input{
+  flex:1;
+  border:none;
+  outline:none;
+  padding:13px;
+  font-size:15px;
+}
+
+.search-box button{
+  width:55px;
+  border:none;
+  background:#ffe2ef;
+  font-size:20px;
+}
+
+.header-icons{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.header-icon{
+  position:relative;
+  border:none;
+  background:transparent;
+  color:white;
+  font-size:24px;
+}
+
+.badge{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:#7b22bd;
+  color:white;
+  font-size:11px;
+  min-width:19px;
+  height:19px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav{
+  background:white;
+  border-bottom:1px solid #eee;
+}
+
+.nav-inner{
+  max-width:1250px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  padding:12px;
+}
+
+.nav button{
+  border:none;
+  background:none;
+  color:#555;
+  font-weight:bold;
+}
+
+.nav button:hover{
+  color:#e52f83;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-  width:100%;
-  padding:15px;
-  background:rgba(255,255,255,.2);
+  max-width:1250px;
+  margin:20px auto;
+  padding:0 15px;
 }
 
 .hero img{
   width:100%;
-  max-height:550px;
+  height:360px;
   object-fit:cover;
+  border-radius:18px;
   display:block;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(150,40,100,.2);
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
 
-/* ================= WELCOME ================= */
+/* =====================================================
+   CATEGORIES
+===================================================== */
 
-.welcome{
+.categories{
+  max-width:1250px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.section-title{
+  margin-bottom:18px;
+  font-size:25px;
+  color:#333;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:15px;
+}
+
+.category{
+  background:white;
+  border-radius:12px;
+  padding:18px 10px;
   text-align:center;
-  padding:50px 20px;
-  background:transparent;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+  transition:.2s;
+  cursor:pointer;
 }
 
-.welcome h1{
-  color:#c92879;
-  font-size:42px;
-  margin-bottom:12px;
+.category:hover{
+  transform:translateY(-4px);
 }
 
-.welcome p{
-  color:#63354f;
-  font-size:18px;
-}
-
-
-/* ================= PRODUCTS ================= */
-
-.products-section{
-  padding:50px 7%;
-  background:transparent;
-}
-
-.products-section h2{
-  text-align:center;
+.category-icon{
   font-size:34px;
-  color:#b91f70;
-  margin-bottom:30px;
+  margin-bottom:8px;
+}
+
+.category p{
+  font-size:14px;
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products{
+  max-width:1250px;
+  margin:30px auto;
+  padding:0 15px 60px;
+}
+
+.products-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.products-header h2{
+  color:#333;
+}
+
+.products-header select{
+  padding:8px;
+  border:1px solid #ddd;
+  border-radius:7px;
 }
 
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+  grid-template-columns:
+    repeat(5,1fr);
+  gap:15px;
 }
 
 .product{
   background:white;
-  border-radius:22px;
+  border-radius:10px;
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(120,30,90,.18);
-  transition:.3s;
+  position:relative;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  transition:.2s;
 }
 
 .product:hover{
-  transform:translateY(-7px);
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,.13);
 }
 
-.product img{
+.product-image{
   width:100%;
-  height:260px;
+  height:210px;
   object-fit:cover;
   display:block;
 }
 
-.product-info{
-  padding:18px;
+.wishlist{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:none;
+  background:white;
+  font-size:19px;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-.product-info h3{
+.product-info{
+  padding:13px;
+}
+
+.product-name{
+  font-size:15px;
+  min-height:38px;
+  margin-bottom:7px;
+}
+
+.product-price{
+  color:#e52f83;
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.rating{
+  color:#f5a623;
+  font-size:13px;
   margin-bottom:10px;
 }
 
-.price{
-  color:#d72d83;
-  font-size:22px;
+.product-buttons{
+  display:flex;
+  gap:7px;
+}
+
+.cart-btn,
+.buy-btn{
+  flex:1;
+  border:none;
+  padding:10px 5px;
+  border-radius:7px;
+  color:white;
+  font-size:13px;
   font-weight:bold;
-  margin-bottom:12px;
+}
+
+.cart-btn{
+  background:#ff9ac5;
 }
 
 .buy-btn{
-  width:100%;
-  border:none;
-  padding:13px;
-  border-radius:12px;
-  background:linear-gradient(90deg,#e63c91,#a64dff);
-  color:white;
-  font-size:16px;
-  cursor:pointer;
+  background:#e52f83;
 }
 
-#emptyProducts{
-  background:rgba(255,255,255,.8);
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  color:#777;
+.cart-btn:hover,
+.buy-btn:hover{
+  opacity:.85;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
   grid-column:1/-1;
-}
-
-
-/* ================= DELIVERY ================= */
-
-.delivery-section{
-  padding:60px 20px;
-  background:transparent;
-}
-
-.delivery-box{
-  max-width:600px;
-  margin:auto;
-  padding:30px;
-  border-radius:25px;
+  text-align:center;
+  padding:50px;
   background:white;
-  box-shadow:0 10px 35px rgba(100,30,90,.2);
-}
-
-.delivery-box h2{
-  text-align:center;
-  color:#d02b7e;
-  margin-bottom:10px;
-}
-
-.delivery-box > p{
-  text-align:center;
+  border-radius:12px;
   color:#777;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:2000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-box{
+  width:100%;
+  max-width:600px;
+  max-height:90vh;
+  overflow:auto;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  border:none;
+  background:none;
+  font-size:25px;
+}
+
+.modal-title{
+  color:#e52f83;
   margin-bottom:20px;
 }
 
-input,
-textarea{
-  width:100%;
-  padding:14px;
-  margin:8px 0;
-  border:2px solid #f0dce8;
-  border-radius:12px;
-  font-size:16px;
-  background:#fffafd;
+
+/* =====================================================
+   CART
+===================================================== */
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
 }
 
-textarea{
-  min-height:100px;
+.cart-item img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.cart-details{
+  flex:1;
+}
+
+.cart-details h4{
+  margin-bottom:5px;
+}
+
+.cart-price{
+  color:#e52f83;
+  font-weight:bold;
+}
+
+.remove-cart{
+  border:none;
+  background:#ffe1ed;
+  color:#d72575;
+  padding:7px;
+  border-radius:6px;
+}
+
+.cart-total{
+  text-align:right;
+  margin-top:20px;
+  font-size:22px;
+  font-weight:bold;
+  color:#e52f83;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group{
+  margin-bottom:12px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:5px;
+  font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  outline:none;
+}
+
+.form-group textarea{
+  min-height:90px;
   resize:vertical;
 }
 
-input:focus,
-textarea:focus{
-  outline:none;
-  border-color:#e63c91;
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:#e52f83;
 }
 
-button{
+.primary-btn{
+  width:100%;
   border:none;
-  padding:13px 20px;
-  border-radius:12px;
-  font-size:16px;
-  cursor:pointer;
+  background:#e52f83;
   color:white;
-  background:linear-gradient(90deg,#e63c91,#a64dff);
-  margin:7px 0;
-}
-
-.delivery-submit{
-  width:100%;
-}
-
-#orderMessage{
-  text-align:center;
+  padding:13px;
+  border-radius:8px;
+  font-size:16px;
   font-weight:bold;
-  margin-top:15px;
+  margin-top:10px;
 }
 
-
-/* ================= LOGIN ================= */
-
-.login-section{
-  padding:70px 20px;
-  background:rgba(255,255,255,.15);
-}
-
-.login-box{
+.whatsapp-btn{
   width:100%;
+  border:none;
+  background:#20b967;
+  color:white;
+  padding:13px;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
+
+.admin-section{
+  max-width:1250px;
+  margin:30px auto;
+  padding:0 15px 70px;
+}
+
+.admin-login{
   max-width:430px;
-  background:white;
-  padding:35px;
-  margin:auto;
-  border-radius:28px;
-  text-align:center;
-  box-shadow:0 15px 45px rgba(100,30,90,.25);
-}
-
-.login-box h1{
-  color:#d52e82;
-  margin-bottom:10px;
-}
-
-.login-box p{
-  color:#777;
-  margin-bottom:15px;
-}
-
-#loginMessage{
-  font-weight:bold;
-}
-
-
-/* ================= ADMIN ================= */
-
-.admin-panel{
-  padding:50px 20px;
-  background:transparent;
-}
-
-.admin-box{
-  max-width:750px;
   margin:auto;
   background:white;
-  padding:30px;
-  border-radius:28px;
-  box-shadow:0 10px 35px rgba(100,30,90,.2);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-.admin-box h1,
-.admin-box h2{
+.admin-login h2{
+  color:#e52f83;
   text-align:center;
-  color:#d52e82;
   margin-bottom:20px;
 }
 
-.profile-info{
-  background:#fff0f7;
-  padding:20px;
+.admin-panel{
+  max-width:750px;
+  margin:auto;
+  background:white;
+  padding:25px;
   border-radius:15px;
-  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-.profile-info p{
-  margin:10px 0;
-}
-
-.upload-box{
-  display:block;
+.profile{
   background:#fff0f7;
   padding:18px;
-  text-align:center;
-  border-radius:15px;
-  margin:15px 0;
-  border:2px dashed #ef8fbb;
-  cursor:pointer;
+  border-radius:10px;
+  margin-bottom:20px;
 }
 
+.upload{
+  border:2px dashed #e52f83;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+  margin:15px 0;
+}
 
-/* ================= EDITOR ================= */
+.editor{
+  margin-top:15px;
+}
 
 #canvas{
   width:100%;
   max-height:400px;
   object-fit:contain;
-  border-radius:15px;
-  border:2px solid #eee;
-  margin-top:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
 }
 
-.editor-controls{
-  background:#fafafa;
-  padding:20px;
-  border-radius:15px;
-  margin-top:15px;
-}
-
-.editor-controls label{
-  display:block;
-  margin:15px 0;
-  font-weight:bold;
-}
-
-.editor-controls input[type="range"]{
-  padding:0;
-}
-
-.done-button{
+.range{
   width:100%;
-  background:linear-gradient(90deg,#20a96b,#48c986);
+  margin:10px 0 15px;
 }
 
-.logout-button{
-  width:100%;
+.logout{
   background:#555;
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-  background:rgba(30,20,30,.95);
+  background:#242024;
   color:white;
   text-align:center;
   padding:40px 20px;
 }
 
 footer h2{
-  color:#ff75bb;
-  margin-bottom:15px;
+  color:#ff78b9;
+  margin-bottom:12px;
 }
 
 footer p{
-  margin:10px;
+  margin:8px;
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-nav{
+  display:none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+  .product-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
 
 @media(max-width:600px){
 
-  .welcome h1{
-    font-size:30px;
+  body{
+    padding-bottom:65px;
   }
 
-  .products-section{
-    padding:35px 5%;
+  .top-header{
+    flex-wrap:wrap;
+    gap:10px;
   }
 
-  .delivery-box,
-  .admin-box,
-  .login-box{
-    padding:22px;
+  .logo{
+    font-size:20px;
   }
 
-  .product img{
-    height:230px;
+  .search-box{
+    order:3;
+    flex-basis:100%;
+  }
+
+  .header-icons{
+    margin-left:auto;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .hero{
+    margin:10px auto;
+  }
+
+  .hero img{
+    height:190px;
+    border-radius:12px;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+
+  .category{
+    padding:12px 5px;
+  }
+
+  .category-icon{
+    font-size:27px;
+  }
+
+  .category p{
+    font-size:11px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .product-image{
+    height:170px;
+  }
+
+  .product-info{
+    padding:10px;
+  }
+
+  .product-name{
+    font-size:13px;
+  }
+
+  .product-price{
+    font-size:18px;
+  }
+
+  .product-buttons{
+    flex-direction:column;
+  }
+
+  .mobile-nav{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:62px;
+    background:white;
+    border-top:1px solid #ddd;
+    z-index:1500;
+    justify-content:space-around;
+  }
+
+  .mobile-nav button{
+    border:none;
+    background:white;
+    color:#555;
+    font-size:12px;
+  }
+
+  .mobile-nav span{
+    display:block;
+    font-size:22px;
+  }
+
+  .products-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
   }
 
 }
+
 </style>
 </head>
 
@@ -385,7 +741,111 @@ footer p{
 <body>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+  <div class="top-header">
+
+    <div class="logo">
+      🧶 Crochet
+    </div>
+
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search in Crochet Collection..."
+        oninput="searchProducts()"
+      >
+
+      <button onclick="searchProducts()">
+        🔎
+      </button>
+
+    </div>
+
+
+    <div class="header-icons">
+
+      <button
+        class="header-icon"
+        onclick="openWishlist()"
+      >
+        ❤️
+        <span
+          class="badge"
+          id="wishlistCount"
+        >0</span>
+      </button>
+
+
+      <button
+        class="header-icon"
+        onclick="openCart()"
+      >
+        🛒
+        <span
+          class="badge"
+          id="cartCount"
+        >0</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     DESKTOP NAV
+===================================================== -->
+
+<nav class="nav">
+
+  <div class="nav-inner">
+
+    <button onclick="goHome()">
+      🏠 Home
+    </button>
+
+    <button onclick="filterCategory('All')">
+      🛍️ All Products
+    </button>
+
+    <button onclick="filterCategory('Bags')">
+      👜 Bags
+    </button>
+
+    <button onclick="filterCategory('Flowers')">
+      🌸 Flowers
+    </button>
+
+    <button onclick="filterCategory('Toys')">
+      🧸 Toys
+    </button>
+
+    <button onclick="openCart()">
+      🛒 Cart
+    </button>
+
+    <button onclick="goAdmin()">
+      👤 Admin
+    </button>
+
+  </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -397,173 +857,286 @@ footer p{
 </section>
 
 
-<!-- ================= WELCOME ================= -->
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
-<section class="welcome">
+<section class="categories">
 
-  <h1>🧶 Crochet Collection</h1>
+  <h2 class="section-title">
+    🛍️ Categories
+  </h2>
 
-  <p>
-    Beautiful handmade products made with love ❤️
-  </p>
+
+  <div class="category-grid">
+
+    <div
+      class="category"
+      onclick="filterCategory('All')"
+    >
+      <div class="category-icon">🛍️</div>
+      <p>All</p>
+    </div>
+
+
+    <div
+      class="category"
+      onclick="filterCategory('Bags')"
+    >
+      <div class="category-icon">👜</div>
+      <p>Bags</p>
+    </div>
+
+
+    <div
+      class="category"
+      onclick="filterCategory('Flowers')"
+    >
+      <div class="category-icon">🌸</div>
+      <p>Flowers</p>
+    </div>
+
+
+    <div
+      class="category"
+      onclick="filterCategory('Toys')"
+    >
+      <div class="category-icon">🧸</div>
+      <p>Toys</p>
+    </div>
+
+
+    <div
+      class="category"
+      onclick="filterCategory('Accessories')"
+    >
+      <div class="category-icon">🎀</div>
+      <p>Accessories</p>
+    </div>
+
+
+    <div
+      class="category"
+      onclick="filterCategory('Home')"
+    >
+      <div class="category-icon">🏠</div>
+      <p>Home</p>
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
-<section class="products-section">
+<section
+  class="products"
+  id="productsSection"
+>
 
-  <h2>🛍️ Our Products</h2>
+  <div class="products-header">
+
+    <h2>
+      ✨ Just For You
+    </h2>
+
+
+    <select
+      id="sortSelect"
+      onchange="sortProducts()"
+    >
+
+      <option value="default">
+        Sort Products
+      </option>
+
+      <option value="low">
+        Price: Low to High
+      </option>
+
+      <option value="high">
+        Price: High to Low
+      </option>
+
+      <option value="name">
+        Name
+      </option>
+
+    </select>
+
+  </div>
+
 
   <div
-    id="productList"
+    id="productGrid"
     class="product-grid"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMIN LOGIN
+===================================================== -->
+
+<section
+  class="admin-section"
+  id="adminSection"
+>
+
+  <div
+    class="admin-login"
+    id="adminLogin"
   >
 
-    <p id="emptyProducts">
-      No products available yet ✨
-    </p>
-
-  </div>
-
-</section>
+    <h2>
+      🔐 Admin Login
+    </h2>
 
 
-<!-- ================= DELIVERY ================= -->
+    <div class="form-group">
 
-<section
-  class="delivery-section"
-  id="deliverySection"
->
+      <label>
+        Name
+      </label>
 
-  <div class="delivery-box">
+      <input
+        type="text"
+        id="adminName"
+        placeholder="Enter Name"
+      >
 
-    <h2>🚚 Order & Home Delivery</h2>
+    </div>
 
-    <p>
-      Fill in your details to order a product.
-    </p>
 
-    <input
-      type="text"
-      id="customerName"
-      placeholder="Your Name"
-    >
+    <div class="form-group">
 
-    <textarea
-      id="customerAddress"
-      placeholder="Your Full Address"
-    ></textarea>
+      <label>
+        Password
+      </label>
 
-    <input
-      type="tel"
-      id="customerPhone"
-      placeholder="Your Phone Number"
-    >
+      <input
+        type="password"
+        id="adminPassword"
+        placeholder="Enter Password"
+      >
 
-    <input
-      type="text"
-      id="customerCountry"
-      placeholder="Your Country"
-    >
+    </div>
 
-    <input
-      type="text"
-      id="selectedProduct"
-      placeholder="Selected Product"
-      readonly
-    >
 
     <button
-      class="delivery-submit"
-      onclick="placeOrder()"
+      class="primary-btn"
+      onclick="adminLogin()"
     >
-      🚚 Confirm Order
+      🔐 Login
     </button>
 
-    <p id="orderMessage"></p>
+
+    <p
+      id="adminMessage"
+      style="text-align:center;margin-top:12px;"
+    ></p>
 
   </div>
 
-</section>
+
+  <!-- ADMIN PANEL -->
+
+  <div
+    class="admin-panel hidden"
+    id="adminPanel"
+  >
+
+    <h2 style="color:#e52f83;margin-bottom:20px;">
+      👤 My Profile
+    </h2>
 
 
-<!-- ================= ADMIN LOGIN ================= -->
-
-<section class="login-section">
-
-  <div class="login-box">
-
-    <h1>🔐 Admin Login</h1>
-
-    <p>
-      Login to add new products
-    </p>
-
-    <input
-      type="text"
-      id="loginName"
-      placeholder="Enter Name"
-    >
-
-    <input
-      type="password"
-      id="loginPassword"
-      placeholder="Enter Password"
-    >
-
-    <button onclick="login()">
-      Login
-    </button>
-
-    <p id="loginMessage"></p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ADMIN PANEL ================= -->
-
-<section
-  id="adminPanel"
-  class="admin-panel hidden"
->
-
-  <div class="admin-box">
-
-    <h1>👤 My Profile</h1>
-
-    <div class="profile-info">
+    <div class="profile">
 
       <p>
         <strong>Name:</strong> Sameeha
       </p>
 
-      <p>
+      <p style="margin-top:8px;">
         <strong>Gender:</strong> Female
       </p>
 
     </div>
 
 
-    <h2>➕ Add New Product</h2>
-
-    <input
-      type="text"
-      id="productName"
-      placeholder="Product Name"
-    >
-
-    <input
-      type="number"
-      id="productPrice"
-      placeholder="Product Price (Rs.)"
-    >
+    <h2 style="color:#e52f83;margin-bottom:15px;">
+      ➕ Add New Product
+    </h2>
 
 
-    <label class="upload-box">
+    <div class="form-group">
+
+      <label>
+        Product Name
+      </label>
+
+      <input
+        type="text"
+        id="newProductName"
+        placeholder="Example: Crochet Flower"
+      >
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label>
+        Price
+      </label>
+
+      <input
+        type="number"
+        id="newProductPrice"
+        placeholder="Price in Rs."
+      >
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label>
+        Category
+      </label>
+
+      <select id="newProductCategory">
+
+        <option value="Bags">
+          👜 Bags
+        </option>
+
+        <option value="Flowers">
+          🌸 Flowers
+        </option>
+
+        <option value="Toys">
+          🧸 Toys
+        </option>
+
+        <option value="Accessories">
+          🎀 Accessories
+        </option>
+
+        <option value="Home">
+          🏠 Home
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <label class="upload">
 
       📷 Select Product Photo
 
@@ -576,83 +1149,90 @@ footer p{
     </label>
 
 
-    <!-- PHOTO EDITOR -->
-
     <div
+      class="editor hidden"
       id="editor"
-      class="hidden"
     >
 
-      <h2>✨ Photo Editor</h2>
+      <h3 style="color:#e52f83;margin-bottom:12px;">
+        ✨ Photo Editor
+      </h3>
+
 
       <canvas id="canvas"></canvas>
 
-      <div class="editor-controls">
 
-        <label>
-          ☀️ Brightness
+      <label>
+        ☀️ Brightness
+      </label>
 
-          <input
-            type="range"
-            id="brightness"
-            min="0"
-            max="200"
-            value="100"
-          >
-        </label>
-
-
-        <label>
-          🎨 Contrast
-
-          <input
-            type="range"
-            id="contrast"
-            min="0"
-            max="200"
-            value="100"
-          >
-        </label>
+      <input
+        class="range"
+        type="range"
+        id="brightness"
+        min="0"
+        max="200"
+        value="100"
+      >
 
 
-        <label>
-          🌈 Saturation
+      <label>
+        🎨 Contrast
+      </label>
 
-          <input
-            type="range"
-            id="saturation"
-            min="0"
-            max="200"
-            value="100"
-          >
-        </label>
-
-
-        <button onclick="rotateImage()">
-          🔄 Rotate Photo
-        </button>
+      <input
+        class="range"
+        type="range"
+        id="contrast"
+        min="0"
+        max="200"
+        value="100"
+      >
 
 
-        <button onclick="resetImage()">
-          ↩️ Reset
-        </button>
+      <label>
+        🌈 Saturation
+      </label>
 
-      </div>
+      <input
+        class="range"
+        type="range"
+        id="saturation"
+        min="0"
+        max="200"
+        value="100"
+      >
+
+
+      <button
+        class="primary-btn"
+        onclick="rotateImage()"
+      >
+        🔄 Rotate
+      </button>
+
+
+      <button
+        class="primary-btn"
+        onclick="resetImage()"
+      >
+        ↩️ Reset
+      </button>
 
     </div>
 
 
     <button
-      class="done-button"
+      class="primary-btn"
       onclick="addProduct()"
     >
-      ✅ DONE - ADD PRODUCT
+      ✅ Add Product
     </button>
 
 
     <button
-      class="logout-button"
-      onclick="logout()"
+      class="primary-btn logout"
+      onclick="adminLogout()"
     >
       🚪 Logout
     </button>
@@ -662,18 +1242,238 @@ footer p{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     CART MODAL
+===================================================== -->
+
+<div
+  class="modal hidden"
+  id="cartModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('cartModal')"
+    >
+      ×
+    </button>
+
+
+    <h2 class="modal-title">
+      🛒 My Cart
+    </h2>
+
+
+    <div id="cartItems"></div>
+
+
+    <div
+      class="cart-total"
+      id="cartTotal"
+    >
+      Total: Rs. 0
+    </div>
+
+
+    <button
+      class="primary-btn"
+      onclick="openCheckout()"
+    >
+      🚚 Checkout
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     WISHLIST MODAL
+===================================================== -->
+
+<div
+  class="modal hidden"
+  id="wishlistModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('wishlistModal')"
+    >
+      ×
+    </button>
+
+
+    <h2 class="modal-title">
+      ❤️ My Wishlist
+    </h2>
+
+
+    <div id="wishlistItems"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     CHECKOUT MODAL
+===================================================== -->
+
+<div
+  class="modal hidden"
+  id="checkoutModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('checkoutModal')"
+    >
+      ×
+    </button>
+
+
+    <h2 class="modal-title">
+      🚚 Checkout
+    </h2>
+
+
+    <div class="form-group">
+
+      <label>
+        Your Name
+      </label>
+
+      <input
+        id="customerName"
+        type="text"
+        placeholder="Enter your name"
+      >
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label>
+        Phone Number
+      </label>
+
+      <input
+        id="customerPhone"
+        type="tel"
+        placeholder="03XXXXXXXXX"
+      >
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label>
+        Full Address
+      </label>
+
+      <textarea
+        id="customerAddress"
+        placeholder="Enter your full address"
+      ></textarea>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label>
+        Country
+      </label>
+
+      <input
+        id="customerCountry"
+        type="text"
+        placeholder="Pakistan"
+        value="Pakistan"
+      >
+
+    </div>
+
+
+    <button
+      class="whatsapp-btn"
+      onclick="sendWhatsAppOrder()"
+    >
+      💬 Order on WhatsApp
+    </button>
+
+
+    <p
+      id="checkoutMessage"
+      style="text-align:center;margin-top:12px;font-weight:bold;"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<div class="mobile-nav">
+
+  <button onclick="goHome()">
+    <span>🏠</span>
+    Home
+  </button>
+
+
+  <button onclick="openWishlist()">
+    <span>❤️</span>
+    Wishlist
+  </button>
+
+
+  <button onclick="openCart()">
+    <span>🛒</span>
+    Cart
+  </button>
+
+
+  <button onclick="goAdmin()">
+    <span>👤</span>
+    Account
+  </button>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-  <h2>🚚 FREE HOME DELIVERY</h2>
+  <h2>
+    🚚 FREE HOME DELIVERY
+  </h2>
 
   <p>
-    We deliver your favorite products to your home ❤️
+    Beautiful handmade crochet products ❤️
   </p>
 
   <p>
     📞 Contact: 03054330064
+  </p>
+
+  <p>
+    💬 WhatsApp Orders Available
   </p>
 
   <p>
@@ -683,72 +1483,66 @@ footer p{
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-/* =========================
-   LOGIN DETAILS
-========================= */
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
 
-const CORRECT_NAME = "Sameeha";
-const CORRECT_PASSWORD = "crochet123";
+const ADMIN_NAME = "Sameeha";
+const ADMIN_PASSWORD = "crochet123";
 
 
-/* =========================
-   LOGIN
-========================= */
-
-function login(){
+function adminLogin(){
 
   const name =
     document
-      .getElementById("loginName")
+      .getElementById("adminName")
       .value
       .trim();
 
   const password =
     document
-      .getElementById("loginPassword")
+      .getElementById("adminPassword")
       .value;
 
   const message =
     document
-      .getElementById("loginMessage");
+      .getElementById("adminMessage");
 
 
   if(
     name.toLowerCase() ===
-      CORRECT_NAME.toLowerCase()
+    ADMIN_NAME.toLowerCase()
     &&
-    password === CORRECT_PASSWORD
+    password === ADMIN_PASSWORD
   ){
+
+    document
+      .getElementById("adminLogin")
+      .classList
+      .add("hidden");
 
     document
       .getElementById("adminPanel")
       .classList
       .remove("hidden");
 
-    message.style.color = "green";
-
     message.innerHTML =
-      "✅ Login Successful!";
+      "";
 
-    setTimeout(function(){
-
-      document
-        .getElementById("adminPanel")
-        .scrollIntoView({
-          behavior:"smooth"
-        });
-
-    },300);
+    document
+      .getElementById("adminSection")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
 
   }
 
   else{
 
-    message.style.color = "red";
+    message.style.color =
+      "red";
 
     message.innerHTML =
       "❌ Wrong name or password!";
@@ -758,11 +1552,7 @@ function login(){
 }
 
 
-/* =========================
-   LOGOUT
-========================= */
-
-function logout(){
+function adminLogout(){
 
   document
     .getElementById("adminPanel")
@@ -770,37 +1560,247 @@ function logout(){
     .add("hidden");
 
   document
-    .getElementById("loginName")
+    .getElementById("adminLogin")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("adminName")
     .value = "";
 
   document
-    .getElementById("loginPassword")
+    .getElementById("adminPassword")
     .value = "";
-
-  document
-    .getElementById("loginMessage")
-    .style.color = "green";
-
-  document
-    .getElementById("loginMessage")
-    .innerHTML =
-      "🚪 Logged out successfully!";
 
 }
 
 
-/* =========================
-   BUY PRODUCT
-========================= */
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
-function buyProduct(productName){
+let products =
+  JSON.parse(
+    localStorage.getItem("crochetProducts")
+  ) || [];
+
+
+let cart =
+  JSON.parse(
+    localStorage.getItem("crochetCart")
+  ) || [];
+
+
+let wishlist =
+  JSON.parse(
+    localStorage.getItem("crochetWishlist")
+  ) || [];
+
+
+let currentCategory = "All";
+
+
+function saveData(){
+
+  localStorage.setItem(
+    "crochetProducts",
+    JSON.stringify(products)
+  );
+
+  localStorage.setItem(
+    "crochetCart",
+    JSON.stringify(cart)
+  );
+
+  localStorage.setItem(
+    "crochetWishlist",
+    JSON.stringify(wishlist)
+  );
+
+}
+
+
+function displayProducts(){
+
+  const grid =
+    document.getElementById(
+      "productGrid"
+    );
+
+
+  let list =
+    [...products];
+
+
+  if(currentCategory !== "All"){
+
+    list =
+      list.filter(function(product){
+
+        return product.category ===
+          currentCategory;
+
+      });
+
+  }
+
+
+  const search =
+    document
+      .getElementById("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  if(search){
+
+    list =
+      list.filter(function(product){
+
+        return product.name
+          .toLowerCase()
+          .includes(search);
+
+      });
+
+  }
+
+
+  grid.innerHTML = "";
+
+
+  if(list.length === 0){
+
+    grid.innerHTML = `
+      <div class="empty">
+        🧶 No products found yet.
+        <br><br>
+        Login to Admin and add products.
+      </div>
+    `;
+
+    updateBadges();
+
+    return;
+
+  }
+
+
+  list.forEach(function(product){
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "product";
+
+
+    const isWishlisted =
+      wishlist.includes(product.id);
+
+
+    card.innerHTML = `
+
+      <button
+        class="wishlist"
+        onclick="toggleWishlist(${product.id})"
+      >
+        ${isWishlisted ? "❤️" : "♡"}
+      </button>
+
+      <img
+        class="product-image"
+        src="${product.image}"
+        alt="${escapeHTML(product.name)}"
+      >
+
+      <div class="product-info">
+
+        <div class="product-name">
+          ${escapeHTML(product.name)}
+        </div>
+
+        <div class="product-price">
+          Rs. ${Number(product.price).toLocaleString()}
+        </div>
+
+        <div class="rating">
+          ⭐⭐⭐⭐⭐
+          <span style="color:#888;">
+            5.0
+          </span>
+        </div>
+
+        <div class="product-buttons">
+
+          <button
+            class="cart-btn"
+            onclick="addToCart(${product.id})"
+          >
+            🛒 Cart
+          </button>
+
+          <button
+            class="buy-btn"
+            onclick="buyNow(${product.id})"
+          >
+            Buy Now
+          </button>
+
+        </div>
+
+      </div>
+    `;
+
+
+    grid.appendChild(card);
+
+  });
+
+
+  updateBadges();
+
+}
+
+
+function escapeHTML(text){
+
+  const div =
+    document.createElement("div");
+
+  div.textContent =
+    text;
+
+  return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchProducts(){
+
+  displayProducts();
+
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+function filterCategory(category){
+
+  currentCategory =
+    category;
+
+  displayProducts();
 
   document
-    .getElementById("selectedProduct")
-    .value = productName;
-
-  document
-    .getElementById("deliverySection")
+    .getElementById("productsSection")
     .scrollIntoView({
       behavior:"smooth"
     });
@@ -808,11 +1808,393 @@ function buyProduct(productName){
 }
 
 
-/* =========================
-   PLACE ORDER
-========================= */
+/* =====================================================
+   SORT
+===================================================== */
 
-function placeOrder(){
+function sortProducts(){
+
+  const type =
+    document
+      .getElementById("sortSelect")
+      .value;
+
+
+  if(type === "low"){
+
+    products.sort(function(a,b){
+      return Number(a.price) -
+             Number(b.price);
+    });
+
+  }
+
+
+  if(type === "high"){
+
+    products.sort(function(a,b){
+      return Number(b.price) -
+             Number(a.price);
+    });
+
+  }
+
+
+  if(type === "name"){
+
+    products.sort(function(a,b){
+
+      return a.name.localeCompare(
+        b.name
+      );
+
+    });
+
+  }
+
+
+  displayProducts();
+
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+function addToCart(id){
+
+  const product =
+    products.find(function(p){
+
+      return p.id === id;
+
+    });
+
+
+  if(!product){
+    return;
+  }
+
+
+  cart.push(product);
+
+
+  saveData();
+
+  updateBadges();
+
+  alert(
+    "🛒 Product added to cart!"
+  );
+
+}
+
+
+function removeFromCart(index){
+
+  cart.splice(
+    index,
+    1
+  );
+
+  saveData();
+
+  renderCart();
+
+  updateBadges();
+
+}
+
+
+function renderCart(){
+
+  const container =
+    document.getElementById(
+      "cartItems"
+    );
+
+
+  container.innerHTML = "";
+
+
+  if(cart.length === 0){
+
+    container.innerHTML = `
+      <div class="empty">
+        🛒 Your cart is empty.
+      </div>
+    `;
+
+    document
+      .getElementById("cartTotal")
+      .innerHTML =
+      "Total: Rs. 0";
+
+    return;
+
+  }
+
+
+  let total = 0;
+
+
+  cart.forEach(function(product,index){
+
+    total +=
+      Number(product.price);
+
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "cart-item";
+
+
+    item.innerHTML = `
+
+      <img
+        src="${product.image}"
+        alt=""
+      >
+
+      <div class="cart-details">
+
+        <h4>
+          ${escapeHTML(product.name)}
+        </h4>
+
+        <div class="cart-price">
+          Rs. ${Number(product.price).toLocaleString()}
+        </div>
+
+      </div>
+
+      <button
+        class="remove-cart"
+        onclick="removeFromCart(${index})"
+      >
+        🗑️
+      </button>
+
+    `;
+
+
+    container.appendChild(item);
+
+  });
+
+
+  document
+    .getElementById("cartTotal")
+    .innerHTML =
+    "Total: Rs. " +
+    total.toLocaleString();
+
+}
+
+
+function openCart(){
+
+  renderCart();
+
+  document
+    .getElementById("cartModal")
+    .classList
+    .remove("hidden");
+
+}
+
+
+function buyNow(id){
+
+  const product =
+    products.find(function(p){
+
+      return p.id === id;
+
+    });
+
+
+  if(!product){
+    return;
+  }
+
+
+  cart = [product];
+
+  saveData();
+
+  openCheckout();
+
+}
+
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+function toggleWishlist(id){
+
+  const index =
+    wishlist.indexOf(id);
+
+
+  if(index === -1){
+
+    wishlist.push(id);
+
+    alert(
+      "❤️ Added to wishlist!"
+    );
+
+  }
+
+  else{
+
+    wishlist.splice(
+      index,
+      1
+    );
+
+  }
+
+
+  saveData();
+
+  displayProducts();
+
+}
+
+
+function openWishlist(){
+
+  const container =
+    document.getElementById(
+      "wishlistItems"
+    );
+
+
+  container.innerHTML = "";
+
+
+  const items =
+    products.filter(function(product){
+
+      return wishlist.includes(
+        product.id
+      );
+
+    });
+
+
+  if(items.length === 0){
+
+    container.innerHTML = `
+      <div class="empty">
+        ❤️ Your wishlist is empty.
+      </div>
+    `;
+
+  }
+
+
+  items.forEach(function(product){
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "cart-item";
+
+
+    item.innerHTML = `
+
+      <img
+        src="${product.image}"
+        alt=""
+      >
+
+      <div class="cart-details">
+
+        <h4>
+          ${escapeHTML(product.name)}
+        </h4>
+
+        <div class="cart-price">
+          Rs. ${Number(product.price).toLocaleString()}
+        </div>
+
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buyNow(${product.id})"
+      >
+        Buy
+      </button>
+
+    `;
+
+
+    container.appendChild(item);
+
+  });
+
+
+  document
+    .getElementById("wishlistModal")
+    .classList
+    .remove("hidden");
+
+}
+
+
+function updateBadges(){
+
+  document
+    .getElementById("cartCount")
+    .textContent =
+    cart.length;
+
+
+  document
+    .getElementById("wishlistCount")
+    .textContent =
+    wishlist.length;
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function openCheckout(){
+
+  closeModal("cartModal");
+
+  document
+    .getElementById("checkoutModal")
+    .classList
+    .remove("hidden");
+
+}
+
+
+function sendWhatsAppOrder(){
+
+  if(cart.length === 0){
+
+    alert(
+      "🛒 Your cart is empty!"
+    );
+
+    return;
+
+  }
+
 
   const name =
     document
@@ -820,11 +2202,6 @@ function placeOrder(){
       .value
       .trim();
 
-  const address =
-    document
-      .getElementById("customerAddress")
-      .value
-      .trim();
 
   const phone =
     document
@@ -832,110 +2209,162 @@ function placeOrder(){
       .value
       .trim();
 
+
+  const address =
+    document
+      .getElementById("customerAddress")
+      .value
+      .trim();
+
+
   const country =
     document
       .getElementById("customerCountry")
       .value
       .trim();
 
-  const product =
-    document
-      .getElementById("selectedProduct")
-      .value
-      .trim();
-
-  const orderMessage =
-    document
-      .getElementById("orderMessage");
-
 
   if(
     !name ||
-    !address ||
     !phone ||
-    !country ||
-    !product
+    !address ||
+    !country
   ){
 
-    orderMessage.style.color = "red";
+    document
+      .getElementById("checkoutMessage")
+      .style.color = "red";
 
-    orderMessage.innerHTML =
-      "❌ Please select a product and fill all details!";
+    document
+      .getElementById("checkoutMessage")
+      .innerHTML =
+      "❌ Please fill all details!";
 
     return;
 
   }
 
 
-  /* WHATSAPP NUMBER */
+  let total = 0;
 
-  const myWhatsAppNumber =
-    "923054330064";
+  let items = "";
 
 
-  /* ORDER MESSAGE */
+  cart.forEach(function(product){
+
+    total +=
+      Number(product.price);
+
+    items +=
+      "📦 " +
+      product.name +
+      " - Rs. " +
+      product.price +
+      "\n";
+
+  });
+
 
   const message =
 
     "🛍️ NEW ORDER - CROCHET COLLECTION\n\n" +
 
-    "📦 Product: " +
-    product +
-    "\n\n" +
+    items +
 
-    "👤 Customer Name: " +
+    "\n💰 Total: Rs. " +
+    total.toLocaleString() +
+
+    "\n\n👤 Customer: " +
     name +
-    "\n" +
 
-    "📞 Customer Phone: " +
+    "\n📞 Phone: " +
     phone +
-    "\n" +
 
-    "📍 Address: " +
+    "\n📍 Address: " +
     address +
-    "\n" +
 
-    "🌍 Country: " +
+    "\n🌍 Country: " +
     country +
-    "\n\n" +
 
-    "🚚 Home Delivery Order";
+    "\n\n🚚 Home Delivery";
 
 
-  const whatsappURL =
+  const whatsappNumber =
+    "923054330064";
+
+
+  const url =
     "https://wa.me/" +
-    myWhatsAppNumber +
+    whatsappNumber +
     "?text=" +
-    encodeURIComponent(message);
+    encodeURIComponent(
+      message
+    );
 
 
   window.open(
-    whatsappURL,
+    url,
     "_blank"
   );
 
 }
 
 
-/* =========================
-   PHOTO EDITOR
-========================= */
+/* =====================================================
+   MODALS
+===================================================== */
+
+function closeModal(id){
+
+  document
+    .getElementById(id)
+    .classList
+    .add("hidden");
+
+}
+
+
+document
+  .querySelectorAll(".modal")
+  .forEach(function(modal){
+
+    modal.addEventListener(
+      "click",
+      function(event){
+
+        if(event.target === modal){
+
+          modal.classList.add(
+            "hidden"
+          );
+
+        }
+
+      }
+    );
+
+  });
+
+
+/* =====================================================
+   ADMIN PRODUCT IMAGE EDITOR
+===================================================== */
 
 const canvas =
-  document.getElementById("canvas");
+  document.getElementById(
+    "canvas"
+  );
 
 const ctx =
   canvas.getContext("2d");
 
+
 let uploadedImage =
   new Image();
 
+
 let rotation = 0;
 
-
-/* =========================
-   IMAGE UPLOAD
-========================= */
 
 document
   .getElementById("imageUpload")
@@ -946,12 +2375,15 @@ document
       const file =
         event.target.files[0];
 
+
       if(!file){
         return;
       }
 
+
       const reader =
         new FileReader();
+
 
       reader.onload =
         function(e){
@@ -965,29 +2397,29 @@ document
               canvas.height =
                 uploadedImage.height;
 
+
               document
                 .getElementById("editor")
                 .classList
                 .remove("hidden");
 
+
               drawImage();
 
             };
+
 
           uploadedImage.src =
             e.target.result;
 
         };
 
+
       reader.readAsDataURL(file);
 
     }
   );
 
-
-/* =========================
-   EDITOR CONTROLS
-========================= */
 
 document
   .getElementById("brightness")
@@ -996,12 +2428,14 @@ document
     drawImage
   );
 
+
 document
   .getElementById("contrast")
   .addEventListener(
     "input",
     drawImage
   );
+
 
 document
   .getElementById("saturation")
@@ -1011,25 +2445,24 @@ document
   );
 
 
-/* =========================
-   DRAW IMAGE
-========================= */
-
 function drawImage(){
 
   if(!uploadedImage.src){
     return;
   }
 
+
   const brightness =
     document
       .getElementById("brightness")
       .value;
 
+
   const contrast =
     document
       .getElementById("contrast")
       .value;
+
 
   const saturation =
     document
@@ -1087,10 +2520,6 @@ function drawImage(){
 }
 
 
-/* =========================
-   ROTATE
-========================= */
-
 function rotateImage(){
 
   rotation += 90;
@@ -1103,10 +2532,6 @@ function rotateImage(){
 
 }
 
-
-/* =========================
-   RESET
-========================= */
 
 function resetImage(){
 
@@ -1129,21 +2554,28 @@ function resetImage(){
 }
 
 
-/* =========================
+/* =====================================================
    ADD PRODUCT
-========================= */
+===================================================== */
 
 function addProduct(){
 
   const name =
     document
-      .getElementById("productName")
+      .getElementById("newProductName")
       .value
       .trim();
 
+
   const price =
     document
-      .getElementById("productPrice")
+      .getElementById("newProductPrice")
+      .value;
+
+
+  const category =
+    document
+      .getElementById("newProductCategory")
       .value;
 
 
@@ -1154,7 +2586,7 @@ function addProduct(){
   ){
 
     alert(
-      "Please enter product name, price and photo!"
+      "Please enter name, price and photo!"
     );
 
     return;
@@ -1162,114 +2594,62 @@ function addProduct(){
   }
 
 
-  const productList =
-    document
-      .getElementById("productList");
-
-  const emptyProducts =
-    document
-      .getElementById("emptyProducts");
-
-
-  if(emptyProducts){
-    emptyProducts.remove();
-  }
-
-
   const editedImage =
-    canvas.toDataURL("image/png");
+    canvas.toDataURL(
+      "image/png"
+    );
 
 
-  const product =
-    document.createElement("div");
+  const product = {
 
-  product.className =
-    "product";
+    id:
+      Date.now(),
 
+    name:
+      name,
 
-  const image =
-    document.createElement("img");
+    price:
+      Number(price),
 
-  image.src =
-    editedImage;
+    category:
+      category,
 
-  image.alt =
-    name;
+    image:
+      editedImage
 
-
-  const productInfo =
-    document.createElement("div");
-
-  productInfo.className =
-    "product-info";
+  };
 
 
-  const title =
-    document.createElement("h3");
-
-  title.textContent =
-    name;
-
-
-  const priceText =
-    document.createElement("p");
-
-  priceText.className =
-    "price";
-
-  priceText.textContent =
-    "Rs. " + price;
-
-
-  const buyButton =
-    document.createElement("button");
-
-  buyButton.className =
-    "buy-btn";
-
-  buyButton.textContent =
-    "🛒 Buy Now";
-
-
-  buyButton.onclick =
-    function(){
-
-      buyProduct(name);
-
-    };
-
-
-  productInfo.appendChild(title);
-
-  productInfo.appendChild(priceText);
-
-  productInfo.appendChild(buyButton);
-
-  product.appendChild(image);
-
-  product.appendChild(productInfo);
-
-  productList.appendChild(product);
-
-
-  alert(
-    "🎉 Product Successfully Added!"
+  products.push(
+    product
   );
 
 
-  /* CLEAR FORM */
+  saveData();
+
+
+  displayProducts();
+
+
+  alert(
+    "🎉 Product Added Successfully!"
+  );
+
 
   document
-    .getElementById("productName")
+    .getElementById("newProductName")
     .value = "";
 
+
   document
-    .getElementById("productPrice")
+    .getElementById("newProductPrice")
     .value = "";
+
 
   document
     .getElementById("imageUpload")
     .value = "";
+
 
   document
     .getElementById("editor")
@@ -1280,21 +2660,17 @@ function addProduct(){
   uploadedImage =
     new Image();
 
+
   rotation = 0;
 
+}
 
-  document
-    .getElementById("brightness")
-    .value = 100;
 
-  document
-    .getElementById("contrast")
-    .value = 100;
+/* =====================================================
+   HOME / ADMIN NAVIGATION
+===================================================== */
 
-  document
-    .getElementById("saturation")
-    .value = 100;
-
+function goHome(){
 
   window.scrollTo({
     top:0,
@@ -1303,7 +2679,28 @@ function addProduct(){
 
 }
 
+
+function goAdmin(){
+
+  document
+    .getElementById("adminSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+displayProducts();
+
+updateBadges();
+
 </script>
+
 
 </body>
 </html>
